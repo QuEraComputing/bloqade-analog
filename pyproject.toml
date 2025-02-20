@@ -1,5 +1,5 @@
 [project]
-name = "bloqade"
+name = "bloqade-analog"
 version = "0.15.14"
 description = "Neutral atom software development kit"
 authors = [
@@ -82,7 +82,24 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 target-version = "py39"
 
 [tool.pdm]
-[tool.pdm.dev-dependencies]
+[tool.pdm.scripts]
+_.env_file = "./.env"
+upload = "python -m twine upload -r bloqade dist/*"
+build = {cmd = "pdm build"}
+publish = {composite = ["build", "upload"]}
+test = {shell = "git clean -f && pytest tests"}
+coverage = {shell = "git clean -f && coverage run -m pytest tests/ && coverage xml && coverage report"}
+coverage-html = {shell = "git clean -f && coverage run -m pytest -x -vv tests/ && coverage html && open htmlcov/index.html"}
+doc = {cmd = "mkdocs serve"}
+doc_build = {cmd = "mkdocs build"}
+doc_deploy = {cmd = "pdm mike deploy --push --update-aliases dev"}
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
+hide_notebook_metadata = false
+
+
+[dependency-groups]
 dev = [
     "twine>=4.0.2",
     "ipython>=8.12.0",
@@ -103,19 +120,3 @@ dev = [
     "icecream>=2.1.3",
     "tqdm>=4.66.4",
 ]
-
-[tool.pdm.scripts]
-_.env_file = "./.env"
-upload = "python -m twine upload -r bloqade dist/*"
-build = {cmd = "pdm build"}
-publish = {composite = ["build", "upload"]}
-test = {shell = "git clean -f && pytest tests"}
-coverage = {shell = "git clean -f && coverage run -m pytest tests/ && coverage xml && coverage report"}
-coverage-html = {shell = "git clean -f && coverage run -m pytest -x -vv tests/ && coverage html && open htmlcov/index.html"}
-doc = {cmd = "mkdocs serve"}
-doc_build = {cmd = "mkdocs build"}
-doc_deploy = {cmd = "pdm mike deploy --push --update-aliases dev"}
-
-[tool.jupytext]
-formats = "ipynb,py:percent"
-hide_notebook_metadata = false

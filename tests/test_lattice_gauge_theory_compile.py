@@ -1,5 +1,5 @@
-from bloqade import cast, piecewise_linear
-from bloqade.ir.location import Chain
+from bloqade.analog import cast, piecewise_linear
+from bloqade.analog.ir.location import Chain
 
 import numpy as np
 

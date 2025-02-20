@@ -1,6 +1,6 @@
 import pytest
-from bloqade.ir.location import Square
-from bloqade import start
+from bloqade.analog.ir.location import Square
+from bloqade.analog import start
 
 
 # create lattice
