@@ -47,9 +47,9 @@ def test_local_no_global():
     panel = json.loads(batch.json())
 
     print(panel)
-    panel = panel["bloqade.task.batch.RemoteBatch"]
+    panel = panel["bloqade_analog.task.batch.RemoteBatch"]
 
-    task = panel["tasks"][0][1]["bloqade.task.quera.QuEraTask"]
+    task = panel["tasks"][0][1]["bloqade_analog.task.quera.QuEraTask"]
     ir = task["task_ir"]
 
     assert ir["nshots"] == 10
@@ -83,10 +83,10 @@ def test_local_global():
     )
 
     panel = json.loads(job.json())
-    panel = panel["bloqade.task.batch.RemoteBatch"]
+    panel = panel["bloqade_analog.task.batch.RemoteBatch"]
 
     print(panel)
-    task = panel["tasks"][0][1]["bloqade.task.quera.QuEraTask"]
+    task = panel["tasks"][0][1]["bloqade_analog.task.quera.QuEraTask"]
     ir = task["task_ir"]
 
     assert ir["nshots"] == 10

@@ -119,7 +119,7 @@ def test_waveform_normalize():
     assert NormalizeWaveformPython().visit(wf7) == wf8
 
 
-@patch("bloqade.compiler.codegen.python.waveform.randint")
+@patch("bloqade_analog.compiler.codegen.python.waveform.randint")
 def test_python_codegen(randint):
     def func_def(wf):
         scan = WaveformScan().scan(wf)

@@ -37,7 +37,7 @@ def get_task_ir():
     )
 
 
-@patch("bloqade.submission.braket.AwsDevice")
+@patch("bloqade_analog.submission.braket.AwsDevice")
 def test_braket_submit(*args, **kwargs):
     task_ir = get_task_ir()
 
@@ -49,7 +49,7 @@ def test_braket_submit(*args, **kwargs):
     mock_aws_device.run.assert_called_once()
 
 
-@patch("bloqade.submission.braket.AwsDevice")
+@patch("bloqade_analog.submission.braket.AwsDevice")
 def test_add_braket_user_agent_invoked(*args, **kwargs):
     backend = bloqade_analog.submission.braket.BraketBackend()
     expected_user_agent = f"Bloqade/{bloqade_analog.__version__}"
@@ -62,8 +62,8 @@ def test_add_braket_user_agent_invoked(*args, **kwargs):
 @pytest.mark.skip(
     reason="removed implementation for validation because of issue with empty queue."
 )
-@patch("bloqade.submission.braket.AwsDevice")
-@patch("bloqade.submission.braket.AwsQuantumTask")
+@patch("bloqade_analog.submission.braket.AwsDevice")
+@patch("bloqade_analog.submission.braket.AwsQuantumTask")
 def test_braket_validate_task(*args, **kwargs):
     task_ir = get_task_ir()
 
@@ -101,7 +101,7 @@ def test_braket_validate_task(*args, **kwargs):
     mock_aws_device.run.assert_called_once()
 
 
-@patch("bloqade.submission.braket.AwsQuantumTask")
+@patch("bloqade_analog.submission.braket.AwsQuantumTask")
 def test_braket_fetch(*args, **kwargs):
     backend = bloqade_analog.submission.braket.BraketBackend()
     mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")
@@ -111,7 +111,7 @@ def test_braket_fetch(*args, **kwargs):
     mock_aws_quantum_task.result.assert_called_once()
 
 
-@patch("bloqade.submission.braket.AwsQuantumTask")
+@patch("bloqade_analog.submission.braket.AwsQuantumTask")
 def test_braket_cancel(*args, **kwargs):
     backend = bloqade_analog.submission.braket.BraketBackend()
     mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")
@@ -121,7 +121,7 @@ def test_braket_cancel(*args, **kwargs):
     mock_aws_quantum_task.cancel.assert_called_once()
 
 
-@patch("bloqade.submission.braket.AwsQuantumTask")
+@patch("bloqade_analog.submission.braket.AwsQuantumTask")
 def test_braket_status(*args, **kwargs):
     backend = bloqade_analog.submission.braket.BraketBackend()
     mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")

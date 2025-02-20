@@ -18,7 +18,7 @@ def create_response(
     return response
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade_analog.ir.routine.quera.request")
 def test_custom_submission(request_mock):
     body_template = '{{"token": "token", "body":{task_ir}}}'
 
@@ -46,7 +46,7 @@ def test_custom_submission(request_mock):
         assert response_json["task_id"] == task_id
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade_analog.ir.routine.quera.request")
 def test_custom_submission_error_missing_task_ir_key(request_mock):
     body_template = '{{"token": "token", "body":}}'
 
@@ -68,7 +68,7 @@ def test_custom_submission_error_missing_task_ir_key(request_mock):
         program.quera.custom().submit(100, "https://my_service.test", body_template)
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade_analog.ir.routine.quera.request")
 def test_custom_submission_error_malformed_template(request_mock):
     body_template = '{{"token": token", "body":}}'
 

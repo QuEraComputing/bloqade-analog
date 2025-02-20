@@ -706,7 +706,7 @@ def test_zero_state():
     assert np.all(space.zero_state().data == np.array([1, 0, 0, 0, 0]))
 
 
-@patch("bloqade.emulate.ir.space.np.random.choice")
+@patch("bloqade_analog.emulate.ir.space.np.random.choice")
 def test_sample_state(patch_choice):
     positions = [(0, 0), (0, 1), (1, 0)]
     register = Register(TwoLevelAtom, positions, 1)
@@ -827,7 +827,7 @@ def test_str():
     )
 
 
-@patch("bloqade.emulate.ir.space.np.iinfo")
+@patch("bloqade_analog.emulate.ir.space.np.iinfo")
 def test_dtype(patch_iinfo):
     patch_iinfo.return_value = Mock(max=10)
 
