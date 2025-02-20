@@ -1,4 +1,4 @@
-name: Documentation(preview)
+name: Documentation (preview)
 on:
   pull_request:
     types:
@@ -10,33 +10,21 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-# See: https://github.com/pdm-project/pdm/issues/1879
-env:
-  PDM_DEPS: 'urllib3<2'
-
 jobs:
   documentation:
     name: Deploy preview documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for dev documentation to deploy
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: main
-          check-name: 'Deploy dev documentation'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
       - uses: actions/checkout@v4
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: 3.12
-      - uses: pdm-project/setup-pdm@v4
-        name: Setup PDM
-        with:
-          python-version: 3.12
-      - name: Install dependencies
-        run: pdm install -G doc
+          # Install a specific version of uv.
+          version: "0.5.1"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Install Documentation dependencies
+        run: uv sync --group doc
       - name: Set up build cache
         uses: actions/cache@v4
         id: cache
@@ -48,9 +36,8 @@ jobs:
       - name: Depoly documentation
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          pdm run doc_build
+          uv run mkdocs build
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
