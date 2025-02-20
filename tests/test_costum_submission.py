@@ -1,11 +1,12 @@
-from bloqade import start
-from requests import Response
 from typing import Dict, List, Union
-import simplejson as json
-
-import bloqade.ir.routine.quera  # noqa: F401
 from unittest.mock import patch
+
 import pytest
+import simplejson as json
+from requests import Response
+
+import bloqade.analog.ir.routine.quera  # noqa: F401
+from bloqade import start
 
 
 def create_response(
@@ -18,7 +19,7 @@ def create_response(
     return response
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade.analog.ir.routine.quera.request")
 def test_custom_submission(request_mock):
     body_template = '{{"token": "token", "body":{task_ir}}}'
 
@@ -46,7 +47,7 @@ def test_custom_submission(request_mock):
         assert response_json["task_id"] == task_id
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade.analog.ir.routine.quera.request")
 def test_custom_submission_error_missing_task_ir_key(request_mock):
     body_template = '{{"token": "token", "body":}}'
 
@@ -68,7 +69,7 @@ def test_custom_submission_error_missing_task_ir_key(request_mock):
         program.quera.custom().submit(100, "https://my_service.test", body_template)
 
 
-@patch("bloqade.ir.routine.quera.request")
+@patch("bloqade.analog.ir.routine.quera.request")
 def test_custom_submission_error_malformed_template(request_mock):
     body_template = '{{"token": token", "body":}}'
 

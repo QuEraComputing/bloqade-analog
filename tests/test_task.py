@@ -1,8 +1,10 @@
-from bloqade.atom_arrangement import Chain
-from bloqade.task.batch import RemoteBatch
-import glob
 import os
+import glob
+
 import pytest
+
+from bloqade.analog.task.batch import RemoteBatch
+from bloqade.analog.atom_arrangement import Chain
 
 
 def test_batch_error(*args):

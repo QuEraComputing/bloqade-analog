@@ -1,22 +1,22 @@
-from decimal import Decimal
-from bloqade.ir import (
-    Field,
-    Uniform,
-    Linear,
-    ScaledLocations,
-    Location,
-    SpatialModulation,
-    RunTimeVector,
-    AssignedRunTimeVector,
-)
-from bloqade.ir.control.field import Drive
-import pytest
-from bloqade import cast
 from io import StringIO
+from decimal import Decimal
+
+import pytest
 from IPython.lib.pretty import PrettyPrinter as PP
 
-import bloqade.ir.tree_print as trp
-from bloqade import tree_depth
+import bloqade.analog.ir.tree_print as trp
+from bloqade.analog import cast, tree_depth
+from bloqade.analog.ir import (
+    Field,
+    Linear,
+    Uniform,
+    Location,
+    RunTimeVector,
+    ScaledLocations,
+    SpatialModulation,
+    AssignedRunTimeVector,
+)
+from bloqade.analog.ir.control.field import Drive
 
 trp.color_enabled = False
 

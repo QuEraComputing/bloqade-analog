@@ -1,15 +1,13 @@
 from bloqade import start
-from bloqade.submission.capabilities import get_capabilities
-from bloqade.ir import analog_circuit
-
-from bloqade.compiler.passes.hardware import (
-    analyze_channels,
-    canonicalize_circuit,
+from bloqade.analog.ir import analog_circuit
+from bloqade.analog.submission.capabilities import get_capabilities
+from bloqade.analog.compiler.passes.hardware import (
     assign_circuit,
-    validate_waveforms,
+    analyze_channels,
     generate_ahs_code,
+    validate_waveforms,
+    canonicalize_circuit,
 )
-
 
 circuit = (
     start.rydberg.detuning.uniform.piecewise_linear([0.1, 1.2, 0.3], [-10, -10, 10, 10])
