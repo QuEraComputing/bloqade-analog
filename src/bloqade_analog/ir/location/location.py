@@ -197,7 +197,7 @@ class AtomArrangement(ProgramStart):
         # atom positions are now (0,0), (2,2)
         >>> new_reg = reg.scale(2)
         # you may also use scale on pre-defined geometries
-        >>> from bloqade.atom_arrangement import Chain
+        >>> from bloqade_analog.atom_arrangement import Chain
         # atoms in the chain will now be 2 um apart versus
         # the default 1 um
         >>> Chain(11).scale(2)
@@ -364,7 +364,7 @@ class AtomArrangement(ProgramStart):
         ### Usage Example:
 
         ```
-        >>> from bloqade.atom_arrangement import Chain
+        >>> from bloqade_analog.atom_arrangement import Chain
         >>> import numpy as np
         # set a custom seed for a numpy-based RNG
         >>> custom_rng = np.random.default_rng(888)
@@ -441,7 +441,7 @@ class AtomArrangement(ProgramStart):
         ### Usage Example:
 
         ```
-        >>> from bloqade.atom_arrangement import Chain
+        >>> from bloqade_analog.atom_arrangement import Chain
         >>> import numpy as np
         # set a custom seed for a numpy-based RNG
         >>> custom_rng = np.random.default_rng(888)

@@ -4,7 +4,7 @@ import bloqade_analog.ir.control.pulse as pulse
 import bloqade_analog.ir.control.sequence as sequence
 from bloqade_analog import var
 
-# from bloqade.ir.scalar import var
+# from bloqade_analog.ir.scalar import var
 
 from bloqade_analog.compiler.analysis.common.scan_channels import ScanChannels
 

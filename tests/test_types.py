@@ -1,4 +1,4 @@
-# from bloqade.julia.types import Vector, Int64
+# from bloqade_analog.julia.types import Vector, Int64
 
 # print(Vector[Int64]([1, 2, 3]))
 

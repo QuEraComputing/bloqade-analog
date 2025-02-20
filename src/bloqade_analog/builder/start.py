@@ -25,7 +25,7 @@ class ProgramStart(Drive, Builder):
         >>> from numpy import pi
         >>> seq = start.rydberg.rabi.amplitude.constant(2.0 * pi, 4.5)
         # choose a geometry of interest to apply the program on
-        >>> from bloqade.atom_arrangement import Chain, Kagome
+        >>> from bloqade_analog.atom_arrangement import Chain, Kagome
         >>> complete_program = Chain(10).apply(seq)
         # you can .apply to as many geometries as you like
         >>> another_complete_program = Kagome(3).apply(seq)

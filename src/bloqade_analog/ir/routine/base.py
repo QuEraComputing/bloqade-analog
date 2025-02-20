@@ -1,4 +1,4 @@
-# from bloqade.ir.routine.params import Params
+# from bloqade_analog.ir.routine.params import Params
 from bloqade_analog.ir.analog_circuit import AnalogCircuit
 from bloqade_analog.ir import AtomArrangement, ParallelRegister, Sequence
 

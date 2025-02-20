@@ -115,7 +115,7 @@ def test_assign_dur_zero_sequence():
 
 
 """
-from bloqade.ir.location import Square
+from bloqade_analog.ir.location import Square
 if __name__ == "__main__":
     simulator_job = (
         start.add_position((0, 0))

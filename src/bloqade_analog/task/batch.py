@@ -17,7 +17,7 @@ from bloqade_analog.submission.ir.task_results import (
     QuEraTaskResults,
 )
 
-# from bloqade.submission.base import ValidationError
+# from bloqade_analog.submission.base import ValidationError
 
 from beartype.typing import Union, Optional, Dict, Any, List
 from beartype import beartype

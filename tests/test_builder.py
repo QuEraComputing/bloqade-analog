@@ -17,7 +17,7 @@ from bloqade_analog.ir.control.waveform import to_waveform
 from bloqade_analog.ir import rydberg, detuning, hyperfine, rabi
 from bloqade_analog import start, cast, var
 
-# from bloqade.ir.location import Square, Chain
+# from bloqade_analog.ir.location import Square, Chain
 import numpy as np
 import pytest
 
