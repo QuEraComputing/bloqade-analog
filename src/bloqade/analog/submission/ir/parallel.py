@@ -1,7 +1,7 @@
-from pydantic.v1 import BaseModel, validator, ValidationError
-
-from typing import List, Optional, Tuple
+from typing import List, Tuple, Optional
 from itertools import combinations
+
+from pydantic.v1 import BaseModel, ValidationError, validator
 
 
 class ClusterLocationInfo(BaseModel):

@@ -1,20 +1,19 @@
-from collections import OrderedDict
 from functools import cached_property
-from bloqade.analog.ir.control.pulse import PulseExpr, Pulse
+from collections import OrderedDict
+
+from beartype.typing import Dict, List
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.ir.scalar import Scalar, Interval, cast
+from bloqade.analog.ir.tree_print import Printer
+from bloqade.analog.visualization import display_ir, get_ir_figure
+from bloqade.analog.ir.control.pulse import Pulse, PulseExpr
 from bloqade.analog.ir.control.traits import (
     HashTrait,
-    AppendTrait,
     SliceTrait,
+    AppendTrait,
     CanonicalizeTrait,
 )
-from bloqade.analog.ir.scalar import Interval, Scalar, cast
-from bloqade.analog.ir.tree_print import Printer
-
-from pydantic.v1.dataclasses import dataclass
-from beartype.typing import List, Dict
-from bloqade.analog.visualization import get_ir_figure
-from bloqade.analog.visualization import display_ir
-
 
 __all__ = [
     "LevelCoupling",

@@ -1,21 +1,23 @@
 import warnings
+
+from braket.aws import AwsDevice, AwsQuantumTask
+from pydantic.v1 import PrivateAttr
+from beartype.typing import Optional
+
+import bloqade.analog
 from bloqade.analog.submission.base import SubmissionBackend
 from bloqade.analog.submission.ir.braket import (
-    from_braket_task_results,
-    from_braket_status_codes,
     to_braket_task,
     to_quera_capabilities,
+    from_braket_status_codes,
+    from_braket_task_results,
 )
 from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 from bloqade.analog.submission.ir.task_results import (
-    QuEraTaskStatusCode,
     QuEraTaskResults,
+    QuEraTaskStatusCode,
 )
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
-from braket.aws import AwsDevice, AwsQuantumTask
-from beartype.typing import Optional
-from pydantic.v1 import PrivateAttr
-import bloqade.analog
 
 
 class BraketBackend(SubmissionBackend):
@@ -32,7 +34,7 @@ class BraketBackend(SubmissionBackend):
         return self._device
 
     def get_capabilities(self, use_experimental: bool = False) -> QuEraCapabilities:
-        from botocore.exceptions import BotoCoreError, ClientError
+        from botocore.exceptions import ClientError, BotoCoreError
 
         if use_experimental:
             return super().get_capabilities(use_experimental)

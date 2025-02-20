@@ -1,5 +1,6 @@
-from bloqade.analog.constants import RB_C6
 from math import pi
+
+from bloqade.analog.constants import RB_C6
 
 
 def test_RB_C6():

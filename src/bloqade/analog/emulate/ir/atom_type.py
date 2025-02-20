@@ -1,7 +1,8 @@
-from dataclasses import dataclass
-from numpy.typing import NDArray
-import numpy as np
 from enum import Enum
+from dataclasses import dataclass
+
+import numpy as np
+from numpy.typing import NDArray
 
 from bloqade.analog.serialize import Serializer
 

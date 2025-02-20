@@ -1,4 +1,5 @@
 from functools import cached_property
+
 from bloqade.analog.ir.scalar import cast
 
 

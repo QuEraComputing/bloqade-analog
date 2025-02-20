@@ -1,9 +1,11 @@
+from math import isclose
+from itertools import product
+
+import numpy as np
 import pytest
+
 from bloqade.analog import start
 from bloqade.analog.atom_arrangement import Chain
-import numpy as np
-from itertools import product
-from math import isclose
 
 
 def test_zero_state():

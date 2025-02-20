@@ -2,15 +2,16 @@
 Module for parsing and displaying quantum computing program components using the bloqade library.
 """
 
-from beartype.typing import Union, TYPE_CHECKING
+from beartype.typing import TYPE_CHECKING, Union
+
 import bloqade.analog.ir as ir
 from bloqade.analog.visualization import display_builder
 
 if TYPE_CHECKING:
-    from bloqade.analog.ir import AtomArrangement, ParallelRegister, Sequence
-    from bloqade.analog.ir.analog_circuit import AnalogCircuit
-    from bloqade.analog.ir.routine.base import Routine
+    from bloqade.analog.ir import Sequence, AtomArrangement, ParallelRegister
     from bloqade.analog.builder.base import Builder
+    from bloqade.analog.ir.routine.base import Routine
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
 
 
 class ParseRegister:

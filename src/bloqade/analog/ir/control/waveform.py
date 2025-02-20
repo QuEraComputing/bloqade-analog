@@ -1,36 +1,34 @@
+import inspect
+import warnings
+from enum import Enum
+from bisect import bisect_left, bisect_right
+from decimal import Decimal
 from numbers import Real
-from bloqade.analog.builder.typing import ScalarType
-from bloqade.analog.ir.tree_print import Printer
+from functools import cached_property
+
+import numpy as np
+import scipy.integrate as integrate
+from beartype import beartype
+from beartype.typing import Any, Dict, List, Tuple, Union, Callable, Container
+from pydantic.v1.dataclasses import dataclass
+
 from bloqade.analog.ir.scalar import (
     Scalar,
     Interval,
     Variable,
     AssignedVariable,
-    cast,
     var,
+    cast,
 )
+from bloqade.analog.ir.tree_print import Printer
+from bloqade.analog.visualization import display_ir, get_ir_figure
+from bloqade.analog.builder.typing import ScalarType
 from bloqade.analog.ir.control.traits import (
     HashTrait,
-    AppendTrait,
     SliceTrait,
+    AppendTrait,
     CanonicalizeTrait,
 )
-
-
-from bisect import bisect_left, bisect_right
-from decimal import Decimal
-from pydantic.v1.dataclasses import dataclass
-from beartype.typing import Any, Tuple, Union, List, Callable, Dict, Container
-from beartype import beartype
-from enum import Enum
-
-import numpy as np
-import inspect
-import scipy.integrate as integrate
-from bloqade.analog.visualization import get_ir_figure
-from bloqade.analog.visualization import display_ir
-from functools import cached_property
-import warnings
 
 
 @beartype

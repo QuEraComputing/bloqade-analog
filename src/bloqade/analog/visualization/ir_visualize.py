@@ -1,18 +1,25 @@
-from bokeh.plotting import figure
-from bokeh.layouts import row, column
-from bokeh.models import CustomJS, MultiChoice
-from bokeh.models import (
-    ColumnDataSource,
-    DataCube,
-    GroupingInfo,
-    StringFormatter,
-    TableColumn,
-)
-from bokeh.models import Tabs, TabPanel, HoverTool, Div, CrosshairTool, Span
-from bokeh.palettes import Dark2_5
 import itertools
-import numpy as np
 from typing import List
+
+import numpy as np
+from bokeh.models import (
+    Div,
+    Span,
+    Tabs,
+    CustomJS,
+    DataCube,
+    TabPanel,
+    HoverTool,
+    MultiChoice,
+    TableColumn,
+    GroupingInfo,
+    CrosshairTool,
+    StringFormatter,
+    ColumnDataSource,
+)
+from bokeh.layouts import row, column
+from bokeh.palettes import Dark2_5
+from bokeh.plotting import figure
 
 
 def mock_data(Ndata):
@@ -372,8 +379,8 @@ def get_ir_figure(ir, **assignments):
     # sequence, spmod and waveform does not need extra
     # pulse, field need extra arguments
     # so we handle separately
-    from bloqade.analog.ir.control.sequence import SequenceExpr
     from bloqade.analog.ir.control.field import SpatialModulation
+    from bloqade.analog.ir.control.sequence import SequenceExpr
     from bloqade.analog.ir.control.waveform import Waveform
 
     if isinstance(ir, SequenceExpr):

@@ -1,5 +1,5 @@
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
 from bloqade.analog.ir.control import field, pulse, sequence, waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 
 class ValidatePiecewiseConstantChannel(BloqadeIRVisitor):

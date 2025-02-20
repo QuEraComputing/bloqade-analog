@@ -1,10 +1,11 @@
-from bloqade.analog.serialize import dumps, loads
+import pytest
+
 from bloqade.analog import start
+from bloqade.analog.serialize import dumps, loads
 from bloqade.analog.task.quera import QuEraTask
 from bloqade.analog.task.braket import BraketTask
 from bloqade.analog.submission.quera import QuEraBackend
 from bloqade.analog.submission.braket import BraketBackend
-import pytest
 
 
 def test_quera_task():

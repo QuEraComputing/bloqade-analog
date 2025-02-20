@@ -1,9 +1,10 @@
+from typing import Any, Dict
+
+import bloqade.analog.ir.scalar as scalar
 import bloqade.analog.ir.control.field as field
 import bloqade.analog.ir.control.waveform as waveform
-import bloqade.analog.ir.scalar as scalar
-from bloqade.analog.builder.typing import LiteralType
 from bloqade.analog.ir.visitor import BloqadeIRTransformer
-from typing import Any, Dict
+from bloqade.analog.builder.typing import LiteralType
 
 
 class AssignBloqadeIR(BloqadeIRTransformer):

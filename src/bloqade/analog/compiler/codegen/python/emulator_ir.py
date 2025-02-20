@@ -1,34 +1,34 @@
+from decimal import Decimal
+
 from beartype.typing import Any, Dict, Optional
 
-from bloqade.analog.builder.typing import LiteralType
-from bloqade.analog.ir.location.location import AtomArrangement, SiteFilling
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
-from bloqade.analog.compiler.analysis.common.assignment_scan import (
-    AssignmentScan,
-)  # noqa: F401
-from bloqade.analog.compiler.analysis.common.is_hyperfine import IsHyperfineSequence
-
-import bloqade.analog.ir.control.sequence as sequence
-import bloqade.analog.ir.control.pulse as pulse
-import bloqade.analog.ir.control.waveform as waveform
-import bloqade.analog.ir.control.field as field
-from bloqade.analog.task.base import Geometry
 import bloqade.analog.ir as ir
-from bloqade.analog.emulate.ir.atom_type import ThreeLevelAtom, TwoLevelAtom
+import bloqade.analog.ir.control.field as field
+import bloqade.analog.ir.control.pulse as pulse
+import bloqade.analog.ir.control.sequence as sequence
+import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.task.base import Geometry
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.builder.typing import LiteralType
 from bloqade.analog.emulate.ir.emulator import (
-    DetuningOperatorData,
-    LevelCoupling,
-    RabiOperatorData,
-    RabiOperatorType,
-    DetuningTerm,
-    JITWaveform,
-    WaveformRuntime,
-    EmulatorProgram,
-    Register,
     Fields,
     RabiTerm,
+    Register,
+    JITWaveform,
+    DetuningTerm,
+    LevelCoupling,
+    EmulatorProgram,
+    WaveformRuntime,
+    RabiOperatorData,
+    RabiOperatorType,
+    DetuningOperatorData,
 )
-from decimal import Decimal
+from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom, ThreeLevelAtom
+from bloqade.analog.ir.location.location import SiteFilling, AtomArrangement
+from bloqade.analog.compiler.analysis.common.is_hyperfine import IsHyperfineSequence
+from bloqade.analog.compiler.analysis.common.assignment_scan import (  # noqa: F401
+    AssignmentScan,
+)
 
 
 class EmulatorProgramCodeGen(BloqadeIRVisitor):

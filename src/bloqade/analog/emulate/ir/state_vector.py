@@ -1,21 +1,23 @@
+from typing import Annotated
+from dataclasses import field, dataclass
+
 import plum
+import numpy as np
+from numba import njit
+from beartype import beartype
+from numpy.typing import NDArray
+from scipy.sparse import diags, csr_matrix
+from beartype.vale import IsAttr, IsEqual
+from beartype.typing import List, Tuple, Union, Callable, Iterator, Optional, Sequence
+from scipy.integrate import ode
+
+from bloqade.analog.emulate.ir.space import MAX_PRINT_SIZE, Space
 from bloqade.analog.emulate.ir.emulator import EmulatorProgram
-from bloqade.analog.emulate.ir.space import Space, MAX_PRINT_SIZE
 from bloqade.analog.emulate.sparse_operator import (
     IndexMapping,
     SparseMatrixCSC,
     SparseMatrixCSR,
 )
-from dataclasses import dataclass, field
-from numpy.typing import NDArray
-from beartype.typing import List, Callable, Union, Optional, Tuple, Iterator, Sequence
-from beartype.vale import IsAttr, IsEqual
-from typing import Annotated
-from beartype import beartype
-import numpy as np
-from scipy.integrate import ode
-from scipy.sparse import csr_matrix, diags
-from numba import njit
 
 SparseOperator = Union[IndexMapping, SparseMatrixCSR, SparseMatrixCSC]
 

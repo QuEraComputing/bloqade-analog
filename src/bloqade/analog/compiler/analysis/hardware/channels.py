@@ -1,9 +1,9 @@
 from beartype import beartype
-from bloqade.analog.ir import analog_circuit
+
 import bloqade.analog.ir.control.field as field
 import bloqade.analog.ir.control.pulse as pulse
 import bloqade.analog.ir.control.sequence as sequence
-
+from bloqade.analog.ir import analog_circuit
 from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 

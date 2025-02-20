@@ -1,15 +1,16 @@
+from typing import List, Tuple
+
+import numpy as np
 from bokeh.models import (
-    ColumnDataSource,
-    Range1d,
-    HoverTool,
-    LinearColorMapper,
     Select,
+    Range1d,
     CustomJS,
+    HoverTool,
+    ColumnDataSource,
+    LinearColorMapper,
 )
 from bokeh.layouts import column
 from bokeh.plotting import figure
-import numpy as np
-from typing import List, Tuple
 
 
 def assemble_atom_arrangement_panel(atom_arrangement_plots: List, keys: List[str]):

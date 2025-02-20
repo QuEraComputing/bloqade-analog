@@ -1,16 +1,17 @@
+import numpy as np
+from scipy.sparse import random
+
 from bloqade.analog.emulate.sparse_operator import (
+    IndexMapping,
     SparseMatrixCSC,
     SparseMatrixCSR,
-    IndexMapping,
     _csc_matvec_impl,
     _csr_matvec_impl,
+    _index_mapping_impl,
     _index_mapping_col_sliced,
     _index_mapping_row_sliced,
-    _index_mapping_impl,
     _index_mapping_row_col_sliced,
 )
-from scipy.sparse import random
-import numpy as np
 
 np.random.seed(12039)
 

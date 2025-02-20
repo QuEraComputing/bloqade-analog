@@ -1,15 +1,14 @@
-from .location import AtomArrangement, ParallelRegister, LocationInfo, ListOfLocations
 from .bravais import (
-    BoundedBravais,
+    Lieb,
     Chain,
+    Kagome,
     Square,
-    Rectangular,
     Honeycomb,
     Triangular,
-    Lieb,
-    Kagome,
+    Rectangular,
+    BoundedBravais,
 )
-
+from .location import LocationInfo, AtomArrangement, ListOfLocations, ParallelRegister
 
 start = ListOfLocations()
 """

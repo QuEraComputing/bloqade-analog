@@ -1,9 +1,8 @@
+from beartype.typing import FrozenSet
 from pydantic.v1.dataclasses import dataclass
+
 import bloqade.analog.ir.scalar as scalar
 import bloqade.analog.ir.control.field as field
-
-from beartype.typing import FrozenSet
-
 from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 

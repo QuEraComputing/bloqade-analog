@@ -2,14 +2,15 @@
 This module provides classes for building and managing quantum programs using the Bloqade library.
 """
 
-from beartype.typing import List, Dict, Union, TYPE_CHECKING
-from bloqade.analog.builder.typing import LiteralType, ParamType
+from beartype.typing import TYPE_CHECKING, Dict, List, Union
+
 from bloqade.analog.ir.scalar import Variable
+from bloqade.analog.builder.typing import ParamType, LiteralType
 
 if TYPE_CHECKING:
-    from bloqade.analog.builder.assign import Assign, BatchAssign, ListAssign
-    from bloqade.analog.builder.parallelize import Parallelize
     from bloqade.analog.builder.args import Args
+    from bloqade.analog.builder.assign import Assign, ListAssign, BatchAssign
+    from bloqade.analog.builder.parallelize import Parallelize
 
 
 class AddArgs:
@@ -131,7 +132,7 @@ class BatchAssignable:
             - `...batch_assign(assignments).args([previously_defined_vars])`: defer value assignment
             to runtime
         """
-        from bloqade.analog.builder.assign import BatchAssign, ListAssign
+        from bloqade.analog.builder.assign import ListAssign, BatchAssign
 
         if len(__batch_params) > 0 and assignments:
             raise ValueError("batch_params and assignments cannot be used together.")

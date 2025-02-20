@@ -10,7 +10,7 @@ For a more nuanced and in-depth read about the neutral atoms that Bloqade and *A
 
 ## Analog vs Digital Quantum Computing
 
-There are two modes of quantum computation that [neutral atoms](#neutral-atom-qubits) are capable of: [*Analog*](#analog-mode) and [*Digital*](#digital-mode). 
+There are two modes of quantum computation that [neutral atoms](#neutral-atom-qubits) are capable of: [*Analog*](#analog-mode) and [*Digital*](#digital-mode).
 
 You can find a brief explanation of the distinction below but for a more in-depth explanation you can refer to QuEra's qBook section on [Analog vs Digital Quantum Computing](https://qbook.quera.com/learn/?course=6630211af30e7d0013c66147&file=6630211af30e7d0013c6614a)
 
@@ -46,11 +46,11 @@ The [Rydberg Many-Body Hamiltonian](#rydberg-many-body-hamiltonian) already impl
 They are a sum of one or more *spatial modulations*, which allows you to *scale* the amplitude of the waveform across the different sites in the system:
 
 $$
-F_{i}(t) = \sum_{\alpha} C_{i}^{\alpha}f_{\alpha}(t) 
+F_{i}(t) = \sum_{\alpha} C_{i}^{\alpha}f_{\alpha}(t)
 $$
 
 $$
-C_{i}^{\alpha} \in \mathbb{R} 
+C_{i}^{\alpha} \in \mathbb{R}
 $$
 
 $$
@@ -64,6 +64,5 @@ Note that the drive is only applied if the $i$-th site is filled with an atom.
 You build fields in Bloqade by first specifying the spatial modulation followed by the waveform
 it should be multiplied by.
 
-In the case of a *uniform* spatial modulation, it can be interpreted as 
+In the case of a *uniform* spatial modulation, it can be interpreted as
 a constant scaling factor where $C_{i}^{\alpha} = 1.0$.
-

@@ -1,16 +1,17 @@
 from decimal import Decimal
+
+import numpy as np
+import pytest
+
 import bloqade.analog.ir as ir
+from bloqade.analog import cast
+from bloqade.analog.constants import RB_C6
 from bloqade.analog.ir.location import (
-    ListOfLocations,
+    Square,
     AtomArrangement,
+    ListOfLocations,
     ParallelRegister,
 )
-from bloqade.analog.ir.location import Square
-from bloqade.analog.constants import RB_C6
-from bloqade.analog import cast
-import pytest
-import numpy as np
-
 from bloqade.analog.submission.capabilities import get_capabilities
 
 

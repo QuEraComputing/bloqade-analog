@@ -1,9 +1,11 @@
 from decimal import Decimal
-from itertools import combinations
-from bloqade.analog.atom_arrangement import Chain
 from functools import reduce
+from itertools import combinations
+
 import numpy as np
 import pytest
+
+from bloqade.analog.atom_arrangement import Chain
 
 np.random.seed(2304023)
 L_VALUES = [1, 2, 3, 4, 5]

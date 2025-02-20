@@ -1,7 +1,6 @@
-import bloqade.analog.ir.control.sequence as sequence
 import bloqade.analog.ir.control.field as field
 import bloqade.analog.ir.control.pulse as pulse
-
+import bloqade.analog.ir.control.sequence as sequence
 from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 

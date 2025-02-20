@@ -1,5 +1,6 @@
-from bloqade.analog import start, cast, var
 import numpy as np
+
+from bloqade.analog import var, cast, start
 
 
 def test_adiabatic_compile():

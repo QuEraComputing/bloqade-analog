@@ -1,15 +1,14 @@
 from bloqade.analog.ir.location import (
-    AtomArrangement,
+    Lieb,
     Chain,
+    Kagome,
     Square,
-    Rectangular,
     Honeycomb,
     Triangular,
-    Lieb,
-    Kagome,
+    Rectangular,
+    AtomArrangement,
     ListOfLocations,
 )
-
 
 __all__ = [
     "AtomArrangement",

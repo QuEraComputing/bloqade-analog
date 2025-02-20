@@ -1,15 +1,15 @@
+from bokeh.models import Step, HoverTool, ColumnDataSource
+from bokeh.layouts import row, gridplot
 from bokeh.plotting import figure
-from bokeh.models import ColumnDataSource, Step, HoverTool
-from bokeh.layouts import gridplot, row
 
 
 def get_task_ir_figure(task_ir, **fig_kwargs):
     from bloqade.analog.submission.ir.task_specification import (
-        RabiFrequencyAmplitude,
-        RabiFrequencyPhase,
-        Detuning,
         Lattice,
+        Detuning,
+        RabiFrequencyPhase,
         QuEraTaskSpecification,
+        RabiFrequencyAmplitude,
     )
 
     if isinstance(task_ir, RabiFrequencyAmplitude):

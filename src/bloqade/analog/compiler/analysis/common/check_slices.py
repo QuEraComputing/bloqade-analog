@@ -1,6 +1,7 @@
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
-from bloqade.analog.ir.control import waveform, pulse, sequence
 from beartype.typing import Union
+
+from bloqade.analog.ir.control import pulse, sequence, waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 
 class CheckSlices(BloqadeIRVisitor):

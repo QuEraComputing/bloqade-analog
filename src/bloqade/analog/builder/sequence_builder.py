@@ -1,6 +1,6 @@
-from bloqade.analog.ir.control.sequence import SequenceExpr
-from bloqade.analog.builder.route import PragmaRoute
 from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.route import PragmaRoute
+from bloqade.analog.ir.control.sequence import SequenceExpr
 
 
 class SequenceBuilder(PragmaRoute, Builder):

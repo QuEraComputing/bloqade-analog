@@ -1,6 +1,6 @@
 import bloqade.analog.ir.location as location
 from bloqade.analog.ir import Linear, Constant
-from bloqade.analog.serialize import loads, dumps
+from bloqade.analog.serialize import dumps, loads
 
 
 def test():

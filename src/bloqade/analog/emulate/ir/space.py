@@ -1,8 +1,9 @@
+from enum import Enum
 from dataclasses import dataclass
+
+import numpy as np
 from numpy.typing import NDArray
 from beartype.typing import TYPE_CHECKING, Any
-import numpy as np
-from enum import Enum
 
 if TYPE_CHECKING:
     from .emulator import Register

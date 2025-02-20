@@ -1,19 +1,19 @@
-from collections import OrderedDict, namedtuple
-import time
-from pydantic.v1.dataclasses import dataclass
 import json
+import time
+from collections import OrderedDict, namedtuple
 
-from bloqade.analog.builder.typing import LiteralType
-from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
-from bloqade.analog.submission.quera import QuEraBackend
-from bloqade.analog.submission.mock import MockBackend
-from bloqade.analog.submission.load_config import load_config
-from bloqade.analog.task.batch import RemoteBatch
-from bloqade.analog.task.quera import QuEraTask
-
-from beartype.typing import Tuple, Union, Optional, NamedTuple, List, Dict, Any
 from beartype import beartype
 from requests import Response, request
+from beartype.typing import Any, Dict, List, Tuple, Union, Optional, NamedTuple
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.task.batch import RemoteBatch
+from bloqade.analog.task.quera import QuEraTask
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
+from bloqade.analog.submission.mock import MockBackend
+from bloqade.analog.submission.quera import QuEraBackend
+from bloqade.analog.submission.load_config import load_config
 
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)
@@ -55,15 +55,15 @@ class CustomSubmissionRoutine(RoutineBase):
         use_experimental: bool = False,
         args: Tuple[LiteralType, ...] = (),
     ):
+        from bloqade.analog.submission.capabilities import get_capabilities
         from bloqade.analog.compiler.passes.hardware import (
-            analyze_channels,
-            canonicalize_circuit,
             assign_circuit,
-            validate_waveforms,
+            analyze_channels,
             generate_ahs_code,
             generate_quera_ir,
+            validate_waveforms,
+            canonicalize_circuit,
         )
-        from bloqade.analog.submission.capabilities import get_capabilities
 
         circuit, params = self.circuit, self.params
         capabilities = get_capabilities(use_experimental)
@@ -174,12 +174,12 @@ class QuEraHardwareRoutine(RoutineBase):
         name: Optional[str] = None,
     ) -> RemoteBatch:
         from bloqade.analog.compiler.passes.hardware import (
-            analyze_channels,
-            canonicalize_circuit,
             assign_circuit,
-            validate_waveforms,
+            analyze_channels,
             generate_ahs_code,
             generate_quera_ir,
+            validate_waveforms,
+            canonicalize_circuit,
         )
 
         circuit, params = self.circuit, self.params

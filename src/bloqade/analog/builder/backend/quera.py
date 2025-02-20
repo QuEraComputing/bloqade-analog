@@ -1,4 +1,5 @@
 from typing import Optional
+
 from bloqade.analog.builder.base import Builder
 
 

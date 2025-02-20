@@ -1,5 +1,6 @@
-from bloqade.analog.submission.base import SubmissionBackend
 import pytest
+
+from bloqade.analog.submission.base import SubmissionBackend
 
 
 def test_submission_base():

@@ -1,7 +1,8 @@
 from enum import Enum
-from pydantic.v1 import BaseModel, conlist, conint
 from typing import List, Tuple
+
 import numpy as np
+from pydantic.v1 import BaseModel, conint, conlist
 
 __all__ = ["QuEraTaskResults", "TaskProbabilities"]
 

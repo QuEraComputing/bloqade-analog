@@ -1,6 +1,6 @@
 from .hash import HashTrait
-from .append import AppendTrait
 from .slice import SliceTrait
+from .append import AppendTrait
 from .canonicalize import CanonicalizeTrait
 
 __all__ = [

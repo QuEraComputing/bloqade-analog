@@ -1,6 +1,6 @@
 from beartype.typing import TYPE_CHECKING
-from bloqade.analog.builder.base import Builder
 
+from bloqade.analog.builder.base import Builder
 
 if TYPE_CHECKING:
     from bloqade.analog.ir.routine.braket import (
