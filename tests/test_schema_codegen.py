@@ -1,6 +1,6 @@
-from bloqade import start
-from bloqade.ir.location import Square
-from bloqade.ir import Constant, Linear
+from bloqade_analog import start
+from bloqade_analog.ir.location import Square
+from bloqade_analog.ir import Constant, Linear
 import json
 import numpy as np
 import pytest

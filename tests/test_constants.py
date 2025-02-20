@@ -1,4 +1,4 @@
-from bloqade.constants import RB_C6
+from bloqade_analog.constants import RB_C6
 from math import pi
 
 

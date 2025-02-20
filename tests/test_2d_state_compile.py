@@ -1,4 +1,4 @@
-from bloqade.atom_arrangement import Square
+from bloqade_analog.atom_arrangement import Square
 
 
 def test_2d_state_compile():

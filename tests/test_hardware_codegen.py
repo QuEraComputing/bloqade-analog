@@ -1,6 +1,6 @@
 # from bloqade import start
-from bloqade.ir import location, cast, Interpolation
-from bloqade.ir import Constant, Linear, Poly, PythonFn, Sample
+from bloqade_analog.ir import location, cast, Interpolation
+from bloqade_analog.ir import Constant, Linear, Poly, PythonFn, Sample
 import pytest
 import json
 import numpy as np

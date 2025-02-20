@@ -1,7 +1,7 @@
-from bloqade import cast
-from bloqade.ir import scalar
-from bloqade.compiler.rewrite.common.assign_to_literal import AssignToLiteral
-from bloqade.compiler.rewrite.common.assign_variables import AssignBloqadeIR
+from bloqade_analog import cast
+from bloqade_analog.ir import scalar
+from bloqade_analog.compiler.rewrite.common.assign_to_literal import AssignToLiteral
+from bloqade_analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
 from decimal import Decimal
 
 

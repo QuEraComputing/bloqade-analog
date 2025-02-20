@@ -1,14 +1,14 @@
 import inspect
-from bloqade.compiler.analysis.python.waveform import WaveformScan
-from bloqade.compiler.rewrite.python.waveform import NormalizeWaveformPython
-from bloqade.compiler.codegen.python.waveform import CodegenPythonWaveform
-from bloqade.compiler.rewrite.common.assign_variables import AssignBloqadeIR
-from bloqade.factory import piecewise_linear, piecewise_constant
-import bloqade.ir.control.waveform as wf
+from bloqade_analog.compiler.analysis.python.waveform import WaveformScan
+from bloqade_analog.compiler.rewrite.python.waveform import NormalizeWaveformPython
+from bloqade_analog.compiler.codegen.python.waveform import CodegenPythonWaveform
+from bloqade_analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
+from bloqade_analog.factory import piecewise_linear, piecewise_constant
+import bloqade_analog.ir.control.waveform as wf
 from unittest.mock import patch
 import numpy as np
 import numba
-from bloqade import start
+from bloqade_analog import start
 
 
 def f(t):

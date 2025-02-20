@@ -1,5 +1,5 @@
-from bloqade.atom_arrangement import Chain
-from bloqade.task.batch import RemoteBatch
+from bloqade_analog.atom_arrangement import Chain
+from bloqade_analog.task.batch import RemoteBatch
 import glob
 import os
 import pytest

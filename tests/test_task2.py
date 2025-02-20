@@ -1,9 +1,9 @@
-from bloqade.serialize import dumps, loads
-from bloqade import start
-from bloqade.task.quera import QuEraTask
-from bloqade.task.braket import BraketTask
-from bloqade.submission.quera import QuEraBackend
-from bloqade.submission.braket import BraketBackend
+from bloqade_analog.serialize import dumps, loads
+from bloqade_analog import start
+from bloqade_analog.task.quera import QuEraTask
+from bloqade_analog.task.braket import BraketTask
+from bloqade_analog.submission.quera import QuEraBackend
+from bloqade_analog.submission.braket import BraketBackend
 import pytest
 
 

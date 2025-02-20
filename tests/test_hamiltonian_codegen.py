@@ -1,6 +1,6 @@
 from decimal import Decimal
 from itertools import combinations
-from bloqade.atom_arrangement import Chain
+from bloqade_analog.atom_arrangement import Chain
 from functools import reduce
 import numpy as np
 import pytest

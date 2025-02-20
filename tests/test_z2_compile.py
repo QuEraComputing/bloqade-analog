@@ -1,4 +1,4 @@
-from bloqade.atom_arrangement import Chain
+from bloqade_analog.atom_arrangement import Chain
 import numpy as np
 
 

@@ -1,11 +1,11 @@
 import pytest
 
-import bloqade.submission.braket
-import bloqade.submission.ir.task_specification as task_spec
+import bloqade_analog.submission.braket
+import bloqade_analog.submission.ir.task_specification as task_spec
 
-from bloqade.submission.ir.task_results import QuEraTaskStatusCode
+from bloqade_analog.submission.ir.task_results import QuEraTaskStatusCode
 from unittest.mock import patch
-from bloqade.submission.base import ValidationError
+from bloqade_analog.submission.base import ValidationError
 
 
 def get_task_ir():
@@ -41,8 +41,8 @@ def get_task_ir():
 def test_braket_submit(*args, **kwargs):
     task_ir = get_task_ir()
 
-    backend = bloqade.submission.braket.BraketBackend()
-    mock_aws_device = bloqade.submission.braket.AwsDevice(backend.device_arn)
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    mock_aws_device = bloqade_analog.submission.braket.AwsDevice(backend.device_arn)
 
     backend.submit_task(task_ir)
 
@@ -51,8 +51,8 @@ def test_braket_submit(*args, **kwargs):
 
 @patch("bloqade.submission.braket.AwsDevice")
 def test_add_braket_user_agent_invoked(*args, **kwargs):
-    backend = bloqade.submission.braket.BraketBackend()
-    expected_user_agent = f"Bloqade/{bloqade.__version__}"
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    expected_user_agent = f"Bloqade/{bloqade_analog.__version__}"
 
     backend.device.aws_session.add_braket_user_agent.assert_called_with(
         expected_user_agent
@@ -67,9 +67,9 @@ def test_add_braket_user_agent_invoked(*args, **kwargs):
 def test_braket_validate_task(*args, **kwargs):
     task_ir = get_task_ir()
 
-    backend = bloqade.submission.braket.BraketBackend()
-    mock_aws_device = bloqade.submission.braket.AwsDevice(backend.device_arn)
-    mock_aws_device.run.return_value = bloqade.submission.braket.AwsQuantumTask(
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    mock_aws_device = bloqade_analog.submission.braket.AwsDevice(backend.device_arn)
+    mock_aws_device.run.return_value = bloqade_analog.submission.braket.AwsQuantumTask(
         "task_id"
     )
     mock_aws_device.run.return_value.id = "task_id"
@@ -83,7 +83,7 @@ def test_braket_validate_task(*args, **kwargs):
     mock_aws_device.reset_mock()
 
     # test failing validation
-    mock_aws_device = bloqade.submission.braket.AwsDevice(backend.device_arn)
+    mock_aws_device = bloqade_analog.submission.braket.AwsDevice(backend.device_arn)
     mock_aws_device.run.side_effect = Exception("ValidationException: validation error")
     with pytest.raises(ValidationError):
         backend.validate_task(task_ir)
@@ -93,7 +93,7 @@ def test_braket_validate_task(*args, **kwargs):
     mock_aws_device.reset_mock()
 
     # test failing validation
-    mock_aws_device = bloqade.submission.braket.AwsDevice(backend.device_arn)
+    mock_aws_device = bloqade_analog.submission.braket.AwsDevice(backend.device_arn)
     mock_aws_device.run.side_effect = Exception("other error")
     with pytest.raises(Exception):
         backend.validate_task(task_ir)
@@ -103,8 +103,8 @@ def test_braket_validate_task(*args, **kwargs):
 
 @patch("bloqade.submission.braket.AwsQuantumTask")
 def test_braket_fetch(*args, **kwargs):
-    backend = bloqade.submission.braket.BraketBackend()
-    mock_aws_quantum_task = bloqade.submission.braket.AwsQuantumTask("task_id")
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")
 
     backend.task_results("task_id")
 
@@ -113,8 +113,8 @@ def test_braket_fetch(*args, **kwargs):
 
 @patch("bloqade.submission.braket.AwsQuantumTask")
 def test_braket_cancel(*args, **kwargs):
-    backend = bloqade.submission.braket.BraketBackend()
-    mock_aws_quantum_task = bloqade.submission.braket.AwsQuantumTask("task_id")
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")
 
     backend.cancel_task("task_id")
 
@@ -123,8 +123,8 @@ def test_braket_cancel(*args, **kwargs):
 
 @patch("bloqade.submission.braket.AwsQuantumTask")
 def test_braket_status(*args, **kwargs):
-    backend = bloqade.submission.braket.BraketBackend()
-    mock_aws_quantum_task = bloqade.submission.braket.AwsQuantumTask("task_id")
+    backend = bloqade_analog.submission.braket.BraketBackend()
+    mock_aws_quantum_task = bloqade_analog.submission.braket.AwsQuantumTask("task_id")
     mock_aws_quantum_task.state.side_effect = [
         "CREATED",
         "RUNNING",

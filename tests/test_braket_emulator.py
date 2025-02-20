@@ -1,7 +1,7 @@
 # import pytest
 import pytest
-from bloqade import start
-from bloqade.serialize import loads, dumps
+from bloqade_analog import start
+from bloqade_analog.serialize import loads, dumps
 
 # import numpy as np
 
@@ -71,10 +71,10 @@ def test_assign_dur_zero_wf():
 
 
 def test_assign_dur_zero_pulse():
-    from bloqade.ir.control.sequence import rydberg, Sequence
-    from bloqade.ir.routine.base import Routine
-    from bloqade.ir.routine.params import Params
-    from bloqade.ir.analog_circuit import AnalogCircuit
+    from bloqade_analog.ir.control.sequence import rydberg, Sequence
+    from bloqade_analog.ir.routine.base import Routine
+    from bloqade_analog.ir.routine.params import Params
+    from bloqade_analog.ir.analog_circuit import AnalogCircuit
 
     atom_arrangement = start.add_position([(0, 0), (0, 6)])
 
@@ -96,9 +96,9 @@ def test_assign_dur_zero_pulse():
 
 
 def test_assign_dur_zero_sequence():
-    from bloqade.ir.routine.base import Routine
-    from bloqade.ir.routine.params import Params
-    from bloqade.ir.analog_circuit import AnalogCircuit
+    from bloqade_analog.ir.routine.base import Routine
+    from bloqade_analog.ir.routine.params import Params
+    from bloqade_analog.ir.analog_circuit import AnalogCircuit
 
     atom_arrangement = start.add_position([(0, 0), (0, 6)])
 

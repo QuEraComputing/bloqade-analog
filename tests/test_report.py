@@ -1,10 +1,10 @@
 from collections import OrderedDict
 from decimal import Decimal
-from bloqade.ir.location import ListOfLocations
+from bloqade_analog.ir.location import ListOfLocations
 import tempfile
 import pandas as pd
 import numpy as np
-from bloqade.task.base import Report, Geometry
+from bloqade_analog.task.base import Report, Geometry
 
 
 def test_integration_report():

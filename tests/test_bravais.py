@@ -1,4 +1,4 @@
-from bloqade.ir.location.bravais import (
+from bloqade_analog.ir.location.bravais import (
     Lieb,
     Square,
     Rectangular,
@@ -7,10 +7,10 @@ from bloqade.ir.location.bravais import (
     Triangular,
     Chain,
 )
-from bloqade.ir.location.bravais import Cell
-from bloqade import cast
+from bloqade_analog.ir.location.bravais import Cell
+from bloqade_analog import cast
 from math import sqrt
-from bloqade.compiler.codegen.common.json import BloqadeIRSerializer
+from bloqade_analog.compiler.codegen.common.json import BloqadeIRSerializer
 
 
 def test_square():

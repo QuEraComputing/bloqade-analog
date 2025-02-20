@@ -1,16 +1,19 @@
 import pytest
-from bloqade import start
+from bloqade_analog import start
 import numpy as np
 from unittest.mock import patch
-from bloqade.submission.ir.task_results import QuEraTaskStatusCode, QuEraTaskResults
-from bloqade.submission.ir.task_specification import QuEraTaskSpecification
-from bloqade.task.base import Geometry
-from bloqade.task.quera import QuEraTask
-from bloqade.task.braket import BraketTask
-from bloqade.submission.base import ValidationError
-from bloqade import dumps, loads
-from bloqade.atom_arrangement import Chain
-from bloqade.ir.control.waveform import NullWaveform
+from bloqade_analog.submission.ir.task_results import (
+    QuEraTaskStatusCode,
+    QuEraTaskResults,
+)
+from bloqade_analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade_analog.task.base import Geometry
+from bloqade_analog.task.quera import QuEraTask
+from bloqade_analog.task.braket import BraketTask
+from bloqade_analog.submission.base import ValidationError
+from bloqade_analog import dumps, loads
+from bloqade_analog.atom_arrangement import Chain
+from bloqade_analog.ir.control.waveform import NullWaveform
 
 # import numpy as np
 
@@ -113,7 +116,7 @@ def mock_results(L):
 
 
 def test_base_classes():
-    from bloqade.task.base import Task, LocalTask, RemoteTask
+    from bloqade_analog.task.base import Task, LocalTask, RemoteTask
 
     task = Task()
 

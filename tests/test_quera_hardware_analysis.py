@@ -1,23 +1,23 @@
 from decimal import Decimal
 import pytest
-from bloqade.compiler.analysis.hardware.piecewise_linear import (
+from bloqade_analog.compiler.analysis.hardware.piecewise_linear import (
     ValidatePiecewiseLinearChannel,
 )
-from bloqade.compiler.analysis.hardware.piecewise_constant import (
+from bloqade_analog.compiler.analysis.hardware.piecewise_constant import (
     ValidatePiecewiseConstantChannel,
 )
-from bloqade.compiler.analysis.hardware.channels import ValidateChannels
-from bloqade.ir import analog_circuit
-from bloqade.compiler.rewrite.common.add_padding import AddPadding
-from bloqade.compiler.analysis.hardware.lattice import BasicLatticeValidation
+from bloqade_analog.compiler.analysis.hardware.channels import ValidateChannels
+from bloqade_analog.ir import analog_circuit
+from bloqade_analog.compiler.rewrite.common.add_padding import AddPadding
+from bloqade_analog.compiler.analysis.hardware.lattice import BasicLatticeValidation
 
-import bloqade.ir.control.sequence as sequence
-import bloqade.ir.control.pulse as pulse
-import bloqade.ir.control.field as field
-import bloqade.ir.control.waveform as waveform
-import bloqade.ir.location as location
+import bloqade_analog.ir.control.sequence as sequence
+import bloqade_analog.ir.control.pulse as pulse
+import bloqade_analog.ir.control.field as field
+import bloqade_analog.ir.control.waveform as waveform
+import bloqade_analog.ir.location as location
 
-from bloqade import piecewise_constant, piecewise_linear, var, start, cast
+from bloqade_analog import piecewise_constant, piecewise_linear, var, start, cast
 
 
 @waveform.to_waveform(1)
@@ -403,7 +403,7 @@ def test_sequence_sad_path():
 
 
 def test_lattice_validation():
-    from bloqade.submission.capabilities import get_capabilities
+    from bloqade_analog.submission.capabilities import get_capabilities
 
     capabilities = get_capabilities()
 

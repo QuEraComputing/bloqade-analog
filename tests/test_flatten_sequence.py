@@ -1,13 +1,13 @@
-import bloqade.ir.control.waveform as waveform
-import bloqade.ir.control.field as field
-import bloqade.ir.control.pulse as pulse
-import bloqade.ir.control.sequence as sequence
-from bloqade.ir.scalar import var
+import bloqade_analog.ir.control.waveform as waveform
+import bloqade_analog.ir.control.field as field
+import bloqade_analog.ir.control.pulse as pulse
+import bloqade_analog.ir.control.sequence as sequence
+from bloqade_analog.ir.scalar import var
 
-from bloqade.compiler.analysis.common.scan_channels import ScanChannels
-from bloqade.compiler.rewrite.common.flatten import FlattenCircuit
-from bloqade.compiler.rewrite.common.add_padding import AddPadding
-from bloqade import tree_depth
+from bloqade_analog.compiler.analysis.common.scan_channels import ScanChannels
+from bloqade_analog.compiler.rewrite.common.flatten import FlattenCircuit
+from bloqade_analog.compiler.rewrite.common.add_padding import AddPadding
+from bloqade_analog import tree_depth
 
 tree_depth(30)
 
