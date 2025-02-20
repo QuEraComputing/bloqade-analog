@@ -182,3 +182,5 @@ main.py
 .mock_state.txt
 quantum_task.json
 future.json
+
+uv.lock
