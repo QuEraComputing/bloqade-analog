@@ -18,9 +18,9 @@ from bloqade.analog.factory import (
 import bloqade.analog.ir as _ir
 from bloqade.analog.constants import RB_C6
 
-# import importlib.metadata
+import importlib.metadata
 
-# __version__ = importlib.metadata.version("bloqade.analog")
+__version__ = importlib.metadata.version("bloqade-analog")
 
 
 def tree_depth(depth: int = None):

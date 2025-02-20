@@ -1,5 +1,5 @@
 [project]
-name = "bloqade_analog"
+name = "bloqade-analog"
 version = "0.15.14"
 description = "Neutral atom software development kit"
 authors = [
