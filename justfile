@@ -1,5 +1,5 @@
 coverage-run:
-    coverage run -m pytest test
+    coverage run -m pytest tests
 
 coverage-xml:
     coverage xml

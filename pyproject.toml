@@ -1,7 +1,7 @@
 [project]
-name = "bloqade"
+name = "bloqade-analog"
 version = "0.15.14"
-description = "Neutral atom software development kit"
+description = "Analog neutral atom software development kit"
 authors = [
     { name = "Roger-luo", email = "rluo@quera.com" },
     { name = "kaihsin", email="khwu@quera.com" },
@@ -36,7 +36,7 @@ dependencies = [
 ]
 requires-python = ">=3.9,<3.13"
 readme = "README.md"
-license = {text = "MIT"}
+license = {text = "Apache License 2.0"}
 
 [build-system]
 requires = ["hatchling"]
