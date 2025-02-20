@@ -1,42 +1,34 @@
-from io import StringIO
-from decimal import Decimal
-
-import numpy as np
-import pytest
-from IPython.lib.pretty import PrettyPrinter as PP
-
-import bloqade.analog.ir.tree_print as trp
-from bloqade.analog import cast
-from bloqade.analog.ir import (
-    Poly,
-    Side,
+from bloqade.ir import (
     Linear,
-    Record,
     Constant,
+    Poly,
+    Record,
+    AlignedWaveform,
     Alignment,
-    CosineKernel,
+    Side,
+    to_waveform,
     Interpolation,
-    SigmoidKernel,
-    TricubeKernel,
-    UniformKernel,
-    BiweightKernel,
     GaussianKernel,
     LogisticKernel,
+    SigmoidKernel,
     TriangleKernel,
-    AlignedWaveform,
+    UniformKernel,
     ParabolicKernel,
+    BiweightKernel,
     TriweightKernel,
-    to_waveform,
+    TricubeKernel,
+    CosineKernel,
 )
-from bloqade.analog.ir.scalar import Interval
-from bloqade.analog.ir.control.waveform import (
-    Slice,
-    Append,
-    Sample,
-    PythonFn,
-    Waveform,
-    SmoothingKernel,
-)
+from bloqade import cast
+from bloqade.ir.scalar import Interval
+from bloqade.ir.control.waveform import PythonFn, Append, Slice, Sample
+from bloqade.ir.control.waveform import SmoothingKernel, Waveform
+from decimal import Decimal
+import pytest
+import numpy as np
+from io import StringIO
+from IPython.lib.pretty import PrettyPrinter as PP
+import bloqade.ir.tree_print as trp
 
 trp.color_enabled = False
 

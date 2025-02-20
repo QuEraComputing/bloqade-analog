@@ -1,12 +1,10 @@
 from unittest.mock import Mock, patch
-
-import numpy as np
 import pytest
-
-import bloqade.analog.emulate.ir.space
-from bloqade.analog.emulate.ir.space import Space
-from bloqade.analog.emulate.ir.emulator import Register
-from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom, ThreeLevelAtom
+import bloqade.emulate.ir.space
+from bloqade.emulate.ir.space import Space
+from bloqade.emulate.ir.atom_type import ThreeLevelAtom, TwoLevelAtom
+from bloqade.emulate.ir.emulator import Register
+import numpy as np
 
 
 def test_two_level_space():
@@ -708,16 +706,14 @@ def test_zero_state():
     assert np.all(space.zero_state().data == np.array([1, 0, 0, 0, 0]))
 
 
-@patch("bloqade.analog.emulate.ir.space.np.random.choice")
+@patch("bloqade.emulate.ir.space.np.random.choice")
 def test_sample_state(patch_choice):
     positions = [(0, 0), (0, 1), (1, 0)]
     register = Register(TwoLevelAtom, positions, 1)
     space = Space.create(register)
     print(space)
 
-    bloqade.analog.emulate.ir.space.np.random.choice.return_value = np.array(
-        [0, 1, 2, 3, 4]
-    )
+    bloqade.emulate.ir.space.np.random.choice.return_value = np.array([0, 1, 2, 3, 4])
     state_vector = np.array([0.1, 0.2, 0.3, 0.4, 0.5])
 
     expected_bitstrings = np.array(
@@ -738,7 +734,7 @@ def test_sample_state(patch_choice):
     space = Space.create(register)
     print(space)
 
-    bloqade.analog.emulate.ir.space.np.random.choice.return_value = np.array(
+    bloqade.emulate.ir.space.np.random.choice.return_value = np.array(
         [0, 1, 2, 3, 4, 5, 6, 7, 8]
     )
 
@@ -829,7 +825,7 @@ def test_str():
     )
 
 
-@patch("bloqade.analog.emulate.ir.space.np.iinfo")
+@patch("bloqade.emulate.ir.space.np.iinfo")
 def test_dtype(patch_iinfo):
     patch_iinfo.return_value = Mock(max=10)
 

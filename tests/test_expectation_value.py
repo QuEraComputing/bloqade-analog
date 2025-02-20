@@ -1,16 +1,14 @@
-from decimal import Decimal
-from functools import reduce
-from itertools import product
-
-import numpy as np
-import pytest
-from scipy.sparse import csc_array
-
 from bloqade import start
-from bloqade.analog.emulate.ir.space import Space
-from bloqade.analog.emulate.ir.emulator import Register
-from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom, ThreeLevelAtom
-from bloqade.analog.emulate.ir.state_vector import _expt_one_body_op, _expt_two_body_op
+import numpy as np
+from bloqade.emulate.ir.space import Space
+from bloqade.emulate.ir.emulator import Register
+from bloqade.emulate.ir.atom_type import TwoLevelAtom, ThreeLevelAtom
+from bloqade.emulate.ir.state_vector import _expt_two_body_op, _expt_one_body_op
+from scipy.sparse import csc_array
+from decimal import Decimal
+from itertools import product
+from functools import reduce
+import pytest
 
 
 def callback_single_atom(register, metadata, ham):

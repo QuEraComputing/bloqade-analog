@@ -1,25 +1,24 @@
-from io import StringIO
 from collections import OrderedDict
-
-import pytest
-from IPython.lib.pretty import PrettyPrinter as PP
-
-import bloqade.analog.ir.tree_print as trp
-from bloqade.analog import cast
-from bloqade.analog.ir import Interval  # ScaledLocations,
-from bloqade.analog.ir import (
-    Field,
-    Pulse,
-    Linear,
-    Uniform,
-    Sequence,
-    LevelCoupling,
+from bloqade.ir import (
     rydberg,
     detuning,
     hyperfine,
+    Sequence,
+    Field,
+    Pulse,
+    Uniform,
+    Linear,
+    # ScaledLocations,
+    LevelCoupling,
 )
-from bloqade.analog.ir.control import sequence
-from bloqade.analog.ir.control.sequence import NamedSequence
+from bloqade.ir.control import sequence
+from bloqade.ir.control.sequence import NamedSequence
+from bloqade.ir import Interval
+import pytest
+from bloqade import cast
+from io import StringIO
+from IPython.lib.pretty import PrettyPrinter as PP
+import bloqade.ir.tree_print as trp
 
 trp.color_enabled = False
 

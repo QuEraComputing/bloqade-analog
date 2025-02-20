@@ -1,23 +1,21 @@
-from decimal import Decimal
-
-import pytest
-
-import bloqade.analog.ir.scalar as scalar
-import bloqade.analog.ir.control.waveform as waveform
-from bloqade import var, cast, start, piecewise_linear
-from bloqade.analog.ir import (
-    Field,
-    Pulse,
-    Uniform,
-    Sequence,
-    AnalogCircuit,
-    AssignedRunTimeVector,
+from bloqade import piecewise_linear, start, var, cast
+from bloqade.atom_arrangement import Chain
+from bloqade.ir import (
     rydberg,
     detuning,
+    AnalogCircuit,
+    Sequence,
+    Pulse,
+    Field,
+    AssignedRunTimeVector,
+    Uniform,
 )
-from bloqade.analog.atom_arrangement import Chain
-from bloqade.analog.compiler.analysis.common.assignment_scan import AssignmentScan
-from bloqade.analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
+import bloqade.ir.control.waveform as waveform
+import bloqade.ir.scalar as scalar
+from bloqade.compiler.rewrite.common.assign_variables import AssignBloqadeIR
+from bloqade.compiler.analysis.common.assignment_scan import AssignmentScan
+from decimal import Decimal
+import pytest
 
 
 def test_assignment():

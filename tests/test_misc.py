@@ -1,8 +1,8 @@
-import bloqade.analog
+import bloqade
 
 
 def test_global_treedepth():
-    bloqade.analog.tree_depth(4)
-    assert bloqade.analog.tree_depth() == 4
-    bloqade.analog.tree_depth(10)
-    assert bloqade.analog.tree_depth() == 10
+    bloqade.tree_depth(4)
+    assert bloqade.tree_depth() == 4
+    bloqade.tree_depth(10)
+    assert bloqade.tree_depth() == 10

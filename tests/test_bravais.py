@@ -1,17 +1,16 @@
-from math import sqrt
-
-from bloqade.analog import cast
-from bloqade.analog.ir.location.bravais import (
-    Cell,
+from bloqade.ir.location.bravais import (
     Lieb,
-    Chain,
-    Kagome,
     Square,
-    Honeycomb,
-    Triangular,
     Rectangular,
+    Honeycomb,
+    Kagome,
+    Triangular,
+    Chain,
 )
-from bloqade.analog.compiler.codegen.common.json import BloqadeIRSerializer
+from bloqade.ir.location.bravais import Cell
+from bloqade import cast
+from math import sqrt
+from bloqade.compiler.codegen.common.json import BloqadeIRSerializer
 
 
 def test_square():
