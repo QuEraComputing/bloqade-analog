@@ -1,12 +1,12 @@
-from bloqade_analog.ir.routine.base import Routine
-from bloqade_analog.ir.control.waveform import Waveform, Linear, Constant
-from bloqade_analog.builder.typing import ScalarType
+from bloqade.analog.ir.routine.base import Routine
+from bloqade.analog.ir.control.waveform import Waveform, Linear, Constant
+from bloqade.analog.builder.typing import ScalarType
 from beartype import beartype
 from beartype.typing import TYPE_CHECKING, List, Optional, Union, Dict, Any
 from decimal import Decimal
 
 if TYPE_CHECKING:
-    from bloqade_analog.submission.ir.capabilities import QuEraCapabilities
+    from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 
 
 def get_capabilities(use_experimental: bool = False) -> "QuEraCapabilities":
@@ -29,7 +29,7 @@ def get_capabilities(use_experimental: bool = False) -> "QuEraCapabilities":
         page
     """
 
-    from bloqade_analog.submission.capabilities import get_capabilities
+    from bloqade.analog.submission.capabilities import get_capabilities
 
     # manually convert to units
     return get_capabilities(use_experimental=use_experimental).scale_units(
@@ -167,8 +167,8 @@ def rydberg_h(
         Routine: An object that can be used to dispatch a rydberg program to
             multiple backends.
     """
-    from bloqade_analog import start
-    from bloqade_analog.atom_arrangement import AtomArrangement
+    from bloqade.analog import start
+    from bloqade.analog.atom_arrangement import AtomArrangement
 
     if isinstance(atoms_positions, AtomArrangement):
         prog = atoms_positions

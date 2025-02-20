@@ -1,12 +1,12 @@
-from bloqade_analog.serialize import Serializer
-from bloqade_analog.builder.base import ParamType
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.builder.base import ParamType
 from .base import LocalTask
-from bloqade_analog.submission.ir.task_results import QuEraTaskResults
-from bloqade_analog.submission.ir.braket import (
+from bloqade.analog.submission.ir.task_results import QuEraTaskResults
+from bloqade.analog.submission.ir.braket import (
     from_braket_task_results,
     BraketTaskSpecification,
 )
-from bloqade_analog.task.base import Geometry
+from bloqade.analog.task.base import Geometry
 from braket.devices import LocalSimulator
 from beartype.typing import Dict, Optional, Any
 from dataclasses import dataclass

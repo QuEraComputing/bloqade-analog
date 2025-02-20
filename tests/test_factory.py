@@ -1,5 +1,5 @@
 import pytest
-from bloqade_analog import (
+from bloqade.analog import (
     waveform,
     rydberg_h,
     piecewise_linear,
@@ -11,8 +11,8 @@ from bloqade_analog import (
     start,
     get_capabilities,
 )
-from bloqade_analog.atom_arrangement import Chain
-from bloqade_analog.ir import (
+from bloqade.analog.atom_arrangement import Chain
+from bloqade.analog.ir import (
     AnalogCircuit,
     Sequence,
     rydberg,
@@ -22,8 +22,8 @@ from bloqade_analog.ir import (
     Field,
     Uniform,
 )
-from bloqade_analog.ir.routine.base import Routine
-from bloqade_analog.ir.routine.params import Params, ScalarArg
+from bloqade.analog.ir.routine.base import Routine
+from bloqade.analog.ir.routine.params import Params, ScalarArg
 
 import numpy as np
 from decimal import Decimal
@@ -241,7 +241,7 @@ def test_rydberg_h_2():
 
 
 def test_rydberg_h_3():
-    from bloqade_analog.atom_arrangement import Square
+    from bloqade.analog.atom_arrangement import Square
 
     atom_pos = Square(4, lattice_spacing=5.0)
 

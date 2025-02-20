@@ -1,7 +1,7 @@
 from decimal import Decimal
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
-from bloqade_analog.ir import location
-from bloqade_analog.submission.ir.capabilities import QuEraCapabilities
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.ir import location
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 
 
 class BasicLatticeValidation(BloqadeIRVisitor):

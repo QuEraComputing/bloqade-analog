@@ -1,5 +1,5 @@
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
-import bloqade_analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+import bloqade.analog.ir.control.waveform as waveform
 from beartype.typing import Dict, FrozenSet, Set
 from beartype import beartype
 from pydantic.v1.dataclasses import dataclass

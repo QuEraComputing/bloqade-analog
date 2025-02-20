@@ -8,7 +8,7 @@ of builder nodes, allowing traversal and manipulation of the construction steps.
 
 from dataclasses import dataclass
 from typing import Optional, List, Type
-from bloqade_analog.builder.base import Builder
+from bloqade.analog.builder.base import Builder
 
 
 @dataclass

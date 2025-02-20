@@ -4,7 +4,7 @@ from bokeh.layouts import gridplot, row
 
 
 def get_task_ir_figure(task_ir, **fig_kwargs):
-    from bloqade_analog.submission.ir.task_specification import (
+    from bloqade.analog.submission.ir.task_specification import (
         RabiFrequencyAmplitude,
         RabiFrequencyPhase,
         Detuning,
@@ -29,7 +29,7 @@ def get_task_ir_figure(task_ir, **fig_kwargs):
 
 
 def get_lattice_figure(lattice, **fig_kwargs):
-    from bloqade_analog.ir.location import ListOfLocations
+    from bloqade.analog.ir.location import ListOfLocations
 
     ## use ir.Atom_oarrangement's plotting:
     ## covert unit to m -> um

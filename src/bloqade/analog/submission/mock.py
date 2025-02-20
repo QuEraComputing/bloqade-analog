@@ -1,9 +1,9 @@
-from bloqade_analog.submission.base import SubmissionBackend
+from bloqade.analog.submission.base import SubmissionBackend
 
-from bloqade_analog.submission.ir.task_specification import (
+from bloqade.analog.submission.ir.task_specification import (
     QuEraTaskSpecification,
 )
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
     QuEraShotResult,

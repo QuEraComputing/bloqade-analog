@@ -1,5 +1,5 @@
 from decimal import Decimal
-from bloqade_analog.ir import (
+from bloqade.analog.ir import (
     Field,
     Uniform,
     Linear,
@@ -9,14 +9,14 @@ from bloqade_analog.ir import (
     RunTimeVector,
     AssignedRunTimeVector,
 )
-from bloqade_analog.ir.control.field import Drive
+from bloqade.analog.ir.control.field import Drive
 import pytest
-from bloqade_analog import cast
+from bloqade.analog import cast
 from io import StringIO
 from IPython.lib.pretty import PrettyPrinter as PP
 
-import bloqade_analog.ir.tree_print as trp
-from bloqade_analog import tree_depth
+import bloqade.analog.ir.tree_print as trp
+from bloqade.analog import tree_depth
 
 trp.color_enabled = False
 

@@ -2,13 +2,13 @@ from beartype.typing import Optional, TYPE_CHECKING
 
 from beartype import beartype
 from beartype.typing import List, Union
-from bloqade_analog.builder.typing import ScalarType, LiteralType
-from bloqade_analog.builder.waveform import WaveformAttachable
-from bloqade_analog.builder.base import Builder
+from bloqade.analog.builder.typing import ScalarType, LiteralType
+from bloqade.analog.builder.waveform import WaveformAttachable
+from bloqade.analog.builder.base import Builder
 
 
 if TYPE_CHECKING:
-    from bloqade_analog.ir.control.field import (
+    from bloqade.analog.ir.control.field import (
         UniformModulation,
         ScaledLocations,
         AssignedRunTimeVector,
@@ -41,7 +41,7 @@ class Uniform(SpatialModulation):
     """
 
     def __bloqade_ir__(self) -> "UniformModulation":
-        from bloqade_analog.ir import Uniform
+        from bloqade.analog.ir import Uniform
 
         return Uniform
 
@@ -54,8 +54,8 @@ class Location(SpatialModulation):
         scales: List[ScalarType],
         parent: Optional[Builder] = None,
     ) -> None:
-        from bloqade_analog.ir.scalar import cast
-        from bloqade_analog.ir.control.field import Location
+        from bloqade.analog.ir.scalar import cast
+        from bloqade.analog.ir.control.field import Location
 
         super().__init__(parent)
         self._scaled_locations = {
@@ -63,7 +63,7 @@ class Location(SpatialModulation):
         }
 
     def __bloqade_ir__(self) -> "ScaledLocations":
-        from bloqade_analog.ir import ScaledLocations
+        from bloqade.analog.ir import ScaledLocations
 
         return ScaledLocations(self._scaled_locations)
 
@@ -79,7 +79,7 @@ class Scale(SpatialModulation):
         self._name_or_list = name_or_list
 
     def __bloqade_ir__(self) -> Union["RunTimeVector", "AssignedRunTimeVector"]:
-        from bloqade_analog.ir import RunTimeVector, AssignedRunTimeVector
+        from bloqade.analog.ir import RunTimeVector, AssignedRunTimeVector
 
         if isinstance(self._name_or_list, str):
             return RunTimeVector(self._name_or_list)

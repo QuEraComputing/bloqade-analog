@@ -1,21 +1,21 @@
 from beartype.typing import Any, Dict, Optional
 
-from bloqade_analog.builder.typing import LiteralType
-from bloqade_analog.ir.location.location import AtomArrangement, SiteFilling
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
-from bloqade_analog.compiler.analysis.common.assignment_scan import (
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.ir.location.location import AtomArrangement, SiteFilling
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.compiler.analysis.common.assignment_scan import (
     AssignmentScan,
 )  # noqa: F401
-from bloqade_analog.compiler.analysis.common.is_hyperfine import IsHyperfineSequence
+from bloqade.analog.compiler.analysis.common.is_hyperfine import IsHyperfineSequence
 
-import bloqade_analog.ir.control.sequence as sequence
-import bloqade_analog.ir.control.pulse as pulse
-import bloqade_analog.ir.control.waveform as waveform
-import bloqade_analog.ir.control.field as field
-from bloqade_analog.task.base import Geometry
-import bloqade_analog.ir as ir
-from bloqade_analog.emulate.ir.atom_type import ThreeLevelAtom, TwoLevelAtom
-from bloqade_analog.emulate.ir.emulator import (
+import bloqade.analog.ir.control.sequence as sequence
+import bloqade.analog.ir.control.pulse as pulse
+import bloqade.analog.ir.control.waveform as waveform
+import bloqade.analog.ir.control.field as field
+from bloqade.analog.task.base import Geometry
+import bloqade.analog.ir as ir
+from bloqade.analog.emulate.ir.atom_type import ThreeLevelAtom, TwoLevelAtom
+from bloqade.analog.emulate.ir.emulator import (
     DetuningOperatorData,
     LevelCoupling,
     RabiOperatorData,

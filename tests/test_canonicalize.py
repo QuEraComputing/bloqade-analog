@@ -1,8 +1,8 @@
-import bloqade_analog.compiler.rewrite.common.canonicalize as canonicalize
+import bloqade.analog.compiler.rewrite.common.canonicalize as canonicalize
 
-from bloqade_analog.ir import scalar
-from bloqade_analog.ir.control import waveform
-from bloqade_analog import var, cast
+from bloqade.analog.ir import scalar
+from bloqade.analog.ir.control import waveform
+from bloqade.analog import var, cast
 from decimal import Decimal
 
 

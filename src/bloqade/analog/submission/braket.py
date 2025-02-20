@@ -1,21 +1,21 @@
 import warnings
-from bloqade_analog.submission.base import SubmissionBackend
-from bloqade_analog.submission.ir.braket import (
+from bloqade.analog.submission.base import SubmissionBackend
+from bloqade.analog.submission.ir.braket import (
     from_braket_task_results,
     from_braket_status_codes,
     to_braket_task,
     to_quera_capabilities,
 )
-from bloqade_analog.submission.ir.capabilities import QuEraCapabilities
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskStatusCode,
     QuEraTaskResults,
 )
-from bloqade_analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 from braket.aws import AwsDevice, AwsQuantumTask
 from beartype.typing import Optional
 from pydantic.v1 import PrivateAttr
-import bloqade_analog
+import bloqade.analog
 
 
 class BraketBackend(SubmissionBackend):
@@ -26,7 +26,7 @@ class BraketBackend(SubmissionBackend):
     def device(self) -> AwsDevice:
         if self._device is None:
             self._device = AwsDevice(self.device_arn)
-            user_agent = f"Bloqade/{bloqade_analog.__version__}"
+            user_agent = f"Bloqade/{bloqade.analog.__version__}"
             self._device.aws_session.add_braket_user_agent(user_agent)
 
         return self._device

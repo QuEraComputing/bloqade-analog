@@ -1,4 +1,4 @@
-from bloqade_analog.visualization.ir_visualize import (
+from bloqade.analog.visualization.ir_visualize import (
     mock_data,
     Field_wvfm,
     SpacialMod,

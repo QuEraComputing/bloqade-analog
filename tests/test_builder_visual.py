@@ -1,7 +1,7 @@
-from bloqade_analog.ir.location import Square
+from bloqade.analog.ir.location import Square
 import numpy as np
 from decimal import Decimal
-from bloqade_analog.visualization import builder_figure
+from bloqade.analog.visualization import builder_figure
 from bokeh.io import save
 
 

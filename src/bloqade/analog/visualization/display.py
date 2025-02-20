@@ -1,7 +1,7 @@
 from bokeh.models import Div
 from bokeh.layouts import row, column
 from bokeh.io import show
-from bloqade_analog.visualization import report_visualize
+from bloqade.analog.visualization import report_visualize
 from bokeh.models import (
     NumericInput,
     Button,
@@ -11,12 +11,12 @@ from bokeh.models import (
 
 ## unify the entry point:
 def display_ir(obj, assignments):
-    from bloqade_analog.ir.analog_circuit import AnalogCircuit
-    from bloqade_analog.ir.control.pulse import PulseExpr
-    from bloqade_analog.ir.control.sequence import SequenceExpr
-    from bloqade_analog.ir.control.field import Field, SpatialModulation
-    from bloqade_analog.ir.control.waveform import Waveform
-    from bloqade_analog.ir.location import AtomArrangement
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.control.pulse import PulseExpr
+    from bloqade.analog.ir.control.sequence import SequenceExpr
+    from bloqade.analog.ir.control.field import Field, SpatialModulation
+    from bloqade.analog.ir.control.waveform import Waveform
+    from bloqade.analog.ir.location import AtomArrangement
 
     if isinstance(obj, AnalogCircuit):
         display_analog_circuit(obj, assignments)
@@ -37,12 +37,12 @@ def display_ir(obj, assignments):
 
 
 def figure_ir(obj, assignments):
-    from bloqade_analog.ir.analog_circuit import AnalogCircuit
-    from bloqade_analog.ir.control.pulse import PulseExpr
-    from bloqade_analog.ir.control.sequence import SequenceExpr
-    from bloqade_analog.ir.control.field import Field, SpatialModulation
-    from bloqade_analog.ir.control.waveform import Waveform
-    from bloqade_analog.ir.location import AtomArrangement
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.control.pulse import PulseExpr
+    from bloqade.analog.ir.control.sequence import SequenceExpr
+    from bloqade.analog.ir.control.field import Field, SpatialModulation
+    from bloqade.analog.ir.control.waveform import Waveform
+    from bloqade.analog.ir.location import AtomArrangement
 
     if isinstance(obj, AnalogCircuit):
         return analog_circuit_figure(obj, assignments)
@@ -67,7 +67,7 @@ def liner(txt):
 
 
 def builder_figure(builder, batch_id, *args):
-    from bloqade_analog.builder.parse.builder import Parser
+    from bloqade.analog.builder.parse.builder import Parser
 
     routine = Parser().parse(builder)
 

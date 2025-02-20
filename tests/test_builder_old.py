@@ -1,5 +1,5 @@
-from bloqade_analog.ir import Linear
-from bloqade_analog import start
+from bloqade.analog.ir import Linear
+from bloqade.analog import start
 
 wf = Linear(start=1.0, stop="x", duration=3.0)
 

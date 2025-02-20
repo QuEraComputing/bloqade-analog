@@ -1,13 +1,13 @@
-from bloqade_analog.builder.typing import ParamType
+from bloqade.analog.builder.typing import ParamType
 
-from bloqade_analog.compiler.passes.hardware.components import AHSComponents
-from bloqade_analog.ir import analog_circuit
-from bloqade_analog.ir.control import pulse, sequence, field
+from bloqade.analog.compiler.passes.hardware.components import AHSComponents
+from bloqade.analog.ir import analog_circuit
+from bloqade.analog.ir.control import pulse, sequence, field
 
-from bloqade_analog.submission.ir.braket import BraketTaskSpecification
+from bloqade.analog.submission.ir.braket import BraketTaskSpecification
 
-from bloqade_analog.submission.ir.capabilities import QuEraCapabilities
-from bloqade_analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 
 from beartype.typing import Dict, Optional, Tuple
 
@@ -36,8 +36,8 @@ def analyze_channels(circuit: analog_circuit.AnalogCircuit) -> Dict:
             and amplitude.
 
     """
-    from bloqade_analog.compiler.analysis.hardware import ValidateChannels
-    from bloqade_analog.compiler.analysis.common import ScanChannels
+    from bloqade.analog.compiler.analysis.hardware import ValidateChannels
+    from bloqade.analog.compiler.analysis.common import ScanChannels
 
     ValidateChannels().scan(circuit)
     level_couplings = ScanChannels().scan(circuit)
@@ -73,7 +73,7 @@ def canonicalize_circuit(
             intervals missing a waveform.
 
     """
-    from bloqade_analog.compiler.rewrite.common import (
+    from bloqade.analog.compiler.rewrite.common import (
         AddPadding,
         AssignToLiteral,
         Canonicalizer,
@@ -107,8 +107,8 @@ def assign_circuit(
         ValueError: If there are any variables that have not been assigned.
 
     """
-    from bloqade_analog.compiler.analysis.common import AssignmentScan, ScanVariables
-    from bloqade_analog.compiler.rewrite.common import AssignBloqadeIR
+    from bloqade.analog.compiler.analysis.common import AssignmentScan, ScanVariables
+    from bloqade.analog.compiler.rewrite.common import AssignBloqadeIR
 
     final_assignments = AssignmentScan(assignments).scan(circuit)
 
@@ -151,11 +151,11 @@ def validate_waveforms(
             channels.
 
     """
-    from bloqade_analog.compiler.analysis.hardware import (
+    from bloqade.analog.compiler.analysis.hardware import (
         ValidatePiecewiseConstantChannel,
         ValidatePiecewiseLinearChannel,
     )
-    from bloqade_analog.compiler.analysis.common import CheckSlices
+    from bloqade.analog.compiler.analysis.common import CheckSlices
 
     channel_iter = (
         (level_coupling, field_name, sm)
@@ -203,13 +203,13 @@ def generate_ahs_code(
             the capabilities to generate the lattice data.
 
     """
-    from bloqade_analog.compiler.codegen.hardware import (
+    from bloqade.analog.compiler.codegen.hardware import (
         GenerateLattice,
         GenerateLatticeSiteCoefficients,
         GeneratePiecewiseLinearChannel,
         GeneratePiecewiseConstantChannel,
     )
-    from bloqade_analog.compiler.analysis.hardware import BasicLatticeValidation
+    from bloqade.analog.compiler.analysis.hardware import BasicLatticeValidation
 
     if capabilities is not None:
         # only validate the lattice if capabilities are provided
@@ -278,8 +278,8 @@ def generate_quera_ir(
             circuit.
 
     """
-    import bloqade_analog.submission.ir.task_specification as task_spec
-    from bloqade_analog.compiler.passes.hardware.units import (
+    import bloqade.analog.submission.ir.task_specification as task_spec
+    from bloqade.analog.compiler.passes.hardware.units import (
         convert_time_units,
         convert_energy_units,
         convert_coordinate_units,
@@ -369,7 +369,7 @@ def generate_braket_ir(
 
     """
     import braket.ir.ahs as ahs
-    from bloqade_analog.compiler.passes.hardware.units import (
+    from bloqade.analog.compiler.passes.hardware.units import (
         convert_time_units,
         convert_energy_units,
         convert_coordinate_units,

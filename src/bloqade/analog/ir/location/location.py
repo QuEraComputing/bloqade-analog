@@ -1,7 +1,7 @@
-from bloqade_analog.builder.typing import ScalarType
-from bloqade_analog.builder.start import ProgramStart
-from bloqade_analog.ir.scalar import Scalar, Literal, cast
-from bloqade_analog.ir.tree_print import Printer
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.builder.start import ProgramStart
+from bloqade.analog.ir.scalar import Scalar, Literal, cast
+from bloqade.analog.ir.tree_print import Printer
 
 from pydantic.v1.dataclasses import dataclass
 from beartype.typing import List, Tuple, Generator, Union, Optional
@@ -9,9 +9,9 @@ from beartype.door import is_bearable
 from beartype import beartype
 from enum import Enum
 from numpy.typing import NDArray
-from bloqade_analog.submission.ir.capabilities import QuEraCapabilities
-from bloqade_analog.visualization import get_atom_arrangement_figure
-from bloqade_analog.visualization import display_ir
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
+from bloqade.analog.visualization import get_atom_arrangement_figure
+from bloqade.analog.visualization import display_ir
 
 from beartype.vale import Is
 from typing import Annotated
@@ -148,7 +148,7 @@ class AtomArrangement(ProgramStart):
 
         """
 
-        from bloqade_analog.constants import RB_C6
+        from bloqade.analog.constants import RB_C6
 
         # calculate the Interaction matrix
         V_ij = np.zeros((self.n_sites, self.n_sites))
@@ -197,7 +197,7 @@ class AtomArrangement(ProgramStart):
         # atom positions are now (0,0), (2,2)
         >>> new_reg = reg.scale(2)
         # you may also use scale on pre-defined geometries
-        >>> from bloqade_analog.atom_arrangement import Chain
+        >>> from bloqade.analog.atom_arrangement import Chain
         # atoms in the chain will now be 2 um apart versus
         # the default 1 um
         >>> Chain(11).scale(2)
@@ -364,7 +364,7 @@ class AtomArrangement(ProgramStart):
         ### Usage Example:
 
         ```
-        >>> from bloqade_analog.atom_arrangement import Chain
+        >>> from bloqade.analog.atom_arrangement import Chain
         >>> import numpy as np
         # set a custom seed for a numpy-based RNG
         >>> custom_rng = np.random.default_rng(888)
@@ -441,7 +441,7 @@ class AtomArrangement(ProgramStart):
         ### Usage Example:
 
         ```
-        >>> from bloqade_analog.atom_arrangement import Chain
+        >>> from bloqade.analog.atom_arrangement import Chain
         >>> import numpy as np
         # set a custom seed for a numpy-based RNG
         >>> custom_rng = np.random.default_rng(888)
@@ -535,9 +535,9 @@ class ParallelRegister(ProgramStart):
     def _compile_to_list(
         self, __capabilities: Optional[QuEraCapabilities] = None, **assignments
     ):
-        from bloqade_analog.compiler.rewrite.common import AssignBloqadeIR
-        from bloqade_analog.compiler.codegen.hardware import GenerateLattice
-        from bloqade_analog.submission.capabilities import get_capabilities
+        from bloqade.analog.compiler.rewrite.common import AssignBloqadeIR
+        from bloqade.analog.compiler.codegen.hardware import GenerateLattice
+        from bloqade.analog.submission.capabilities import get_capabilities
 
         lattice_data = GenerateLattice(__capabilities or get_capabilities()).emit(
             AssignBloqadeIR(assignments).emit(self)

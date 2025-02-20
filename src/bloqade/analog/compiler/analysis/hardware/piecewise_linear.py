@@ -1,6 +1,6 @@
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
-from bloqade_analog.ir import scalar
-from bloqade_analog.ir.control import field, pulse, sequence, waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.ir import scalar
+from bloqade.analog.ir.control import field, pulse, sequence, waveform
 from decimal import Decimal
 
 

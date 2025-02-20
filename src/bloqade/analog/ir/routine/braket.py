@@ -2,13 +2,13 @@ from collections import OrderedDict
 from pydantic.v1.dataclasses import dataclass
 from beartype import beartype
 from beartype.typing import Optional, Tuple
-from bloqade_analog.builder.typing import LiteralType
+from bloqade.analog.builder.typing import LiteralType
 
-from bloqade_analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
-from bloqade_analog.submission.braket import BraketBackend
-from bloqade_analog.task.batch import LocalBatch, RemoteBatch
-from bloqade_analog.task.braket_simulator import BraketEmulatorTask
-from bloqade_analog.task.braket import BraketTask
+from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
+from bloqade.analog.submission.braket import BraketBackend
+from bloqade.analog.task.batch import LocalBatch, RemoteBatch
+from bloqade.analog.task.braket_simulator import BraketEmulatorTask
+from bloqade.analog.task.braket import BraketTask
 
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)
@@ -39,7 +39,7 @@ class BraketHardwareRoutine(RoutineBase):
         name: Optional[str] = None,
     ) -> RemoteBatch:
         ## fall passes here ###
-        from bloqade_analog.compiler.passes.hardware import (
+        from bloqade.analog.compiler.passes.hardware import (
             analyze_channels,
             canonicalize_circuit,
             assign_circuit,
@@ -185,8 +185,8 @@ class BraketLocalEmulatorRoutine(RoutineBase):
         self, shots: int, args: Tuple[LiteralType, ...] = (), name: Optional[str] = None
     ) -> LocalBatch:
         ## fall passes here ###
-        from bloqade_analog.ir import ParallelRegister
-        from bloqade_analog.compiler.passes.hardware import (
+        from bloqade.analog.ir import ParallelRegister
+        from bloqade.analog.compiler.passes.hardware import (
             analyze_channels,
             canonicalize_circuit,
             assign_circuit,

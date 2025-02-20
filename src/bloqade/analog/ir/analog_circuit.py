@@ -1,12 +1,12 @@
 # from numbers import Real
-from bloqade_analog.visualization import (
+from bloqade.analog.visualization import (
     display_ir,
     get_atom_arrangement_figure,
     assemble_atom_arrangement_panel,
 )
-from bloqade_analog.ir.control.sequence import SequenceExpr
-from bloqade_analog.ir.location.location import AtomArrangement, ParallelRegister
-from bloqade_analog.ir.tree_print import Printer
+from bloqade.analog.ir.control.sequence import SequenceExpr
+from bloqade.analog.ir.location.location import AtomArrangement, ParallelRegister
+from bloqade.analog.ir.tree_print import Printer
 from beartype.typing import Union, List, Tuple, Dict
 from pydantic.v1.dataclasses import dataclass
 import pandas as pd

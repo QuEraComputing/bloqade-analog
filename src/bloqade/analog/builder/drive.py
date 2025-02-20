@@ -1,4 +1,4 @@
-from bloqade_analog.builder.coupling import Rydberg, Hyperfine
+from bloqade.analog.builder.coupling import Rydberg, Hyperfine
 
 
 class Drive:

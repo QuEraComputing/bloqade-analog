@@ -1,9 +1,9 @@
-import bloqade_analog.ir.control.sequence as sequence
-import bloqade_analog.ir.control.pulse as pulse
-import bloqade_analog.ir.control.field as field
-import bloqade_analog.ir.control.waveform as waveform
-import bloqade_analog.ir.scalar as scalar
-from bloqade_analog.ir.visitor import BloqadeIRTransformer
+import bloqade.analog.ir.control.sequence as sequence
+import bloqade.analog.ir.control.pulse as pulse
+import bloqade.analog.ir.control.field as field
+import bloqade.analog.ir.control.waveform as waveform
+import bloqade.analog.ir.scalar as scalar
+from bloqade.analog.ir.visitor import BloqadeIRTransformer
 
 
 class AddPadding(BloqadeIRTransformer):

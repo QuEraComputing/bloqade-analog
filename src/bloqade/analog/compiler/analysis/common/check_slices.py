@@ -1,5 +1,5 @@
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
-from bloqade_analog.ir.control import waveform, pulse, sequence
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.ir.control import waveform, pulse, sequence
 from beartype.typing import Union
 
 

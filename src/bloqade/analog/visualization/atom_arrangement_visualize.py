@@ -43,7 +43,7 @@ def get_atom_arrangement_figure(
     fig_kwargs=None,
     **assignments,
 ):
-    import bloqade_analog.ir.location as ir_loc
+    import bloqade.analog.ir.location as ir_loc
 
     if len(colors) == 0:
         color_sites, color_weights = [], []

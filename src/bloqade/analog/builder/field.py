@@ -1,10 +1,10 @@
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.typing import ScalarType
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.typing import ScalarType
 from beartype.typing import Union, List, Optional, TYPE_CHECKING
 import plum
 
 if TYPE_CHECKING:
-    from bloqade_analog.builder.spatial import Uniform, Location, Scale
+    from bloqade.analog.builder.spatial import Uniform, Location, Scale
 
 
 class Field(Builder):
@@ -35,13 +35,13 @@ class Field(Builder):
             - `...uniform.fn(f(t,...))`: to apply a function as a waveform
 
         """
-        from bloqade_analog.builder.spatial import Uniform
+        from bloqade.analog.builder.spatial import Uniform
 
         return Uniform(self)
 
     @plum.dispatch
     def _location(self, label: int, scale: Optional[ScalarType] = None):  # noqa: F811
-        from bloqade_analog.builder.spatial import Location
+        from bloqade.analog.builder.spatial import Location
 
         if scale is None:
             scale = 1
@@ -52,7 +52,7 @@ class Field(Builder):
     def _location(
         self, labels: List[int], scales: Optional[List[ScalarType]] = None
     ):  # noqa: F811
-        from bloqade_analog.builder.spatial import Location
+        from bloqade.analog.builder.spatial import Location
 
         if scales is None:
             scales = [1] * len(labels)
@@ -159,7 +159,7 @@ class Field(Builder):
             - `...scale(coeffs).fn(f(t,..))`: to apply a function as a waveform
 
         """
-        from bloqade_analog.builder.spatial import Scale
+        from bloqade.analog.builder.spatial import Scale
 
         return Scale(coeffs, self)
 
@@ -192,7 +192,7 @@ class Detuning(Field):
     """
 
     def __bloqade_ir__(self):
-        from bloqade_analog.ir.control.pulse import detuning
+        from bloqade.analog.ir.control.pulse import detuning
 
         return detuning
 
@@ -291,7 +291,7 @@ class RabiAmplitude(Field):
     """
 
     def __bloqade_ir__(self):
-        from bloqade_analog.ir.control.pulse import rabi
+        from bloqade.analog.ir.control.pulse import rabi
 
         return rabi.amplitude
 
@@ -321,6 +321,6 @@ class RabiPhase(Field):
     """
 
     def __bloqade_ir__(self):
-        from bloqade_analog.ir.control.pulse import rabi
+        from bloqade.analog.ir.control.pulse import rabi
 
         return rabi.phase

@@ -1,7 +1,7 @@
 from numbers import Real
-from bloqade_analog.builder.typing import ScalarType
-from bloqade_analog.ir.tree_print import Printer
-from bloqade_analog.ir.scalar import (
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.ir.tree_print import Printer
+from bloqade.analog.ir.scalar import (
     Scalar,
     Interval,
     Variable,
@@ -9,7 +9,7 @@ from bloqade_analog.ir.scalar import (
     cast,
     var,
 )
-from bloqade_analog.ir.control.traits import (
+from bloqade.analog.ir.control.traits import (
     HashTrait,
     AppendTrait,
     SliceTrait,
@@ -27,8 +27,8 @@ from enum import Enum
 import numpy as np
 import inspect
 import scipy.integrate as integrate
-from bloqade_analog.visualization import get_ir_figure
-from bloqade_analog.visualization import display_ir
+from bloqade.analog.visualization import get_ir_figure
+from bloqade.analog.visualization import display_ir
 from functools import cached_property
 import warnings
 
@@ -104,7 +104,7 @@ class Waveform(HashTrait, CanonicalizeTrait):
         return get_ir_figure(self, **assignments)
 
     def _get_data(self, npoints, **assignments):
-        from bloqade_analog.compiler.analysis.common.assignment_scan import (
+        from bloqade.analog.compiler.analysis.common.assignment_scan import (
             AssignmentScan,
         )
 

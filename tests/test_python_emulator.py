@@ -1,5 +1,5 @@
-from bloqade_analog import start, var, cast, dumps, loads
-from bloqade_analog.atom_arrangement import Chain
+from bloqade.analog import start, var, cast, dumps, loads
+from bloqade.analog.atom_arrangement import Chain
 import numpy as np
 from beartype.typing import Dict
 from scipy.stats import ks_2samp

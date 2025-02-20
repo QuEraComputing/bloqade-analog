@@ -1,4 +1,4 @@
-from bloqade_analog.visualization.report_visualize import mock_data, report_visual
+from bloqade.analog.visualization.report_visualize import mock_data, report_visual
 from bokeh.io import save
 
 

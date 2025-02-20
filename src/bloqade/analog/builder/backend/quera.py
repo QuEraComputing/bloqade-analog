@@ -1,5 +1,5 @@
 from typing import Optional
-from bloqade_analog.builder.base import Builder
+from bloqade.analog.builder.base import Builder
 
 
 class QuEraService(Builder):

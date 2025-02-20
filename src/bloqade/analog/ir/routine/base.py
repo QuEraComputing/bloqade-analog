@@ -1,19 +1,19 @@
-# from bloqade_analog.ir.routine.params import Params
-from bloqade_analog.ir.analog_circuit import AnalogCircuit
-from bloqade_analog.ir import AtomArrangement, ParallelRegister, Sequence
+# from bloqade.analog.ir.routine.params import Params
+from bloqade.analog.ir.analog_circuit import AnalogCircuit
+from bloqade.analog.ir import AtomArrangement, ParallelRegister, Sequence
 
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.parse.trait import Parse, Show
-from bloqade_analog.ir.routine.params import Params
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.parse.trait import Parse, Show
+from bloqade.analog.ir.routine.params import Params
 
 from pydantic.v1 import ConfigDict
 from pydantic.v1.dataclasses import dataclass
 from typing import TYPE_CHECKING, Union, Optional
 
 if TYPE_CHECKING:
-    from bloqade_analog.ir.routine.braket import BraketServiceOptions
-    from bloqade_analog.ir.routine.quera import QuEraServiceOptions
-    from bloqade_analog.ir.routine.bloqade import BloqadeServiceOptions
+    from bloqade.analog.ir.routine.braket import BraketServiceOptions
+    from bloqade.analog.ir.routine.quera import QuEraServiceOptions
+    from bloqade.analog.ir.routine.bloqade import BloqadeServiceOptions
 
 
 class RoutineParse(Parse):

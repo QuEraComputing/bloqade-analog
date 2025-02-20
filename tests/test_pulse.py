@@ -1,17 +1,17 @@
 from collections import OrderedDict
-from bloqade_analog.ir import Field, Uniform, Linear, Pulse, NamedPulse, detuning, rabi
-from bloqade_analog.ir import Interval
-from bloqade_analog import cast
+from bloqade.analog.ir import Field, Uniform, Linear, Pulse, NamedPulse, detuning, rabi
+from bloqade.analog.ir import Interval
+from bloqade.analog import cast
 import pytest
 from io import StringIO
 from IPython.lib.pretty import PrettyPrinter as PP
-from bloqade_analog.ir.control import pulse
-from bloqade_analog.ir.control.pulse import (
+from bloqade.analog.ir.control import pulse
+from bloqade.analog.ir.control.pulse import (
     FieldName,
     RabiFrequencyAmplitude,
     RabiFrequencyPhase,
 )
-import bloqade_analog.ir.tree_print as trp
+import bloqade.analog.ir.tree_print as trp
 
 trp.color_enabled = False
 

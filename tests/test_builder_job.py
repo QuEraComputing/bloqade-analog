@@ -1,4 +1,4 @@
-from bloqade_analog.ir.location import Square
+from bloqade.analog.ir.location import Square
 import pytest
 
 

@@ -1,6 +1,6 @@
 from functools import reduce
-from bloqade_analog.ir.visitor import BloqadeIRTransformer
-import bloqade_analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRTransformer
+import bloqade.analog.ir.control.waveform as waveform
 import numpy as np
 
 

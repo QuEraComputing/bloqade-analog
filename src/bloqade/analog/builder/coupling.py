@@ -1,5 +1,5 @@
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.field import Rabi, Detuning
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.field import Rabi, Detuning
 
 
 class LevelCoupling(Builder):
@@ -98,7 +98,7 @@ class Rydberg(LevelCoupling):
         Note:
             This method is used internally by the Bloqade framework.
         """
-        from bloqade_analog.ir.control.sequence import rydberg
+        from bloqade.analog.ir.control.sequence import rydberg
 
         return rydberg
 
@@ -140,6 +140,6 @@ class Hyperfine(LevelCoupling):
         Note:
             This method is used internally by the Bloqade framework.
         """
-        from bloqade_analog.ir.control.sequence import hyperfine
+        from bloqade.analog.ir.control.sequence import hyperfine
 
         return hyperfine

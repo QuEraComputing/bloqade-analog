@@ -42,7 +42,7 @@ def load_bloqade():
     # multiple calls
 
     if not __bloqade_package_loaded__:
-        _import_submodules("bloqade_analog")
+        _import_submodules("bloqade.analog")
 
         globals()["__bloqade_package_loaded__"] = True
 

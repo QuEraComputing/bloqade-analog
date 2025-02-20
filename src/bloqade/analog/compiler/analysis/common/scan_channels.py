@@ -1,8 +1,8 @@
-import bloqade_analog.ir.control.sequence as sequence
-import bloqade_analog.ir.control.field as field
-import bloqade_analog.ir.control.pulse as pulse
+import bloqade.analog.ir.control.sequence as sequence
+import bloqade.analog.ir.control.field as field
+import bloqade.analog.ir.control.pulse as pulse
 
-from bloqade_analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 
 class ScanChannels(BloqadeIRVisitor):

@@ -3,14 +3,14 @@ Module for parsing and displaying quantum computing program components using the
 """
 
 from beartype.typing import Union, TYPE_CHECKING
-import bloqade_analog.ir as ir
-from bloqade_analog.visualization import display_builder
+import bloqade.analog.ir as ir
+from bloqade.analog.visualization import display_builder
 
 if TYPE_CHECKING:
-    from bloqade_analog.ir import AtomArrangement, ParallelRegister, Sequence
-    from bloqade_analog.ir.analog_circuit import AnalogCircuit
-    from bloqade_analog.ir.routine.base import Routine
-    from bloqade_analog.builder.base import Builder
+    from bloqade.analog.ir import AtomArrangement, ParallelRegister, Sequence
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.routine.base import Routine
+    from bloqade.analog.builder.base import Builder
 
 
 class ParseRegister:
@@ -37,7 +37,7 @@ class ParseRegister:
         Raises:
             ValueError: If the register cannot be parsed.
         """
-        from bloqade_analog.builder.parse.builder import Parser
+        from bloqade.analog.builder.parse.builder import Parser
 
         return Parser().parse_register(self)
 
@@ -66,7 +66,7 @@ class ParseSequence:
         Raises:
             ValueError: If the sequence cannot be parsed.
         """
-        from bloqade_analog.builder.parse.builder import Parser
+        from bloqade.analog.builder.parse.builder import Parser
 
         return Parser().parse_sequence(self)
 
@@ -95,7 +95,7 @@ class ParseCircuit:
         Raises:
             ValueError: If the circuit cannot be parsed.
         """
-        from bloqade_analog.builder.parse.builder import Parser
+        from bloqade.analog.builder.parse.builder import Parser
 
         return Parser().parse_circuit(self)
 
@@ -124,7 +124,7 @@ class ParseRoutine:
         Raises:
             ValueError: If the routine cannot be parsed.
         """
-        from bloqade_analog.builder.parse.builder import Parser
+        from bloqade.analog.builder.parse.builder import Parser
 
         return Parser().parse(self)
 

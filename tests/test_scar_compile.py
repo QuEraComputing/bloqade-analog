@@ -1,5 +1,5 @@
-from bloqade_analog import var
-from bloqade_analog.atom_arrangement import Chain
+from bloqade.analog import var
+from bloqade.analog.atom_arrangement import Chain
 import numpy as np
 
 

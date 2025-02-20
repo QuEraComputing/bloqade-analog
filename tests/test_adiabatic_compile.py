@@ -1,4 +1,4 @@
-from bloqade_analog import start, cast, var
+from bloqade.analog import start, cast, var
 import numpy as np
 
 

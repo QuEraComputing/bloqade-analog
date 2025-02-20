@@ -1,6 +1,6 @@
-import bloqade_analog
+import bloqade.analog
 
 
 def test_version():
-    print(bloqade_analog.__version__)
-    assert bloqade_analog.__version__
+    print(bloqade.analog.__version__)
+    assert bloqade.analog.__version__

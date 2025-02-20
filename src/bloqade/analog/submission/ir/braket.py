@@ -11,14 +11,14 @@ from braket.ahs.shifting_field import ShiftingField
 from braket.ahs.field import Field
 from braket.task_result import AnalogHamiltonianSimulationTaskResult
 
-import bloqade_analog.submission.ir.capabilities as cp
-from bloqade_analog.submission.ir.task_results import (
+import bloqade.analog.submission.ir.capabilities as cp
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
     QuEraShotResult,
     QuEraShotStatusCode,
 )
-from bloqade_analog.submission.ir.task_specification import (
+from bloqade.analog.submission.ir.task_specification import (
     QuEraTaskSpecification,
     GlobalField,
     LocalField,

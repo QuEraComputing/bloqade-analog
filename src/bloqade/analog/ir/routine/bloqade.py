@@ -1,9 +1,9 @@
 from collections import OrderedDict, namedtuple, abc
 
-from bloqade_analog.emulate.ir.emulator import EmulatorProgram
-from bloqade_analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
-from bloqade_analog.builder.typing import LiteralType
-from bloqade_analog.task.batch import LocalBatch
+from bloqade.analog.emulate.ir.emulator import EmulatorProgram
+from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.task.batch import LocalBatch
 from beartype import beartype
 from beartype.typing import (
     Optional,
@@ -20,11 +20,11 @@ from pydantic.v1.dataclasses import dataclass
 import dataclasses
 import numpy as np
 
-from bloqade_analog.emulate.codegen.hamiltonian import (
+from bloqade.analog.emulate.codegen.hamiltonian import (
     CompileCache,
     RydbergHamiltonianCodeGen,
 )
-from bloqade_analog.emulate.ir.state_vector import (
+from bloqade.analog.emulate.ir.state_vector import (
     AnalogGate,
     RydbergHamiltonian,
     StateVector,
@@ -184,7 +184,7 @@ class BloqadePythonRoutine(RoutineBase):
     def _generate_ir(
         self, args, blockade_radius, waveform_runtime, use_hyperfine
     ) -> Iterator[TaskData]:
-        from bloqade_analog.compiler.passes.emulator import (
+        from bloqade.analog.compiler.passes.emulator import (
             flatten,
             assign,
             generate_emulator_ir,
@@ -211,7 +211,7 @@ class BloqadePythonRoutine(RoutineBase):
         waveform_runtime: str = "interpret",
         use_hyperfine: bool = False,
     ) -> LocalBatch:
-        from bloqade_analog.task.bloqade import BloqadeTask
+        from bloqade.analog.task.bloqade import BloqadeTask
 
         if cache_matrices:
             matrix_cache = CompileCache()

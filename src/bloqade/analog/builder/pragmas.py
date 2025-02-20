@@ -3,13 +3,13 @@ This module provides classes for building and managing quantum programs using th
 """
 
 from beartype.typing import List, Dict, Union, TYPE_CHECKING
-from bloqade_analog.builder.typing import LiteralType, ParamType
-from bloqade_analog.ir.scalar import Variable
+from bloqade.analog.builder.typing import LiteralType, ParamType
+from bloqade.analog.ir.scalar import Variable
 
 if TYPE_CHECKING:
-    from bloqade_analog.builder.assign import Assign, BatchAssign, ListAssign
-    from bloqade_analog.builder.parallelize import Parallelize
-    from bloqade_analog.builder.args import Args
+    from bloqade.analog.builder.assign import Assign, BatchAssign, ListAssign
+    from bloqade.analog.builder.parallelize import Parallelize
+    from bloqade.analog.builder.args import Args
 
 
 class AddArgs:
@@ -31,7 +31,7 @@ class AddArgs:
             This method is useful for deferring the value assignment of certain
             variables to runtime.
         """
-        from bloqade_analog.builder.args import Args
+        from bloqade.analog.builder.args import Args
 
         return Args(args_list, self)
 
@@ -81,7 +81,7 @@ class Assignable:
             - `...assign(assignments).args([previously_defined_vars])`: defer value assignment to
             runtime
         """
-        from bloqade_analog.builder.assign import Assign
+        from bloqade.analog.builder.assign import Assign
 
         return Assign(assignments, parent=self)
 
@@ -131,7 +131,7 @@ class BatchAssignable:
             - `...batch_assign(assignments).args([previously_defined_vars])`: defer value assignment
             to runtime
         """
-        from bloqade_analog.builder.assign import BatchAssign, ListAssign
+        from bloqade.analog.builder.assign import BatchAssign, ListAssign
 
         if len(__batch_params) > 0 and assignments:
             raise ValueError("batch_params and assignments cannot be used together.")
@@ -179,6 +179,6 @@ class Parallelizable:
             - `...parallelize(cluster_spacing).device(specifier_string)`: select backend by
             specifying a string
         """
-        from bloqade_analog.builder.parallelize import Parallelize
+        from bloqade.analog.builder.parallelize import Parallelize
 
         return Parallelize(cluster_spacing, self)

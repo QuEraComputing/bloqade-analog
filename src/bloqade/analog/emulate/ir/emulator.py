@@ -1,19 +1,19 @@
 from functools import cached_property
 
-from bloqade_analog.compiler.codegen.common.json import (
+from bloqade.analog.compiler.codegen.common.json import (
     BloqadeIRSerializer,
     BloqadeIRDeserializer,
 )
-from bloqade_analog.serialize import Serializer
+from bloqade.analog.serialize import Serializer
 from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any, Dict, List, Tuple, Optional, Callable, TYPE_CHECKING
 from enum import Enum
-from bloqade_analog.ir.control.waveform import Waveform
-from bloqade_analog.emulate.ir.atom_type import AtomType
+from bloqade.analog.ir.control.waveform import Waveform
+from bloqade.analog.emulate.ir.atom_type import AtomType
 
 if TYPE_CHECKING:
-    from bloqade_analog.task.base import Geometry
+    from bloqade.analog.task.base import Geometry
 
 
 class WaveformRuntime(str, Enum):
@@ -31,15 +31,15 @@ class JITWaveform:
 
     @cached_property
     def canonicalized_ir(self):
-        from bloqade_analog.compiler.rewrite.common import (
+        from bloqade.analog.compiler.rewrite.common import (
             AssignBloqadeIR,
             AssignToLiteral,
             Canonicalizer,
         )
-        from bloqade_analog.compiler.rewrite.python.waveform import (
+        from bloqade.analog.compiler.rewrite.python.waveform import (
             NormalizeWaveformPython,
         )
-        from bloqade_analog.compiler.analysis.common import (
+        from bloqade.analog.compiler.analysis.common import (
             AssignmentScan,
             ScanVariables,
         )
@@ -63,8 +63,8 @@ class JITWaveform:
         return ast_canonicalized
 
     def emit(self) -> Callable[[float], float]:
-        from bloqade_analog.compiler.analysis.python.waveform import WaveformScan
-        from bloqade_analog.compiler.codegen.python.waveform import (
+        from bloqade.analog.compiler.analysis.python.waveform import WaveformScan
+        from bloqade.analog.compiler.codegen.python.waveform import (
             CodegenPythonWaveform,
         )
 
@@ -166,7 +166,7 @@ class Register:
     full_index_to_index: Dict[int, int] = field(init=False, default_factory=dict)
 
     def __post_init__(self):
-        from bloqade_analog.task.base import Geometry
+        from bloqade.analog.task.base import Geometry
 
         if self.geometry is None:
             geometry = Geometry(self.sites, len(self.sites) * [1])

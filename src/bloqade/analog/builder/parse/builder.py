@@ -6,23 +6,23 @@ pulse sequences, analog circuits, and routines. It also defines utility function
 sequences, registers, and pragmas from a builder stream.
 """
 
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.coupling import LevelCoupling, Rydberg, Hyperfine
-from bloqade_analog.builder.sequence_builder import SequenceBuilder
-from bloqade_analog.builder.field import Field, Detuning, RabiAmplitude, RabiPhase
-from bloqade_analog.builder.spatial import SpatialModulation, Location, Uniform, Scale
-from bloqade_analog.builder.waveform import WaveformPrimitive, Slice, Record, Sample, Fn
-from bloqade_analog.builder.assign import Assign, BatchAssign, ListAssign
-from bloqade_analog.builder.args import Args
-from bloqade_analog.builder.parallelize import Parallelize
-from bloqade_analog.builder.parse.stream import BuilderNode, BuilderStream
-import bloqade_analog.ir as ir
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.coupling import LevelCoupling, Rydberg, Hyperfine
+from bloqade.analog.builder.sequence_builder import SequenceBuilder
+from bloqade.analog.builder.field import Field, Detuning, RabiAmplitude, RabiPhase
+from bloqade.analog.builder.spatial import SpatialModulation, Location, Uniform, Scale
+from bloqade.analog.builder.waveform import WaveformPrimitive, Slice, Record, Sample, Fn
+from bloqade.analog.builder.assign import Assign, BatchAssign, ListAssign
+from bloqade.analog.builder.args import Args
+from bloqade.analog.builder.parallelize import Parallelize
+from bloqade.analog.builder.parse.stream import BuilderNode, BuilderStream
+import bloqade.analog.ir as ir
 from beartype.typing import TYPE_CHECKING, Tuple, Union, Dict, List, Optional, Set
 
 if TYPE_CHECKING:
-    from bloqade_analog.ir.routine.params import ParamType
-    from bloqade_analog.ir.routine.base import Routine
-    from bloqade_analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.routine.params import ParamType
+    from bloqade.analog.ir.routine.base import Routine
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
 
 
 class Parser:
@@ -288,7 +288,7 @@ class Parser:
         Returns:
             AnalogCircuit: The parsed analog circuit.
         """
-        from bloqade_analog.ir.analog_circuit import AnalogCircuit
+        from bloqade.analog.ir.analog_circuit import AnalogCircuit
 
         self.reset(builder)
         self.read_register()
@@ -308,10 +308,10 @@ class Parser:
         Returns:
             Routine: The parsed routine.
         """
-        from bloqade_analog.ir.analog_circuit import AnalogCircuit
-        from bloqade_analog.ir.routine.params import Params, ScalarArg, VectorArg
-        from bloqade_analog.ir.routine.base import Routine
-        from bloqade_analog.compiler.analysis.common.scan_variables import ScanVariables
+        from bloqade.analog.ir.analog_circuit import AnalogCircuit
+        from bloqade.analog.ir.routine.params import Params, ScalarArg, VectorArg
+        from bloqade.analog.ir.routine.base import Routine
+        from bloqade.analog.compiler.analysis.common.scan_variables import ScanVariables
 
         self.reset(builder)
         self.read_register()

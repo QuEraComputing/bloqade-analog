@@ -1,19 +1,19 @@
-from bloqade_analog.serialize import Serializer
-from bloqade_analog.submission.mock import MockBackend
-from bloqade_analog.task.base import Geometry
-from bloqade_analog.task.base import RemoteTask
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.submission.mock import MockBackend
+from bloqade.analog.task.base import Geometry
+from bloqade.analog.task.base import RemoteTask
 
-from bloqade_analog.submission.base import ValidationError
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.base import ValidationError
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )
-from bloqade_analog.submission.ir.task_specification import QuEraTaskSpecification
-from bloqade_analog.submission.ir.parallel import ParallelDecoder
-from bloqade_analog.submission.quera import QuEraBackend
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade.analog.submission.ir.parallel import ParallelDecoder
+from bloqade.analog.submission.quera import QuEraBackend
 
 from beartype.typing import Dict, Optional, Union, Any
-from bloqade_analog.builder.base import ParamType
+from bloqade.analog.builder.base import ParamType
 from dataclasses import dataclass, field
 import warnings
 

@@ -1,23 +1,23 @@
 from decimal import Decimal
 from numbers import Real
 from typing import Literal
-from bloqade_analog.builder.typing import LiteralType
-from bloqade_analog.serialize import Serializer
-from bloqade_analog.task.base import Report
-from bloqade_analog.task.quera import QuEraTask
-from bloqade_analog.task.braket import BraketTask
-from bloqade_analog.task.braket_simulator import BraketEmulatorTask
-from bloqade_analog.task.bloqade import BloqadeTask
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.task.base import Report
+from bloqade.analog.task.quera import QuEraTask
+from bloqade.analog.task.braket import BraketTask
+from bloqade.analog.task.braket_simulator import BraketEmulatorTask
+from bloqade.analog.task.bloqade import BloqadeTask
 
-from bloqade_analog.builder.base import Builder
+from bloqade.analog.builder.base import Builder
 
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.ir.task_results import (
     QuEraShotStatusCode,
     QuEraTaskStatusCode,
     QuEraTaskResults,
 )
 
-# from bloqade_analog.submission.base import ValidationError
+# from bloqade.analog.submission.base import ValidationError
 
 from beartype.typing import Union, Optional, Dict, Any, List
 from beartype import beartype
@@ -43,7 +43,7 @@ class Serializable:
             JSON string
 
         """
-        from bloqade_analog import dumps
+        from bloqade.analog import dumps
 
         return dumps(self, **options)
 
@@ -498,7 +498,7 @@ class RemoteBatch(Serializable, Filter):
         Returns:
             RemoteBatch: The RemoteBatch instance with tasks submitted.
         """
-        from bloqade_analog import save
+        from bloqade.analog import save
 
         # online, non-blocking
         if shuffle_submit_order:

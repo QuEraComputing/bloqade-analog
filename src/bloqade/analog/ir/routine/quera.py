@@ -3,13 +3,13 @@ import time
 from pydantic.v1.dataclasses import dataclass
 import json
 
-from bloqade_analog.builder.typing import LiteralType
-from bloqade_analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
-from bloqade_analog.submission.quera import QuEraBackend
-from bloqade_analog.submission.mock import MockBackend
-from bloqade_analog.submission.load_config import load_config
-from bloqade_analog.task.batch import RemoteBatch
-from bloqade_analog.task.quera import QuEraTask
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
+from bloqade.analog.submission.quera import QuEraBackend
+from bloqade.analog.submission.mock import MockBackend
+from bloqade.analog.submission.load_config import load_config
+from bloqade.analog.task.batch import RemoteBatch
+from bloqade.analog.task.quera import QuEraTask
 
 from beartype.typing import Tuple, Union, Optional, NamedTuple, List, Dict, Any
 from beartype import beartype
@@ -55,7 +55,7 @@ class CustomSubmissionRoutine(RoutineBase):
         use_experimental: bool = False,
         args: Tuple[LiteralType, ...] = (),
     ):
-        from bloqade_analog.compiler.passes.hardware import (
+        from bloqade.analog.compiler.passes.hardware import (
             analyze_channels,
             canonicalize_circuit,
             assign_circuit,
@@ -63,7 +63,7 @@ class CustomSubmissionRoutine(RoutineBase):
             generate_ahs_code,
             generate_quera_ir,
         )
-        from bloqade_analog.submission.capabilities import get_capabilities
+        from bloqade.analog.submission.capabilities import get_capabilities
 
         circuit, params = self.circuit, self.params
         capabilities = get_capabilities(use_experimental)
@@ -173,7 +173,7 @@ class QuEraHardwareRoutine(RoutineBase):
         args: Tuple[LiteralType, ...] = (),
         name: Optional[str] = None,
     ) -> RemoteBatch:
-        from bloqade_analog.compiler.passes.hardware import (
+        from bloqade.analog.compiler.passes.hardware import (
             analyze_channels,
             canonicalize_circuit,
             assign_circuit,

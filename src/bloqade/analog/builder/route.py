@@ -1,13 +1,13 @@
-from bloqade_analog.builder.drive import Drive
-from bloqade_analog.builder.coupling import LevelCoupling
-from bloqade_analog.builder.field import Field, Rabi
-from bloqade_analog.builder.pragmas import (
+from bloqade.analog.builder.drive import Drive
+from bloqade.analog.builder.coupling import LevelCoupling
+from bloqade.analog.builder.field import Field, Rabi
+from bloqade.analog.builder.pragmas import (
     Assignable,
     BatchAssignable,
     Parallelizable,
     AddArgs,
 )
-from bloqade_analog.builder.backend import BackendRoute
+from bloqade.analog.builder.backend import BackendRoute
 
 
 class PulseRoute(Drive, LevelCoupling, Field, Rabi):

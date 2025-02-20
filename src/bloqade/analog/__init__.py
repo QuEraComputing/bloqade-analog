@@ -3,11 +3,11 @@ try:
 except ImportError:
     __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 
-from bloqade_analog.ir import var, cast, Variable, Literal, start
-from bloqade_analog.ir import to_waveform as waveform
-from bloqade_analog.serialize import load, save, loads, dumps
+from bloqade.analog.ir import var, cast, Variable, Literal, start
+from bloqade.analog.ir import to_waveform as waveform
+from bloqade.analog.serialize import load, save, loads, dumps
 
-from bloqade_analog.factory import (
+from bloqade.analog.factory import (
     get_capabilities,
     piecewise_linear,
     piecewise_constant,
@@ -15,12 +15,12 @@ from bloqade_analog.factory import (
     constant,
     rydberg_h,
 )
-import bloqade_analog.ir as _ir
-from bloqade_analog.constants import RB_C6
+import bloqade.analog.ir as _ir
+from bloqade.analog.constants import RB_C6
 
 import importlib.metadata
 
-__version__ = importlib.metadata.version("bloqade_analog")
+__version__ = importlib.metadata.version("bloqade.analog")
 
 
 def tree_depth(depth: int = None):

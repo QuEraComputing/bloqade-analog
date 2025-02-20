@@ -1,4 +1,4 @@
-from bloqade_analog.serialize import Serializer, dumps, loads
+from bloqade.analog.serialize import Serializer, dumps, loads
 from beartype.typing import Union, Dict, Any
 from beartype import beartype
 from decimal import Decimal

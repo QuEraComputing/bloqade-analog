@@ -1,12 +1,12 @@
-from bloqade_analog.builder.base import ParamType
-from bloqade_analog.serialize import Serializer
-from bloqade_analog.submission.ir.parallel import ParallelDecoder
-from bloqade_analog.task.base import Geometry, RemoteTask
-from bloqade_analog.submission.ir.task_specification import QuEraTaskSpecification
-from bloqade_analog.submission.braket import BraketBackend
+from bloqade.analog.builder.base import ParamType
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.submission.ir.parallel import ParallelDecoder
+from bloqade.analog.task.base import Geometry, RemoteTask
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade.analog.submission.braket import BraketBackend
 
-from bloqade_analog.submission.base import ValidationError
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.base import ValidationError
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )

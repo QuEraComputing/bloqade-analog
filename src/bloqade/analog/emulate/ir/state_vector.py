@@ -1,7 +1,7 @@
 import plum
-from bloqade_analog.emulate.ir.emulator import EmulatorProgram
-from bloqade_analog.emulate.ir.space import Space, MAX_PRINT_SIZE
-from bloqade_analog.emulate.sparse_operator import (
+from bloqade.analog.emulate.ir.emulator import EmulatorProgram
+from bloqade.analog.emulate.ir.space import Space, MAX_PRINT_SIZE
+from bloqade.analog.emulate.sparse_operator import (
     IndexMapping,
     SparseMatrixCSC,
     SparseMatrixCSR,

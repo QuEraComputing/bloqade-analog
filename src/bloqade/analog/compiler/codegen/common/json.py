@@ -1,10 +1,10 @@
-import bloqade_analog.ir.location as location
-import bloqade_analog.ir.control.sequence as sequence
-import bloqade_analog.ir.control.pulse as pulse
-import bloqade_analog.ir.control.field as field
-import bloqade_analog.ir.analog_circuit as analog_circuit
-import bloqade_analog.ir.control.waveform as waveform
-from bloqade_analog.ir.location import (
+import bloqade.analog.ir.location as location
+import bloqade.analog.ir.control.sequence as sequence
+import bloqade.analog.ir.control.pulse as pulse
+import bloqade.analog.ir.control.field as field
+import bloqade.analog.ir.analog_circuit as analog_circuit
+import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.ir.location import (
     Chain,
     Honeycomb,
     Kagome,
@@ -14,10 +14,10 @@ from bloqade_analog.ir.location import (
     Square,
     Triangular,
 )
-from bloqade_analog.ir.location.location import LocationInfo, ParallelRegister
-import bloqade_analog.ir.scalar as scalar
+from bloqade.analog.ir.location.location import LocationInfo, ParallelRegister
+import bloqade.analog.ir.scalar as scalar
 
-from bloqade_analog.ir.visitor import BloqadeIRVisitor, BloqadeNodeTypes
+from bloqade.analog.ir.visitor import BloqadeIRVisitor, BloqadeNodeTypes
 
 import json
 

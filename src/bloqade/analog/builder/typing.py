@@ -1,4 +1,4 @@
-from bloqade_analog.ir.scalar import Scalar
+from bloqade.analog.ir.scalar import Scalar
 from decimal import Decimal
 from numbers import Real
 from beartype.typing import List, Union

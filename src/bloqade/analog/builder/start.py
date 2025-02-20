@@ -1,7 +1,7 @@
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.sequence_builder import SequenceBuilder
-from bloqade_analog.builder.drive import Drive
-from bloqade_analog.ir.control.sequence import SequenceExpr
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.sequence_builder import SequenceBuilder
+from bloqade.analog.builder.drive import Drive
+from bloqade.analog.ir.control.sequence import SequenceExpr
 from beartype import beartype
 
 
@@ -25,7 +25,7 @@ class ProgramStart(Drive, Builder):
         >>> from numpy import pi
         >>> seq = start.rydberg.rabi.amplitude.constant(2.0 * pi, 4.5)
         # choose a geometry of interest to apply the program on
-        >>> from bloqade_analog.atom_arrangement import Chain, Kagome
+        >>> from bloqade.analog.atom_arrangement import Chain, Kagome
         >>> complete_program = Chain(10).apply(seq)
         # you can .apply to as many geometries as you like
         >>> another_complete_program = Kagome(3).apply(seq)

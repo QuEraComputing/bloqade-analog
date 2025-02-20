@@ -4,10 +4,10 @@ from dataclasses import fields
 import numpy as np
 import itertools
 from numpy.typing import NDArray
-from bloqade_analog.ir.location.location import AtomArrangement, LocationInfo
-from bloqade_analog.ir import Literal, Scalar, cast
+from bloqade.analog.ir.location.location import AtomArrangement, LocationInfo
+from bloqade.analog.ir import Literal, Scalar, cast
 
-from bloqade_analog.builder.typing import ScalarType
+from bloqade.analog.builder.typing import ScalarType
 from beartype.typing import List, Tuple, Generator, Optional
 from beartype import beartype
 

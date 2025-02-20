@@ -1,20 +1,20 @@
-from bloqade_analog.serialize import Serializer
-from bloqade_analog.task.base import Geometry, LocalTask
-from bloqade_analog.emulate.ir.emulator import EmulatorProgram
-from bloqade_analog.emulate.codegen.hamiltonian import (
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.task.base import Geometry, LocalTask
+from bloqade.analog.emulate.ir.emulator import EmulatorProgram
+from bloqade.analog.emulate.codegen.hamiltonian import (
     RydbergHamiltonianCodeGen,
     CompileCache,
 )
-from bloqade_analog.emulate.ir.state_vector import AnalogGate
+from bloqade.analog.emulate.ir.state_vector import AnalogGate
 
-from bloqade_analog.submission.ir.task_results import (
+from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraShotResult,
     QuEraTaskStatusCode,
     QuEraShotStatusCode,
 )
 from beartype.typing import Dict, Any
-from bloqade_analog.builder.base import ParamType
+from bloqade.analog.builder.base import ParamType
 from dataclasses import dataclass
 from typing import Optional
 import numpy as np

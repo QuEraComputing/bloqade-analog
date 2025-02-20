@@ -1,6 +1,6 @@
-from bloqade_analog.compiler.codegen.hardware.lattice import AHSLatticeData
-from bloqade_analog.compiler.codegen.hardware.piecewise_linear import PiecewiseLinear
-from bloqade_analog.compiler.codegen.hardware.piecewise_constant import (
+from bloqade.analog.compiler.codegen.hardware.lattice import AHSLatticeData
+from bloqade.analog.compiler.codegen.hardware.piecewise_linear import PiecewiseLinear
+from bloqade.analog.compiler.codegen.hardware.piecewise_constant import (
     PiecewiseConstant,
 )
 from beartype.typing import Optional, List

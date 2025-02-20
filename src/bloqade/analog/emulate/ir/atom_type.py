@@ -3,7 +3,7 @@ from numpy.typing import NDArray
 import numpy as np
 from enum import Enum
 
-from bloqade_analog.serialize import Serializer
+from bloqade.analog.serialize import Serializer
 
 
 @dataclass(frozen=True)

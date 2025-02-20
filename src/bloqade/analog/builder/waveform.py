@@ -1,12 +1,12 @@
 from functools import reduce
-from bloqade_analog.builder.base import Builder
-from bloqade_analog.builder.typing import ScalarType
-from bloqade_analog.builder.route import WaveformRoute
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.builder.route import WaveformRoute
 
 from beartype import beartype
 from beartype.typing import Optional, Union, List, Callable
 
-import bloqade_analog.ir as ir
+import bloqade.analog.ir as ir
 
 
 class WaveformAttachable(Builder):

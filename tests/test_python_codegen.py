@@ -1,14 +1,14 @@
 import inspect
-from bloqade_analog.compiler.analysis.python.waveform import WaveformScan
-from bloqade_analog.compiler.rewrite.python.waveform import NormalizeWaveformPython
-from bloqade_analog.compiler.codegen.python.waveform import CodegenPythonWaveform
-from bloqade_analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
-from bloqade_analog.factory import piecewise_linear, piecewise_constant
-import bloqade_analog.ir.control.waveform as wf
+from bloqade.analog.compiler.analysis.python.waveform import WaveformScan
+from bloqade.analog.compiler.rewrite.python.waveform import NormalizeWaveformPython
+from bloqade.analog.compiler.codegen.python.waveform import CodegenPythonWaveform
+from bloqade.analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
+from bloqade.analog.factory import piecewise_linear, piecewise_constant
+import bloqade.analog.ir.control.waveform as wf
 from unittest.mock import patch
 import numpy as np
 import numba
-from bloqade_analog import start
+from bloqade.analog import start
 
 
 def f(t):
@@ -119,7 +119,7 @@ def test_waveform_normalize():
     assert NormalizeWaveformPython().visit(wf7) == wf8
 
 
-@patch("bloqade_analog.compiler.codegen.python.waveform.randint")
+@patch("bloqade.analog.compiler.codegen.python.waveform.randint")
 def test_python_codegen(randint):
     def func_def(wf):
         scan = WaveformScan().scan(wf)
