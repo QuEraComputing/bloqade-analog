@@ -1,6 +1,6 @@
 import pytest
-from bloqade import start
-from bloqade.atom_arrangement import Chain
+from bloqade.analog import start
+from bloqade.analog.atom_arrangement import Chain
 import numpy as np
 from itertools import product
 from math import isclose

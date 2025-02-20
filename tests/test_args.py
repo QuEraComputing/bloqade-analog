@@ -1,4 +1,4 @@
-from bloqade import start, var
+from bloqade.analog import start, var
 import pytest
 
 

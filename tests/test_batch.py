@@ -1,16 +1,19 @@
 import pytest
-from bloqade import start
+from bloqade.analog import start
 import numpy as np
 from unittest.mock import patch
-from bloqade.submission.ir.task_results import QuEraTaskStatusCode, QuEraTaskResults
-from bloqade.submission.ir.task_specification import QuEraTaskSpecification
-from bloqade.task.base import Geometry
-from bloqade.task.quera import QuEraTask
-from bloqade.task.braket import BraketTask
-from bloqade.submission.base import ValidationError
-from bloqade import dumps, loads
-from bloqade.atom_arrangement import Chain
-from bloqade.ir.control.waveform import NullWaveform
+from bloqade.analog.submission.ir.task_results import (
+    QuEraTaskStatusCode,
+    QuEraTaskResults,
+)
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
+from bloqade.analog.task.base import Geometry
+from bloqade.analog.task.quera import QuEraTask
+from bloqade.analog.task.braket import BraketTask
+from bloqade.analog.submission.base import ValidationError
+from bloqade.analog import dumps, loads
+from bloqade.analog.atom_arrangement import Chain
+from bloqade.analog.ir.control.waveform import NullWaveform
 
 # import numpy as np
 
@@ -113,7 +116,7 @@ def mock_results(L):
 
 
 def test_base_classes():
-    from bloqade.task.base import Task, LocalTask, RemoteTask
+    from bloqade.analog.task.base import Task, LocalTask, RemoteTask
 
     task = Task()
 
@@ -202,8 +205,8 @@ def test_metadata_filter_vector():
         filtered_batch_all = batch.filter_metadata(**filters)
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
-@patch("bloqade.task.batch.np.random.permutation")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.task.batch.np.random.permutation")
 def test_remote_batch_task_metric(permutation, BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -242,7 +245,7 @@ def test_remote_batch_task_metric(permutation, BraketBackend):
     assert batch.total_nshots == 60
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_pull(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -273,7 +276,7 @@ def test_pull(BraketBackend):
     assert len(new_batch.tasks) == 6
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_retrieve(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -317,7 +320,7 @@ def test_retrieve(BraketBackend):
     assert len(new_batch.tasks) == 6
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_remove_invalid_tasks(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -347,7 +350,7 @@ def test_remove_invalid_tasks(BraketBackend):
     assert len(new_batch.tasks) == 0
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_test_filters(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -397,7 +400,7 @@ def test_test_filters(BraketBackend):
     assert len(new_batch.tasks) == 6
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_cancel_tasks(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -427,7 +430,7 @@ def test_cancel_tasks(BraketBackend):
     assert backend.cancel_task.call_count == 6
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_resubmit_tasks(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -464,7 +467,7 @@ def test_resubmit_tasks(BraketBackend):
     )
 
 
-@patch("bloqade.ir.routine.braket.BraketBackend")
+@patch("bloqade.analog.ir.routine.braket.BraketBackend")
 def test_report(BraketBackend):
     backend = BraketBackend(
         device_arn="arn:aws:braket:us-east-1::device/qpu/quera/Aquila"
@@ -509,7 +512,7 @@ def test_report(BraketBackend):
     assert all([len(ele) == 0 for ele in report.counts()])
 
 
-@patch("bloqade.task.quera.QuEraBackend")
+@patch("bloqade.analog.task.quera.QuEraBackend")
 def test_braket_task(QuEraBackend):
     backend = QuEraBackend()
 
@@ -566,7 +569,7 @@ def test_braket_task(QuEraBackend):
     assert backend.cancel_task.call_count == 1
 
 
-@patch("bloqade.task.braket.BraketBackend")
+@patch("bloqade.analog.task.braket.BraketBackend")
 def test_quera_task(BraketBackend):
     backend = BraketBackend()
 
