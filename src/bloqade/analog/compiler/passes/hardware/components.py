@@ -1,11 +1,13 @@
+from decimal import Decimal
+
+from beartype.typing import List, Optional
+from pydantic.v1.dataclasses import dataclass
+
 from bloqade.analog.compiler.codegen.hardware.lattice import AHSLatticeData
 from bloqade.analog.compiler.codegen.hardware.piecewise_linear import PiecewiseLinear
 from bloqade.analog.compiler.codegen.hardware.piecewise_constant import (
     PiecewiseConstant,
 )
-from beartype.typing import Optional, List
-from pydantic.v1.dataclasses import dataclass
-from decimal import Decimal
 
 
 @dataclass

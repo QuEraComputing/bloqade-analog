@@ -1,7 +1,7 @@
-from typing import Optional, Union, List
+from typing import List, Union, Optional
 from numbers import Real
 
-from bloqade.analog.builder.parse.trait import Parse, Show
+from bloqade.analog.builder.parse.trait import Show, Parse
 
 ParamType = Union[Real, List[Real]]
 

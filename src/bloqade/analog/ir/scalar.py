@@ -1,11 +1,13 @@
-from typing import Any, Optional
-import numpy as np
-from pydantic.v1.dataclasses import dataclass
-from pydantic.v1 import ValidationError, validator
-from .tree_print import Printer
 import re
-from decimal import Decimal
 import numbers
+from typing import Any, Optional
+from decimal import Decimal
+
+import numpy as np
+from pydantic.v1 import ValidationError, validator
+from pydantic.v1.dataclasses import dataclass
+
+from .tree_print import Printer
 
 __all__ = [
     "var",

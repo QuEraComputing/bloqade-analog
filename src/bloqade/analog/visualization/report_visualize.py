@@ -1,28 +1,32 @@
-from bokeh.plotting import figure
-from bokeh.layouts import column, row
+from typing import TYPE_CHECKING
+
 from bokeh.models import (
-    CustomJS,
-    MultiChoice,
     Div,
-    HoverTool,
+    Button,
     Range1d,
-    ColorBar,
+    SVGIcon,
     TapTool,
+    ColorBar,
+    CustomJS,
+    HoverTool,
+    MultiChoice,
+    ColumnDataSource,
+    LinearColorMapper,
 )
-from bokeh.models import ColumnDataSource, LinearColorMapper, Button, SVGIcon
+from bokeh.layouts import row, column
 
 # from bokeh.models import Tabs, TabPanel,, Div, CrosshairTool, Span
 from bokeh.palettes import Dark2_5
-from typing import TYPE_CHECKING
+from bokeh.plotting import figure
 
 if TYPE_CHECKING:
     from bloqade.analog.task.base import Report
 
 import math
+from decimal import Decimal
 
 # import itertools
 import numpy as np
-from decimal import Decimal
 
 # from typing import List
 

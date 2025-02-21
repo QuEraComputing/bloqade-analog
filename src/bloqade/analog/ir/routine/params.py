@@ -1,8 +1,8 @@
-from functools import cached_property
-from pydantic.v1.dataclasses import dataclass
 from typing import Dict, List, Tuple, Union
 from decimal import Decimal
+from functools import cached_property
 
+from pydantic.v1.dataclasses import dataclass
 
 ParamType = Union[Decimal, List[Decimal]]
 

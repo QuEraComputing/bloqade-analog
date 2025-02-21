@@ -1,5 +1,6 @@
-from bloqade.analog.ir.location import Square
 import pytest
+
+from bloqade.analog.ir.location import Square
 
 
 def test_braket_unsupport_parallel():

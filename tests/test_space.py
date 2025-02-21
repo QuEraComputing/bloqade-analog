@@ -1,10 +1,12 @@
 from unittest.mock import Mock, patch
+
+import numpy as np
 import pytest
+
 import bloqade.analog.emulate.ir.space
 from bloqade.analog.emulate.ir.space import Space
-from bloqade.analog.emulate.ir.atom_type import ThreeLevelAtom, TwoLevelAtom
 from bloqade.analog.emulate.ir.emulator import Register
-import numpy as np
+from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom, ThreeLevelAtom
 
 
 def test_two_level_space():

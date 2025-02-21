@@ -3,7 +3,6 @@ from bloqade.analog import start
 from bloqade.analog.ir.location import Square
 from bloqade.analog.ir.control.waveform import Linear
 
-
 wv_linear = Linear(start=0, stop=4, duration=0.1)
 reg = Square(3)
 prog = reg.rydberg.detuning.uniform.piecewise_constant([0.1], [0.1]).parallelize(10.0)

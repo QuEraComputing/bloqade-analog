@@ -1,35 +1,31 @@
+from typing import Dict, Tuple, Union, Optional
+from dataclasses import field, dataclass
+
+import numpy as np
+from numpy.typing import NDArray
+from scipy.sparse import csr_matrix
+
 from bloqade.analog.constants import RB_C6
+from bloqade.analog.emulate.ir.space import Space
 from bloqade.analog.emulate.ir.emulator import (
-    DetuningOperatorData,
-    EmulatorProgram,
-    LevelCoupling,
-    Register,
     Fields,
+    Visitor,
+    RabiTerm,
+    Register,
     DetuningTerm,
+    LevelCoupling,
+    EmulatorProgram,
     RabiOperatorData,
     RabiOperatorType,
-    RabiTerm,
-    Visitor,
+    DetuningOperatorData,
 )
-from bloqade.analog.emulate.ir.space import Space
-from bloqade.analog.emulate.ir.atom_type import (
-    TwoLevelAtomType,
-    ThreeLevelAtomType,
-)
+from bloqade.analog.emulate.ir.atom_type import TwoLevelAtomType, ThreeLevelAtomType
 from bloqade.analog.emulate.ir.state_vector import (
     RabiOperator,
     DetuningOperator,
     RydbergHamiltonian,
 )
-from bloqade.analog.emulate.sparse_operator import (
-    IndexMapping,
-    SparseMatrixCSR,
-)
-from scipy.sparse import csr_matrix
-import numpy as np
-from numpy.typing import NDArray
-from typing import Dict, Optional, Tuple, Union
-from dataclasses import dataclass, field
+from bloqade.analog.emulate.sparse_operator import IndexMapping, SparseMatrixCSR
 
 OperatorData = Union[DetuningOperatorData, RabiOperatorData]
 MatrixTypes = Union[csr_matrix, IndexMapping, NDArray]

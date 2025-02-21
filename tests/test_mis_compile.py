@@ -1,5 +1,6 @@
-from bloqade.analog.atom_arrangement import Square
 import numpy as np
+
+from bloqade.analog.atom_arrangement import Square
 
 
 def test_mis_compile():

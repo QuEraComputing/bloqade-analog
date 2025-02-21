@@ -1,15 +1,18 @@
-from bloqade.analog.serialize import Serializer
-from bloqade.analog.builder.base import ParamType
-from .base import LocalTask
-from bloqade.analog.submission.ir.task_results import QuEraTaskResults
-from bloqade.analog.submission.ir.braket import (
-    from_braket_task_results,
-    BraketTaskSpecification,
-)
-from bloqade.analog.task.base import Geometry
-from braket.devices import LocalSimulator
-from beartype.typing import Dict, Optional, Any
 from dataclasses import dataclass
+
+from braket.devices import LocalSimulator
+from beartype.typing import Any, Dict, Optional
+
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.task.base import Geometry
+from bloqade.analog.builder.base import ParamType
+from bloqade.analog.submission.ir.braket import (
+    BraketTaskSpecification,
+    from_braket_task_results,
+)
+from bloqade.analog.submission.ir.task_results import QuEraTaskResults
+
+from .base import LocalTask
 
 ## keep the old conversion for now,
 ## we will remove conversion btwn QuEraTask <-> BraketTask,

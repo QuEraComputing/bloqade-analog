@@ -1,18 +1,16 @@
-from beartype.typing import Optional, TYPE_CHECKING
-
 from beartype import beartype
-from beartype.typing import List, Union
+from beartype.typing import TYPE_CHECKING, List, Union, Optional
+
+from bloqade.analog.builder.base import Builder
 from bloqade.analog.builder.typing import ScalarType, LiteralType
 from bloqade.analog.builder.waveform import WaveformAttachable
-from bloqade.analog.builder.base import Builder
-
 
 if TYPE_CHECKING:
     from bloqade.analog.ir.control.field import (
-        UniformModulation,
-        ScaledLocations,
-        AssignedRunTimeVector,
         RunTimeVector,
+        ScaledLocations,
+        UniformModulation,
+        AssignedRunTimeVector,
     )
 
 

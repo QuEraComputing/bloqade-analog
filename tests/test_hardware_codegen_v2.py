@@ -1,6 +1,16 @@
+from decimal import Decimal
+
+import numpy as np
 import pytest
-from bloqade.analog.ir.control import waveform, field, pulse, sequence
+
+from bloqade.analog import start, piecewise_linear, piecewise_constant
 from bloqade.analog.ir import analog_circuit
+from bloqade.analog.ir.scalar import cast
+from bloqade.analog.ir.control import field, pulse, sequence, waveform
+from bloqade.analog.ir.location import ListOfLocations, ParallelRegister
+from bloqade.analog.submission.ir.parallel import ParallelDecoder, ClusterLocationInfo
+from bloqade.analog.submission.capabilities import get_capabilities
+from bloqade.analog.compiler.codegen.hardware.lattice import GenerateLattice
 from bloqade.analog.compiler.codegen.hardware.piecewise_linear import (
     PiecewiseLinear,
     GeneratePiecewiseLinearChannel,
@@ -12,15 +22,6 @@ from bloqade.analog.compiler.codegen.hardware.piecewise_constant import (
 from bloqade.analog.compiler.codegen.hardware.lattice_site_coefficients import (
     GenerateLatticeSiteCoefficients,
 )
-from bloqade.analog import piecewise_linear, piecewise_constant, start
-import numpy as np
-from decimal import Decimal
-
-from bloqade.analog.ir.scalar import cast
-from bloqade.analog.submission.ir.parallel import ParallelDecoder, ClusterLocationInfo
-from bloqade.analog.ir.location import ListOfLocations, ParallelRegister
-from bloqade.analog.compiler.codegen.hardware.lattice import GenerateLattice
-from bloqade.analog.submission.capabilities import get_capabilities
 
 
 @waveform.to_waveform(4.0)

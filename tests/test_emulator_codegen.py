@@ -1,31 +1,31 @@
-from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom
-from bloqade.analog.emulate.ir.emulator import (
-    EmulatorProgram,
-    Register,
-    RabiOperatorData,
-    RabiTerm,
-    Fields,
-    DetuningTerm,
-    DetuningOperatorData,
-    RabiOperatorType,
-)
-from bloqade.analog.compiler.codegen.python.emulator_ir import (
-    EmulatorProgramCodeGen,
-    JITWaveform,
-    LevelCoupling,
-)
+from decimal import Decimal
+
 from bloqade.analog import start
-from bloqade.analog.ir.control.sequence import rydberg
-from bloqade.analog.ir.control.pulse import detuning, rabi
+from bloqade.analog.ir.scalar import cast
 from bloqade.analog.ir.control.field import (
+    Uniform,
     Location,
     RunTimeVector,
     ScaledLocations,
-    Uniform,
 )
-from decimal import Decimal
-
-from bloqade.analog.ir.scalar import cast
+from bloqade.analog.ir.control.pulse import rabi, detuning
+from bloqade.analog.emulate.ir.emulator import (
+    Fields,
+    RabiTerm,
+    Register,
+    DetuningTerm,
+    EmulatorProgram,
+    RabiOperatorData,
+    RabiOperatorType,
+    DetuningOperatorData,
+)
+from bloqade.analog.ir.control.sequence import rydberg
+from bloqade.analog.emulate.ir.atom_type import TwoLevelAtom
+from bloqade.analog.compiler.codegen.python.emulator_ir import (
+    JITWaveform,
+    LevelCoupling,
+    EmulatorProgramCodeGen,
+)
 
 
 def test_codegen_global_detuning():

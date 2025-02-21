@@ -1,22 +1,22 @@
-from collections import OrderedDict
+import datetime
 from typing import Any
-
-from beartype.typing import List, Sequence, Union, Dict, Optional, Tuple
-from beartype import beartype
 from numbers import Number
+from collections import OrderedDict
 
+import numpy as np
+import pandas as pd
+from beartype import beartype
+from numpy.typing import NDArray
+from beartype.typing import Dict, List, Tuple, Union, Optional, Sequence
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.visualization import display_report
+from bloqade.analog.submission.ir.parallel import ParallelDecoder
 from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )
-from numpy.typing import NDArray
-import pandas as pd
-import numpy as np
-from pydantic.v1.dataclasses import dataclass
-from bloqade.analog.submission.ir.parallel import ParallelDecoder
-from bloqade.analog.visualization import display_report
-from bloqade.analog.serialize import Serializer
-import datetime
 
 
 @Serializer.register

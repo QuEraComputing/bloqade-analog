@@ -1,22 +1,23 @@
 Use_bokeh = True
 
 if Use_bokeh:
+    from typing import List
+
     from .display import (
-        display_ir,
-        display_report,
-        display_task_ir,
-        display_builder,
         figure_ir,
-        builder_figure,
+        display_ir,
         report_figure,
+        builder_figure,
+        display_report,
+        display_builder,
+        display_task_ir,
     )
+    from .ir_visualize import get_ir_figure, get_field_figure, get_pulse_figure
     from .task_visualize import get_task_ir_figure
     from .atom_arrangement_visualize import (
         get_atom_arrangement_figure,
         assemble_atom_arrangement_panel,
     )
-    from .ir_visualize import get_ir_figure, get_field_figure, get_pulse_figure
-    from typing import List
 else:
     # display
     def display_ir(obj, assignemnts):

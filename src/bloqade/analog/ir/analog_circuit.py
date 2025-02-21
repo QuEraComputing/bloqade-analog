@@ -1,4 +1,9 @@
 # from numbers import Real
+import pandas as pd
+from beartype.typing import Dict, List, Tuple, Union
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.ir.tree_print import Printer
 from bloqade.analog.visualization import (
     display_ir,
     get_atom_arrangement_figure,
@@ -6,10 +11,6 @@ from bloqade.analog.visualization import (
 )
 from bloqade.analog.ir.control.sequence import SequenceExpr
 from bloqade.analog.ir.location.location import AtomArrangement, ParallelRegister
-from bloqade.analog.ir.tree_print import Printer
-from beartype.typing import Union, List, Tuple, Dict
-from pydantic.v1.dataclasses import dataclass
-import pandas as pd
 
 
 # NOTE: this is just a dummy type bundle geometry and sequence

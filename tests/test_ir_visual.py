@@ -1,17 +1,19 @@
+import itertools
+
+from bokeh.io import save
+from bokeh.models import Span
+from bokeh.layouts import row
+from bokeh.palettes import Dark2_5
+
 from bloqade.analog.visualization.ir_visualize import (
-    mock_data,
     Field_wvfm,
     SpacialMod,
-    assemble_field,
-    assemble_pulse_panel,
-    assemble_sequences,
+    mock_data,
     mock_register,
+    assemble_field,
+    assemble_sequences,
+    assemble_pulse_panel,
 )
-import itertools
-from bokeh.palettes import Dark2_5
-from bokeh.models import Span
-from bokeh.io import save
-from bokeh.layouts import row
 
 
 def test_mock_data():

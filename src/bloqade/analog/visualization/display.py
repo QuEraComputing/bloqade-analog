@@ -1,22 +1,18 @@
-from bokeh.models import Div
-from bokeh.layouts import row, column
 from bokeh.io import show
+from bokeh.models import Div, Button, CustomJS, NumericInput
+from bokeh.layouts import row, column
+
 from bloqade.analog.visualization import report_visualize
-from bokeh.models import (
-    NumericInput,
-    Button,
-    CustomJS,
-)
 
 
 ## unify the entry point:
 def display_ir(obj, assignments):
-    from bloqade.analog.ir.analog_circuit import AnalogCircuit
-    from bloqade.analog.ir.control.pulse import PulseExpr
-    from bloqade.analog.ir.control.sequence import SequenceExpr
-    from bloqade.analog.ir.control.field import Field, SpatialModulation
-    from bloqade.analog.ir.control.waveform import Waveform
     from bloqade.analog.ir.location import AtomArrangement
+    from bloqade.analog.ir.control.field import Field, SpatialModulation
+    from bloqade.analog.ir.control.pulse import PulseExpr
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.control.sequence import SequenceExpr
+    from bloqade.analog.ir.control.waveform import Waveform
 
     if isinstance(obj, AnalogCircuit):
         display_analog_circuit(obj, assignments)
@@ -37,12 +33,12 @@ def display_ir(obj, assignments):
 
 
 def figure_ir(obj, assignments):
-    from bloqade.analog.ir.analog_circuit import AnalogCircuit
-    from bloqade.analog.ir.control.pulse import PulseExpr
-    from bloqade.analog.ir.control.sequence import SequenceExpr
-    from bloqade.analog.ir.control.field import Field, SpatialModulation
-    from bloqade.analog.ir.control.waveform import Waveform
     from bloqade.analog.ir.location import AtomArrangement
+    from bloqade.analog.ir.control.field import Field, SpatialModulation
+    from bloqade.analog.ir.control.pulse import PulseExpr
+    from bloqade.analog.ir.analog_circuit import AnalogCircuit
+    from bloqade.analog.ir.control.sequence import SequenceExpr
+    from bloqade.analog.ir.control.waveform import Waveform
 
     if isinstance(obj, AnalogCircuit):
         return analog_circuit_figure(obj, assignments)

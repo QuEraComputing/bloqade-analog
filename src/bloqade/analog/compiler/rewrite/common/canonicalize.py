@@ -1,6 +1,6 @@
-from bloqade.analog.ir.visitor import BloqadeIRTransformer
 from bloqade.analog.ir import scalar
-from bloqade.analog.ir.control import pulse, sequence, field, waveform
+from bloqade.analog.ir.control import field, pulse, sequence, waveform
+from bloqade.analog.ir.visitor import BloqadeIRTransformer
 
 
 def is_literal(expr):

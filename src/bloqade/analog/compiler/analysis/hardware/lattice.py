@@ -1,6 +1,7 @@
 from decimal import Decimal
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
+
 from bloqade.analog.ir import location
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 
 

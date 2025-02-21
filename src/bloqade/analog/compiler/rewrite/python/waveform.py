@@ -1,7 +1,9 @@
 from functools import reduce
-from bloqade.analog.ir.visitor import BloqadeIRTransformer
-import bloqade.analog.ir.control.waveform as waveform
+
 import numpy as np
+
+import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRTransformer
 
 
 def concat(lhs: waveform.Waveform, rhs: waveform.Waveform) -> waveform.Waveform:

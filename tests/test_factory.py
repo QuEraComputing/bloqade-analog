@@ -1,32 +1,33 @@
+from decimal import Decimal
+
+import numpy as np
 import pytest
+
 from bloqade.analog import (
-    waveform,
-    rydberg_h,
-    piecewise_linear,
-    piecewise_constant,
-    constant,
-    linear,
     var,
     cast,
     start,
+    linear,
+    constant,
+    waveform,
+    rydberg_h,
     get_capabilities,
+    piecewise_linear,
+    piecewise_constant,
 )
-from bloqade.analog.atom_arrangement import Chain
 from bloqade.analog.ir import (
-    AnalogCircuit,
-    Sequence,
-    rydberg,
-    Pulse,
-    rabi,
-    detuning,
     Field,
+    Pulse,
     Uniform,
+    Sequence,
+    AnalogCircuit,
+    rabi,
+    rydberg,
+    detuning,
 )
 from bloqade.analog.ir.routine.base import Routine
+from bloqade.analog.atom_arrangement import Chain
 from bloqade.analog.ir.routine.params import Params, ScalarArg
-
-import numpy as np
-from decimal import Decimal
 
 
 def test_get_capabilities():

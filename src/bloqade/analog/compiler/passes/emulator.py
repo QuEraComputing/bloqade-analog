@@ -1,16 +1,16 @@
+from bloqade.analog.compiler.rewrite.common import (
+    AddPadding,
+    Canonicalizer,
+    FlattenCircuit,
+    AssignBloqadeIR,
+    AssignToLiteral,
+)
 from bloqade.analog.compiler.analysis.common import (
     ScanChannels,
     ScanVariables,
     AssignmentScan,
 )
 from bloqade.analog.compiler.codegen.python.emulator_ir import EmulatorProgramCodeGen
-from bloqade.analog.compiler.rewrite.common import (
-    AddPadding,
-    FlattenCircuit,
-    AssignBloqadeIR,
-    AssignToLiteral,
-    Canonicalizer,
-)
 
 
 def flatten(circuit):

@@ -1,23 +1,22 @@
-from bloqade.analog.builder.typing import ScalarType
-from bloqade.analog.builder.start import ProgramStart
-from bloqade.analog.ir.scalar import Scalar, Literal, cast
-from bloqade.analog.ir.tree_print import Printer
-
-from pydantic.v1.dataclasses import dataclass
-from beartype.typing import List, Tuple, Generator, Union, Optional
-from beartype.door import is_bearable
-from beartype import beartype
-from enum import Enum
-from numpy.typing import NDArray
-from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
-from bloqade.analog.visualization import get_atom_arrangement_figure
-from bloqade.analog.visualization import display_ir
-
-from beartype.vale import Is
-from typing import Annotated
-import plotext as pltxt
 import sys
+from enum import Enum
+from typing import Annotated
+
 import numpy as np
+import plotext as pltxt
+from beartype import beartype
+from numpy.typing import NDArray
+from beartype.door import is_bearable
+from beartype.vale import Is
+from beartype.typing import List, Tuple, Union, Optional, Generator
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.ir.scalar import Scalar, Literal, cast
+from bloqade.analog.builder.start import ProgramStart
+from bloqade.analog.ir.tree_print import Printer
+from bloqade.analog.visualization import display_ir, get_atom_arrangement_figure
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 
 
 def check_position_array(array):
@@ -536,8 +535,8 @@ class ParallelRegister(ProgramStart):
         self, __capabilities: Optional[QuEraCapabilities] = None, **assignments
     ):
         from bloqade.analog.compiler.rewrite.common import AssignBloqadeIR
-        from bloqade.analog.compiler.codegen.hardware import GenerateLattice
         from bloqade.analog.submission.capabilities import get_capabilities
+        from bloqade.analog.compiler.codegen.hardware import GenerateLattice
 
         lattice_data = GenerateLattice(__capabilities or get_capabilities()).emit(
             AssignBloqadeIR(assignments).emit(self)

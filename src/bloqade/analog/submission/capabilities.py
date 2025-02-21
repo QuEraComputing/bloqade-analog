@@ -1,5 +1,7 @@
-import simplejson as json
 import os
+
+import simplejson as json
+
 from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 
 

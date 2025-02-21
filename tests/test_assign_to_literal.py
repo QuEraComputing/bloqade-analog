@@ -1,8 +1,9 @@
+from decimal import Decimal
+
 from bloqade.analog import cast
 from bloqade.analog.ir import scalar
-from bloqade.analog.compiler.rewrite.common.assign_to_literal import AssignToLiteral
 from bloqade.analog.compiler.rewrite.common.assign_variables import AssignBloqadeIR
-from decimal import Decimal
+from bloqade.analog.compiler.rewrite.common.assign_to_literal import AssignToLiteral
 
 
 def test_assign_to_literal():

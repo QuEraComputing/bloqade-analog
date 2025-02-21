@@ -1,10 +1,12 @@
-from beartype import beartype
 from decimal import Decimal
+
+from beartype import beartype
 from beartype.typing import Optional
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
+
+from bloqade.analog.ir import scalar, analog_circuit
 from bloqade.analog.ir.control import field, pulse
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 from bloqade.analog.submission.ir.parallel import ParallelDecoder
-from bloqade.analog.ir import analog_circuit, scalar
 
 
 class GenerateLatticeSiteCoefficients(BloqadeIRVisitor):

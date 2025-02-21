@@ -1,5 +1,6 @@
-from bloqade.analog import start, cast
 import numpy as np
+
+from bloqade.analog import cast, start
 
 
 def test_single_rabi_compile():

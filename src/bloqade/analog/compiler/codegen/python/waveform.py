@@ -1,11 +1,12 @@
+from random import randint
 from decimal import Decimal
 
 from beartype import beartype
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from beartype.typing import Tuple, Optional
+
 import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 from bloqade.analog.compiler.analysis.python.waveform import WaveformScanResult
-from beartype.typing import Optional, Tuple
-from random import randint
 
 
 class CodegenPythonWaveform(BloqadeIRVisitor):

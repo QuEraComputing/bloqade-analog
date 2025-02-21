@@ -1,8 +1,9 @@
+from beartype import beartype
+
 from bloqade.analog.builder.base import Builder
-from bloqade.analog.builder.sequence_builder import SequenceBuilder
 from bloqade.analog.builder.drive import Drive
 from bloqade.analog.ir.control.sequence import SequenceExpr
-from beartype import beartype
+from bloqade.analog.builder.sequence_builder import SequenceBuilder
 
 
 class ProgramStart(Drive, Builder):

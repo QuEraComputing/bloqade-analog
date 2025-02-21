@@ -1,9 +1,9 @@
-import bloqade.analog.compiler.rewrite.common.canonicalize as canonicalize
+from decimal import Decimal
 
+import bloqade.analog.compiler.rewrite.common.canonicalize as canonicalize
+from bloqade.analog import var, cast
 from bloqade.analog.ir import scalar
 from bloqade.analog.ir.control import waveform
-from bloqade.analog import var, cast
-from decimal import Decimal
 
 
 class TestUtils:

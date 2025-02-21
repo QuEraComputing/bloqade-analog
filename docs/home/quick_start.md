@@ -1,6 +1,6 @@
 # Quick Start
 
-All the sections below are self-contained, you can click on the links in the Table of Contents to read the relevant parts. 
+All the sections below are self-contained, you can click on the links in the Table of Contents to read the relevant parts.
 
 ## Navigating the Bloqade API
 
@@ -18,7 +18,7 @@ The same goes for [JetBrains PyCharm](https://www.jetbrains.com/pycharm/):
 
 ![PyCharm Hints](../assets/quick_start/pycharm-hints.gif)
 
-### Jupyter Notebook 
+### Jupyter Notebook
 
 In a [Jupyter Notebook](https://jupyter.org/) you'll need to type `.` and then hit tab for the hints to appear:
 
@@ -85,7 +85,7 @@ After you've [defined a geometry](#defining-atom-geometry) you:
 * Specify `detuning`, `rabi.amplitude` or `rabi.phase`
 * Specify the [spatial modulation][local-control]
 
-Which then leads you to the ability to specify a waveform of interest and begin constructing your pulse sequence. 
+Which then leads you to the ability to specify a waveform of interest and begin constructing your pulse sequence.
 In the example below, we target the ground-Rydberg level coupling to drive with uniform [spatial modulation][local-control] for the Rabi amplitude. Our waveform is a piecewise linear one which ramps from $0$ to $5 \,\text{rad/us}$, holds that value for $1 \,\text{us}$ and then ramps back down to $0 \,\text{rad/us}$.
 
 ```python
@@ -120,7 +120,7 @@ from math import sin
 geometry = start.add_position((0,0))
 target_rabi_amplitude = geometry.rydberg.rabi.amplitude.uniform
 
-def custom_waveform(t): 
+def custom_waveform(t):
     return 2.0 * sin(t)
 
 custom_waveform_applied = (
@@ -129,7 +129,7 @@ custom_waveform_applied = (
 )
 ```
 
-In this form you can immediately [emulate](#emulation) it if you'd like but to run this on [hardware](#submitting-to-hardware) you need to discretize it. The waveform on hardware has to either be: 
+In this form you can immediately [emulate](#emulation) it if you'd like but to run this on [hardware](#submitting-to-hardware) you need to discretize it. The waveform on hardware has to either be:
 
 * Piecewise linear for Rabi amplitude and detuning terms of the Hamiltonian
 * Piecewise constant for the Phase term of the Hamiltonian
@@ -146,7 +146,7 @@ custom_discretized_waveform_applied = (
 
 !!! note
 
-    Programs that have custom functions as waveforms are not fully serializable. This means that when you are [saving and reloading results](#saving-and-loading-results), the original embedded program will be missing that custom waveform. You will still be able to analyze the saved results! 
+    Programs that have custom functions as waveforms are not fully serializable. This means that when you are [saving and reloading results](#saving-and-loading-results), the original embedded program will be missing that custom waveform. You will still be able to analyze the saved results!
 
 
 ## Slicing and Recording Waveforms
@@ -173,7 +173,7 @@ vars_assigned_program = sliced_program.batch_assign(run_time=run_times)
 
 This program will run fine in [emulation](#emulation) but due to hardware constraints certain waveforms (such as those targeting the Rabi Amplitude), the waveform needs to start and end at $0 \,\text{rad}/\text{us}$. Thus, there needs to be a way to slice our waveform but also add an end component to that waveform. `.record` in Bloqade lets you literally "record" the value at the end of a `.slice` and then use it to construct further parts of the waveform.
 
-In the program below the waveform is still sliced but with the help of `.record` a linear segment that pulls the waveform down to $0.0 \,\text{rad}/\text{us}$ from whatever its current value at the slice is in $0.7 \,\text{us}$ is added. 
+In the program below the waveform is still sliced but with the help of `.record` a linear segment that pulls the waveform down to $0.0 \,\text{rad}/\text{us}$ from whatever its current value at the slice is in $0.7 \,\text{us}$ is added.
 
 ```python
 from bloqade import start
@@ -219,7 +219,7 @@ pulse_sequence.show()
 And when you're content with it you just `.apply()` it on the geometries of your choice:
 
 ```python
-from bloqade.atom_arrangement import Honeycomb, Kagome 
+from bloqade.atom_arrangement import Honeycomb, Kagome
 
 geometry_1 = Honeycomb(2, lattice_spacing = 6.0)
 geometry_2 = Kagome(2, lattice_spacing = 6.0)
@@ -318,7 +318,7 @@ report.rydberg_densities()
 ```
 ```
                  0      1
-task_number              
+task_number
 0            0.053  0.054
 ```
 
@@ -334,7 +334,7 @@ report.show()
 
 ## Parameter Sweeps
 
-You can easily do parameter sweeps in emulation and on *Aquila* with variables. Bloqade automatically detects strings in your program as variables that you can later assign singular or multiple values to. 
+You can easily do parameter sweeps in emulation and on *Aquila* with variables. Bloqade automatically detects strings in your program as variables that you can later assign singular or multiple values to.
 
 In the example below, we define a program with a singular variable that controls the amplitude of the waveform.
 
@@ -344,7 +344,7 @@ from bloqade import start
 rabi_oscillations_program = (
     start.add_position((0, 0))
     .rydberg.rabi.amplitude.uniform.piecewise_linear(
-        durations=[0.06, 3, 0.06], 
+        durations=[0.06, 3, 0.06],
         values=[0, "rabi_amplitude", "rabi_amplitude", 0]
     )
 )
@@ -374,7 +374,7 @@ delayed_assignment_program = rabi_oscillations_program.args(["rabi_amplitude"])
 results = delayed_assignment_program.bloqade.python().run(100, args=(1.0,))
 ```
 
-You can alternatively treat the program as a callable after using `.args()` (note the inverted order of arguments in the call!): 
+You can alternatively treat the program as a callable after using `.args()` (note the inverted order of arguments in the call!):
 
 ```python
 delayed_assignment_program = rabi_oscillations_program.args(["rabi_amplitude"])
@@ -400,18 +400,18 @@ geometry = start.add_position((0,0))
 target_rabi_amplitude = geometry.rydberg.rabi.amplitude.uniform
 rabi_waveform = (
     target_rabi_amplitude
-    .piecewise_linear(durations=waveform_durations, 
+    .piecewise_linear(durations=waveform_durations,
                       values=[0.0, my_var, my_var, 0.0])
 )
 target_detuning = rabi_waveform.detuning.uniform
 detuning_waveform = (
     target_detuning
-    .piecewise_linear(durations=waveform_durations, 
+    .piecewise_linear(durations=waveform_durations,
                       values=[my_var-1.0, my_var*0.5, my_var/2, my_var+1.0 ])
 )
 ```
 
-You still perform variable assignment just like you normally would: 
+You still perform variable assignment just like you normally would:
 
 ```python
 program = detuning_waveform.assign(my_variable=1.0)
@@ -428,7 +428,7 @@ geometry = start.add_position((0,0))
 target_rabi_amplitude = geometry.rydberg.rabi.amplitude.uniform
 rabi_waveform = (
     target_rabi_amplitude
-    .piecewise_linear(durations=variable_durations, 
+    .piecewise_linear(durations=variable_durations,
                       values=[0.0, 1.5, 1.5, 0.0])
 )
 target_detuning = rabi_waveform.detuning.uniform
@@ -456,8 +456,8 @@ your_program = ...
 emulation_results = your_program.bloqade.python().run(100)
 hardware_results = your_program.braket.aquila.run_async(100)
 
-save(emulation_results, "emulation_results.json") 
-save(hardware_results, "hardware_results.json") 
+save(emulation_results, "emulation_results.json")
+save(hardware_results, "hardware_results.json")
 ```
 
 And later reload them into Python using the `load` function:

@@ -1,15 +1,12 @@
-from bloqade.analog.builder.typing import ParamType
+from beartype.typing import Dict, Tuple, Optional
 
-from bloqade.analog.compiler.passes.hardware.components import AHSComponents
 from bloqade.analog.ir import analog_circuit
-from bloqade.analog.ir.control import pulse, sequence, field
-
+from bloqade.analog.ir.control import field, pulse, sequence
+from bloqade.analog.builder.typing import ParamType
 from bloqade.analog.submission.ir.braket import BraketTaskSpecification
-
 from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
-
-from beartype.typing import Dict, Optional, Tuple
+from bloqade.analog.compiler.passes.hardware.components import AHSComponents
 
 
 def analyze_channels(circuit: analog_circuit.AnalogCircuit) -> Dict:
@@ -36,8 +33,8 @@ def analyze_channels(circuit: analog_circuit.AnalogCircuit) -> Dict:
             and amplitude.
 
     """
-    from bloqade.analog.compiler.analysis.hardware import ValidateChannels
     from bloqade.analog.compiler.analysis.common import ScanChannels
+    from bloqade.analog.compiler.analysis.hardware import ValidateChannels
 
     ValidateChannels().scan(circuit)
     level_couplings = ScanChannels().scan(circuit)
@@ -75,8 +72,8 @@ def canonicalize_circuit(
     """
     from bloqade.analog.compiler.rewrite.common import (
         AddPadding,
-        AssignToLiteral,
         Canonicalizer,
+        AssignToLiteral,
     )
 
     circuit = AddPadding(level_couplings).visit(circuit)
@@ -107,8 +104,8 @@ def assign_circuit(
         ValueError: If there are any variables that have not been assigned.
 
     """
-    from bloqade.analog.compiler.analysis.common import AssignmentScan, ScanVariables
     from bloqade.analog.compiler.rewrite.common import AssignBloqadeIR
+    from bloqade.analog.compiler.analysis.common import ScanVariables, AssignmentScan
 
     final_assignments = AssignmentScan(assignments).scan(circuit)
 
@@ -151,11 +148,11 @@ def validate_waveforms(
             channels.
 
     """
-    from bloqade.analog.compiler.analysis.hardware import (
-        ValidatePiecewiseConstantChannel,
-        ValidatePiecewiseLinearChannel,
-    )
     from bloqade.analog.compiler.analysis.common import CheckSlices
+    from bloqade.analog.compiler.analysis.hardware import (
+        ValidatePiecewiseLinearChannel,
+        ValidatePiecewiseConstantChannel,
+    )
 
     channel_iter = (
         (level_coupling, field_name, sm)
@@ -205,8 +202,8 @@ def generate_ahs_code(
     """
     from bloqade.analog.compiler.codegen.hardware import (
         GenerateLattice,
-        GenerateLatticeSiteCoefficients,
         GeneratePiecewiseLinearChannel,
+        GenerateLatticeSiteCoefficients,
         GeneratePiecewiseConstantChannel,
     )
     from bloqade.analog.compiler.analysis.hardware import BasicLatticeValidation
@@ -369,6 +366,7 @@ def generate_braket_ir(
 
     """
     import braket.ir.ahs as ahs
+
     from bloqade.analog.compiler.passes.hardware.units import (
         convert_time_units,
         convert_energy_units,

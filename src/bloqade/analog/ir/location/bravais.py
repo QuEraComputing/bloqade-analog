@@ -1,18 +1,18 @@
-from functools import cached_property
-from pydantic.v1.dataclasses import dataclass
-from dataclasses import fields
-import numpy as np
-import itertools
-from numpy.typing import NDArray
-from bloqade.analog.ir.location.location import AtomArrangement, LocationInfo
-from bloqade.analog.ir import Literal, Scalar, cast
-
-from bloqade.analog.builder.typing import ScalarType
-from beartype.typing import List, Tuple, Generator, Optional
-from beartype import beartype
-
-import plotext as pltxt
 import sys
+import itertools
+from functools import cached_property
+from dataclasses import fields
+
+import numpy as np
+import plotext as pltxt
+from beartype import beartype
+from numpy.typing import NDArray
+from beartype.typing import List, Tuple, Optional, Generator
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.ir import Scalar, Literal, cast
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.ir.location.location import LocationInfo, AtomArrangement
 
 
 class Cell:

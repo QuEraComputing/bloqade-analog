@@ -1,11 +1,11 @@
+from unittest.mock import patch
+
 import pytest
 
 import bloqade.analog.submission.braket
 import bloqade.analog.submission.ir.task_specification as task_spec
-
-from bloqade.analog.submission.ir.task_results import QuEraTaskStatusCode
-from unittest.mock import patch
 from bloqade.analog.submission.base import ValidationError
+from bloqade.analog.submission.ir.task_results import QuEraTaskStatusCode
 
 
 def get_task_ir():
