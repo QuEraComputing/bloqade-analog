@@ -6,8 +6,9 @@ element in the stream, representing a step in a construction process. A builder 
 of builder nodes, allowing traversal and manipulation of the construction steps.
 """
 
+from typing import List, Type, Optional
 from dataclasses import dataclass
-from typing import Optional, List, Type
+
 from bloqade.analog.builder.base import Builder
 
 

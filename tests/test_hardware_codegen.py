@@ -1,9 +1,19 @@
 # from bloqade import start
-from bloqade.analog.ir import location, cast, Interpolation
-from bloqade.analog.ir import Constant, Linear, Poly, PythonFn, Sample
-import pytest
 import json
+
 import numpy as np
+import pytest
+
+from bloqade.analog.ir import (
+    Poly,
+    Linear,
+    Sample,
+    Constant,
+    PythonFn,
+    Interpolation,
+    cast,
+    location,
+)
 
 
 def fc(x):

@@ -1,16 +1,15 @@
-from bloqade.analog.submission.base import SubmissionBackend
-
-from bloqade.analog.submission.ir.task_specification import (
-    QuEraTaskSpecification,
-)
-from bloqade.analog.submission.ir.task_results import (
-    QuEraTaskResults,
-    QuEraTaskStatusCode,
-    QuEraShotResult,
-    QuEraShotStatusCode,
-)
 import uuid
+
 import numpy as np
+
+from bloqade.analog.submission.base import SubmissionBackend
+from bloqade.analog.submission.ir.task_results import (
+    QuEraShotResult,
+    QuEraTaskResults,
+    QuEraShotStatusCode,
+    QuEraTaskStatusCode,
+)
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 
 
 def simulate_task_results(task: QuEraTaskSpecification, p_full=0.99, p_empty=0.01):

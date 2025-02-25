@@ -1,6 +1,8 @@
-from bloqade.analog import start, cast
 from decimal import Decimal
+
 import numpy as np
+
+from bloqade.analog import cast, start
 
 
 def test_ramsey_compile():

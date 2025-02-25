@@ -1,14 +1,15 @@
 from collections import OrderedDict
-from pydantic.v1.dataclasses import dataclass
-from beartype import beartype
-from beartype.typing import Optional, Tuple
-from bloqade.analog.builder.typing import LiteralType
 
+from beartype import beartype
+from beartype.typing import Tuple, Optional
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.task.batch import LocalBatch, RemoteBatch
+from bloqade.analog.task.braket import BraketTask
+from bloqade.analog.builder.typing import LiteralType
 from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
 from bloqade.analog.submission.braket import BraketBackend
-from bloqade.analog.task.batch import LocalBatch, RemoteBatch
 from bloqade.analog.task.braket_simulator import BraketEmulatorTask
-from bloqade.analog.task.braket import BraketTask
 
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)
@@ -40,12 +41,12 @@ class BraketHardwareRoutine(RoutineBase):
     ) -> RemoteBatch:
         ## fall passes here ###
         from bloqade.analog.compiler.passes.hardware import (
-            analyze_channels,
-            canonicalize_circuit,
             assign_circuit,
-            validate_waveforms,
+            analyze_channels,
             generate_ahs_code,
             generate_quera_ir,
+            validate_waveforms,
+            canonicalize_circuit,
         )
 
         capabilities = self.backend.get_capabilities(use_experimental)
@@ -187,12 +188,12 @@ class BraketLocalEmulatorRoutine(RoutineBase):
         ## fall passes here ###
         from bloqade.analog.ir import ParallelRegister
         from bloqade.analog.compiler.passes.hardware import (
-            analyze_channels,
-            canonicalize_circuit,
             assign_circuit,
-            validate_waveforms,
+            analyze_channels,
             generate_ahs_code,
             generate_braket_ir,
+            validate_waveforms,
+            canonicalize_circuit,
         )
 
         circuit, params = self.circuit, self.params

@@ -1,5 +1,6 @@
-from bloqade.analog import start
 import numpy as np
+
+from bloqade.analog import start
 
 
 def test_multi_rabi_compile():

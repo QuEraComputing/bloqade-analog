@@ -1,7 +1,7 @@
+import numpy as np
+
 from bloqade.analog import cast, piecewise_linear
 from bloqade.analog.ir.location import Chain
-
-import numpy as np
 
 
 def test_lattice_gauge_theory_compile():

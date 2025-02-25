@@ -1,6 +1,7 @@
+import numpy as np
+
 from bloqade.analog import var
 from bloqade.analog.atom_arrangement import Chain
-import numpy as np
 
 
 def test_scar_compile():

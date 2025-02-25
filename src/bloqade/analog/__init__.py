@@ -3,22 +3,27 @@ try:
 except ImportError:
     __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 
-from bloqade.analog.ir import var, cast, Variable, Literal, start
-from bloqade.analog.ir import to_waveform as waveform
-from bloqade.analog.serialize import load, save, loads, dumps
+import importlib.metadata
 
+import bloqade.analog.ir as _ir
+from bloqade.analog.ir import (
+    Literal,
+    Variable,
+    var,
+    cast,
+    start,
+    to_waveform as waveform,
+)
 from bloqade.analog.factory import (
-    get_capabilities,
-    piecewise_linear,
-    piecewise_constant,
     linear,
     constant,
     rydberg_h,
+    get_capabilities,
+    piecewise_linear,
+    piecewise_constant,
 )
-import bloqade.analog.ir as _ir
 from bloqade.analog.constants import RB_C6
-
-import importlib.metadata
+from bloqade.analog.serialize import load, save, dumps, loads
 
 __version__ = importlib.metadata.version("bloqade-analog")
 

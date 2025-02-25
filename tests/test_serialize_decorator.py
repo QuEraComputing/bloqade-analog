@@ -1,9 +1,10 @@
-from bloqade.analog.serialize import Serializer, dumps, loads
-from beartype.typing import Union, Dict, Any
-from beartype import beartype
 from decimal import Decimal
 from numbers import Real
 
+from beartype import beartype
+from beartype.typing import Any, Dict, Union
+
+from bloqade.analog.serialize import Serializer, dumps, loads
 
 LiteralType = Union[Decimal, Real]
 

@@ -1,10 +1,11 @@
-from dataclasses import dataclass
 from functools import cached_property
-from scipy.sparse import csr_matrix, csc_matrix, coo_matrix
+from dataclasses import dataclass
+
 import numpy as np
-from numpy.typing import NDArray
-from beartype.typing import Union
 from numba import njit
+from numpy.typing import NDArray
+from scipy.sparse import coo_matrix, csc_matrix, csr_matrix
+from beartype.typing import Union
 
 # from beartype.vale import IsAttr, IsEqual
 # from beartype import beartype

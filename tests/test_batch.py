@@ -1,19 +1,20 @@
-import pytest
-from bloqade.analog import start
-import numpy as np
 from unittest.mock import patch
-from bloqade.analog.submission.ir.task_results import (
-    QuEraTaskStatusCode,
-    QuEraTaskResults,
-)
-from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
+
+import numpy as np
+import pytest
+
+from bloqade.analog import dumps, loads, start
 from bloqade.analog.task.base import Geometry
 from bloqade.analog.task.quera import QuEraTask
 from bloqade.analog.task.braket import BraketTask
 from bloqade.analog.submission.base import ValidationError
-from bloqade.analog import dumps, loads
 from bloqade.analog.atom_arrangement import Chain
 from bloqade.analog.ir.control.waveform import NullWaveform
+from bloqade.analog.submission.ir.task_results import (
+    QuEraTaskResults,
+    QuEraTaskStatusCode,
+)
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 
 # import numpy as np
 

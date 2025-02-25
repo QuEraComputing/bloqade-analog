@@ -1,9 +1,11 @@
-from bloqade.analog import start
-from bloqade.analog.ir.location import Square
-from bloqade.analog.ir import Constant, Linear
 import json
+
 import numpy as np
 import pytest
+
+from bloqade.analog import start
+from bloqade.analog.ir import Linear, Constant
+from bloqade.analog.ir.location import Square
 
 
 def f(x):

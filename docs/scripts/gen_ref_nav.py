@@ -4,7 +4,6 @@ from pathlib import Path
 
 import mkdocs_gen_files
 
-
 SRC_PATH = "src"
 
 skip_keywords = [

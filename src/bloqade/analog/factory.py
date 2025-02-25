@@ -1,9 +1,11 @@
-from bloqade.analog.ir.routine.base import Routine
-from bloqade.analog.ir.control.waveform import Waveform, Linear, Constant
-from bloqade.analog.builder.typing import ScalarType
-from beartype import beartype
-from beartype.typing import TYPE_CHECKING, List, Optional, Union, Dict, Any
 from decimal import Decimal
+
+from beartype import beartype
+from beartype.typing import TYPE_CHECKING, Any, Dict, List, Union, Optional
+
+from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.ir.routine.base import Routine
+from bloqade.analog.ir.control.waveform import Linear, Constant, Waveform
 
 if TYPE_CHECKING:
     from bloqade.analog.submission.ir.capabilities import QuEraCapabilities

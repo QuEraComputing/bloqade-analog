@@ -36,7 +36,7 @@ from bloqade.atom_arrangement import Honeycomb
 geometry = Honeycomb(2, lattice_spacing = 10.0)
 ```
 
-We can verify what the atom geometry looks like by `.show()`'ing it: 
+We can verify what the atom geometry looks like by `.show()`'ing it:
 
 ```python
 geometry.show()
@@ -60,7 +60,7 @@ rabi_program = (
 )
 ```
 <!--explain what uniform is-->
-Here `rabi.amplitude` means exactly what it is, the Rabi amplitude term of the [Hamiltonian][rydberg-hamiltonian]. `uniform` refers to applying the waveform uniformly across all the atom locations. 
+Here `rabi.amplitude` means exactly what it is, the Rabi amplitude term of the [Hamiltonian][rydberg-hamiltonian]. `uniform` refers to applying the waveform uniformly across all the atom locations.
 
 We can visualize what our program looks like again with `.show()`:
 
@@ -88,7 +88,7 @@ Which gives us:
 [OrderedDict([('0', 55), ('1', 45)])]
 ```
 
-If we want to submit our program to hardware we'll need to adjust the waveform as there is a constraint the Rabi amplitude waveform must start and end at zero. 
+If we want to submit our program to hardware we'll need to adjust the waveform as there is a constraint the Rabi amplitude waveform must start and end at zero.
 This is easy to do as we can build off the atom geometry we saved previously but apply a piecewise linear waveform:
 
 ```python
@@ -106,8 +106,8 @@ hardware_rabi_program.show()
 </picture>
 </div>
 
-Now instead of using the built-in Bloqade emulator we submit the program to *Aquila*. You will need to use the [AWS CLI](https://aws.amazon.com/cli/) to obtain credentials from your AWS account 
-or set the proper environment variables before hand. 
+Now instead of using the built-in Bloqade emulator we submit the program to *Aquila*. You will need to use the [AWS CLI](https://aws.amazon.com/cli/) to obtain credentials from your AWS account
+or set the proper environment variables before hand.
 
 ```python
 hardware_results = hardware_rabi_program.braket.aquila.run_async(100)
@@ -133,7 +133,7 @@ rabi_program = (
   .rydberg.rabi.amplitude.uniform
   .constant(value=pi/2, duration=1.0)
 )
-emulation_results = rabi_program.bloqade.python().run(100) 
+emulation_results = rabi_program.bloqade.python().run(100)
 bitstring_counts = emulation_results.report().counts()
 
 hardware_rabi_program = (
@@ -151,7 +151,7 @@ hardware_bitstring_counts = hardware_results.report().counts()
 ## Features
 
 
-### Customizable Atom Geometries 
+### Customizable Atom Geometries
 
 You can easily explore a number of common geometric lattices with Bloqade's `atom_arrangement`'s:
 
@@ -256,7 +256,7 @@ hardware_results = rabi_oscillation_job.braket.aquila().run(100)
 ```
 emulation_results.report().rydberg_densities()
                 0
-task_number      
+task_number
 0            0.16
 1            0.35
 2            0.59

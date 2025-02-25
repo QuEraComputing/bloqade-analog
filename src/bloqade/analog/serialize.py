@@ -1,11 +1,11 @@
-import simplejson as json
-from typing import Any
-from beartype.typing import Type, Callable, Dict, Union, TextIO
-from beartype import beartype
-from typing_extensions import dataclass_transform
-
-import importlib
 import pkgutil
+import importlib
+from typing import Any
+
+import simplejson as json
+from beartype import beartype
+from beartype.typing import Dict, Type, Union, TextIO, Callable
+from typing_extensions import dataclass_transform
 
 __bloqade_package_loaded__ = False
 

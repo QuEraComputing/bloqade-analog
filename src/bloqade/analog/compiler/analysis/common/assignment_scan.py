@@ -1,8 +1,9 @@
-from bloqade.analog.builder.typing import LiteralType
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
-import bloqade.analog.ir.control.waveform as waveform
 from typing import Dict
 from decimal import Decimal
+
+import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from bloqade.analog.builder.typing import LiteralType
 
 
 class AssignmentScan(BloqadeIRVisitor):

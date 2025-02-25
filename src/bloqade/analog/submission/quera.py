@@ -1,14 +1,14 @@
+from typing import Optional
+
 from pydantic.v1 import PrivateAttr
-from bloqade.analog.submission.base import SubmissionBackend, ValidationError
-from bloqade.analog.submission.ir.task_specification import (
-    QuEraTaskSpecification,
-)
+
+from bloqade.analog.submission.base import ValidationError, SubmissionBackend
 from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )
-from typing import Optional
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 
 
 class QuEraBackend(SubmissionBackend):

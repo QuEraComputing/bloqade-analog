@@ -1,13 +1,14 @@
-import bloqade.analog.ir.control.waveform as waveform
+from decimal import Decimal
+
+from beartype import beartype
+from beartype.typing import Any, Dict
+
 import bloqade.analog.ir.control.field as field
 import bloqade.analog.ir.control.pulse as pulse
 import bloqade.analog.ir.control.sequence as sequence
-from bloqade.analog.builder.typing import LiteralType
+import bloqade.analog.ir.control.waveform as waveform
 from bloqade.analog.ir.visitor import BloqadeIRVisitor
-
-from decimal import Decimal
-from beartype.typing import Any, Dict
-from beartype import beartype
+from bloqade.analog.builder.typing import LiteralType
 
 
 class IsConstant(BloqadeIRVisitor):

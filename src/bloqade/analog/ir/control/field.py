@@ -1,15 +1,14 @@
+from decimal import Decimal
 from functools import cached_property
+
+from beartype.typing import Dict, List, Optional
+from pydantic.v1.dataclasses import dataclass
+
 from bloqade.analog.ir.scalar import Scalar, cast
 from bloqade.analog.ir.tree_print import Printer
-from bloqade.analog.ir.control.waveform import Waveform
+from bloqade.analog.visualization import display_ir, get_ir_figure, get_field_figure
 from bloqade.analog.ir.control.traits import HashTrait, CanonicalizeTrait
-from bloqade.analog.visualization import get_field_figure
-from pydantic.v1.dataclasses import dataclass
-from beartype.typing import Dict, List, Optional
-from decimal import Decimal
-from bloqade.analog.visualization import display_ir
-from bloqade.analog.visualization import get_ir_figure
-
+from bloqade.analog.ir.control.waveform import Waveform
 
 __all__ = [
     "Field",

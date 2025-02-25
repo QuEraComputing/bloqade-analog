@@ -1,28 +1,26 @@
+import json
+import warnings
+from typing import Any, Dict
+
+import bloqade.analog.ir.scalar as scalar
 import bloqade.analog.ir.location as location
-import bloqade.analog.ir.control.sequence as sequence
-import bloqade.analog.ir.control.pulse as pulse
 import bloqade.analog.ir.control.field as field
+import bloqade.analog.ir.control.pulse as pulse
 import bloqade.analog.ir.analog_circuit as analog_circuit
+import bloqade.analog.ir.control.sequence as sequence
 import bloqade.analog.ir.control.waveform as waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor, BloqadeNodeTypes
 from bloqade.analog.ir.location import (
-    Chain,
-    Honeycomb,
-    Kagome,
     Lieb,
-    ListOfLocations,
-    Rectangular,
+    Chain,
+    Kagome,
     Square,
+    Honeycomb,
     Triangular,
+    Rectangular,
+    ListOfLocations,
 )
 from bloqade.analog.ir.location.location import LocationInfo, ParallelRegister
-import bloqade.analog.ir.scalar as scalar
-
-from bloqade.analog.ir.visitor import BloqadeIRVisitor, BloqadeNodeTypes
-
-import json
-
-from typing import Any, Dict
-import warnings
 
 
 class BloqadeIRSerializer(json.JSONEncoder, BloqadeIRVisitor):

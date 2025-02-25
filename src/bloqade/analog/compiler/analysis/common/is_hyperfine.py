@@ -1,4 +1,5 @@
 from beartype.typing import Any
+
 import bloqade.analog.ir.control.sequence as sequence
 from bloqade.analog.ir.visitor import BloqadeIRVisitor
 

@@ -1,10 +1,11 @@
-from bloqade.analog import start, cast
-from bloqade.analog.ir.location import Square, Rectangular, Chain
-import random
-import numpy as np
 import os
-import bloqade.analog.ir.tree_print as trp
+import random
 
+import numpy as np
+
+import bloqade.analog.ir.tree_print as trp
+from bloqade.analog import cast, start
+from bloqade.analog.ir.location import Chain, Square, Rectangular
 
 trp.color_enabled = False
 trp.MAX_TREE_DEPTH = 10

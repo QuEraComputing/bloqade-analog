@@ -1,7 +1,9 @@
 # Ported from the Julia language AbstractTrees.jl implementation: https://github.com/JuliaCollections/AbstractTrees.jl/blob/master/src/printing.jl
 
-from pydantic.v1.dataclasses import dataclass
 import sys
+
+from pydantic.v1.dataclasses import dataclass
+
 import bloqade.analog.ir as ir
 
 # The maximum depth of the tree to print.

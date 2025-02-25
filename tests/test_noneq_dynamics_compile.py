@@ -1,5 +1,6 @@
-from bloqade.analog.atom_arrangement import Chain
 import numpy as np
+
+from bloqade.analog.atom_arrangement import Chain
 
 
 def test_non_eq_compile():

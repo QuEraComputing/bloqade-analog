@@ -1,7 +1,8 @@
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
+from decimal import Decimal
+
 from bloqade.analog.ir import scalar
 from bloqade.analog.ir.control import field, pulse, sequence, waveform
-from decimal import Decimal
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 
 class ValidatePiecewiseLinearChannel(BloqadeIRVisitor):

@@ -1,35 +1,35 @@
-from collections import OrderedDict, namedtuple, abc
+import traceback
+import dataclasses
+from collections import OrderedDict, abc, namedtuple
 
-from bloqade.analog.emulate.ir.emulator import EmulatorProgram
-from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
-from bloqade.analog.builder.typing import LiteralType
-from bloqade.analog.task.batch import LocalBatch
+import numpy as np
 from beartype import beartype
 from beartype.typing import (
-    Optional,
+    Any,
+    Dict,
+    List,
     Tuple,
     Callable,
-    Dict,
-    Any,
-    List,
-    NamedTuple,
     Iterator,
+    Optional,
     Sequence,
+    NamedTuple,
 )
 from pydantic.v1.dataclasses import dataclass
-import dataclasses
-import numpy as np
 
+from bloqade.analog.task.batch import LocalBatch
+from bloqade.analog.builder.typing import LiteralType
+from bloqade.analog.ir.routine.base import RoutineBase, __pydantic_dataclass_config__
+from bloqade.analog.emulate.ir.emulator import EmulatorProgram
+from bloqade.analog.emulate.ir.state_vector import (
+    AnalogGate,
+    StateVector,
+    RydbergHamiltonian,
+)
 from bloqade.analog.emulate.codegen.hamiltonian import (
     CompileCache,
     RydbergHamiltonianCodeGen,
 )
-from bloqade.analog.emulate.ir.state_vector import (
-    AnalogGate,
-    RydbergHamiltonian,
-    StateVector,
-)
-import traceback
 
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)
@@ -185,8 +185,8 @@ class BloqadePythonRoutine(RoutineBase):
         self, args, blockade_radius, waveform_runtime, use_hyperfine
     ) -> Iterator[TaskData]:
         from bloqade.analog.compiler.passes.emulator import (
-            flatten,
             assign,
+            flatten,
             generate_emulator_ir,
         )
 
@@ -417,7 +417,7 @@ class BloqadePythonRoutine(RoutineBase):
 
         """
         if multiprocessing:
-            from multiprocessing import Process, Queue, cpu_count
+            from multiprocessing import Queue, Process, cpu_count
         else:
             from queue import Queue
 

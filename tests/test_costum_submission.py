@@ -1,11 +1,12 @@
-from bloqade.analog import start
-from requests import Response
 from typing import Dict, List, Union
+from unittest.mock import patch
+
+import pytest
 import simplejson as json
+from requests import Response
 
 import bloqade.analog.ir.routine.quera  # noqa: F401
-from unittest.mock import patch
-import pytest
+from bloqade.analog import start
 
 
 def create_response(

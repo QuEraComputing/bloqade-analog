@@ -1,7 +1,8 @@
-from pydantic.v1 import BaseModel
 from decimal import Decimal
-from beartype.typing import Optional
+
 from beartype import beartype
+from pydantic.v1 import BaseModel
+from beartype.typing import Optional
 
 __all__ = ["QuEraCapabilities"]
 

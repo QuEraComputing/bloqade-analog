@@ -1,16 +1,16 @@
+from enum import Enum
+from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Callable, Optional
+from decimal import Decimal
 from functools import cached_property
+from dataclasses import field, dataclass
 
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.ir.control.waveform import Waveform
+from bloqade.analog.emulate.ir.atom_type import AtomType
 from bloqade.analog.compiler.codegen.common.json import (
     BloqadeIRSerializer,
     BloqadeIRDeserializer,
 )
-from bloqade.analog.serialize import Serializer
-from dataclasses import dataclass, field
-from decimal import Decimal
-from typing import Any, Dict, List, Tuple, Optional, Callable, TYPE_CHECKING
-from enum import Enum
-from bloqade.analog.ir.control.waveform import Waveform
-from bloqade.analog.emulate.ir.atom_type import AtomType
 
 if TYPE_CHECKING:
     from bloqade.analog.task.base import Geometry
@@ -32,16 +32,16 @@ class JITWaveform:
     @cached_property
     def canonicalized_ir(self):
         from bloqade.analog.compiler.rewrite.common import (
+            Canonicalizer,
             AssignBloqadeIR,
             AssignToLiteral,
-            Canonicalizer,
+        )
+        from bloqade.analog.compiler.analysis.common import (
+            ScanVariables,
+            AssignmentScan,
         )
         from bloqade.analog.compiler.rewrite.python.waveform import (
             NormalizeWaveformPython,
-        )
-        from bloqade.analog.compiler.analysis.common import (
-            AssignmentScan,
-            ScanVariables,
         )
 
         assignments = AssignmentScan(self.assignments).scan(self.source)
@@ -63,10 +63,10 @@ class JITWaveform:
         return ast_canonicalized
 
     def emit(self) -> Callable[[float], float]:
-        from bloqade.analog.compiler.analysis.python.waveform import WaveformScan
         from bloqade.analog.compiler.codegen.python.waveform import (
             CodegenPythonWaveform,
         )
+        from bloqade.analog.compiler.analysis.python.waveform import WaveformScan
 
         if self.runtime is WaveformRuntime.Interpret:
             return self.canonicalized_ir
@@ -89,7 +89,7 @@ def _serialize(obj: JITWaveform) -> Dict[str, Any]:
 
 @JITWaveform.set_deserializer
 def _deserializer(d: Dict[str, Any]) -> JITWaveform:
-    from json import loads, dumps
+    from json import dumps, loads
 
     source_str = dumps(d["source"])
     d["source"] = loads(source_str, object_hook=BloqadeIRDeserializer.object_hook)

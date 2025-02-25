@@ -1,14 +1,14 @@
-from functools import reduce
-from bloqade.analog.ir.control import waveform, pulse, sequence, field
-from bloqade.analog.ir import analog_circuit
-
-from bloqade.analog.ir.visitor import BloqadeIRVisitor
-
-from beartype.typing import List
-from beartype import beartype
-from pydantic.v1.dataclasses import dataclass
-from bisect import bisect_right, bisect_left
+from bisect import bisect_left, bisect_right
 from decimal import Decimal
+from functools import reduce
+
+from beartype import beartype
+from beartype.typing import List
+from pydantic.v1.dataclasses import dataclass
+
+from bloqade.analog.ir import analog_circuit
+from bloqade.analog.ir.control import field, pulse, sequence, waveform
+from bloqade.analog.ir.visitor import BloqadeIRVisitor
 
 
 @dataclass(frozen=True)

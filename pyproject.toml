@@ -1,9 +1,12 @@
 [project]
 name = "bloqade-analog"
-version = "0.15.14"
-description = "Neutral atom software development kit"
+version = "0.16.0"
+description = "Analog neutral atom software development kit"
 authors = [
-    {name = "QuEra Computing Inc.", email = "info@quera.com"},
+    { name = "Roger-luo", email = "rluo@quera.com" },
+    { name = "kaihsin", email="khwu@quera.com" },
+    { name = "weinbe58", email="pweinberg@quera.com"},
+    { name = "johnzl-777", email="jlong@quera.com"},
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -33,26 +36,27 @@ dependencies = [
 ]
 requires-python = ">=3.9,<3.13"
 readme = "README.md"
-license = {text = "MIT"}
-
-[project.optional-dependencies]
-doc = [
-    "mkdocs>=1.5.3",
-    "mkdocs-material>=9.1.9",
-    "mkdocstrings[python]>=0.21.2",
-    "mkdocs-minify-plugin>=0.6.4",
-    "mkdocs-jupyter>=0.24.1",
-    "mkdocs-gen-files>=0.5.0",
-    "mkdocs-literate-nav>=0.6.0",
-    "mike>=1.1.2",
-]
+license = {text = "Apache License 2.0"}
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bloqade"]
 
 [tool.black]
 line-length = 88
+
+[tool.isort]
+profile = "black"
+combine_as_imports = true
+multi_line_output = 3
+length_sort = true
+src_paths = ["src/bloqade"]
 
 [tool.ruff]
 exclude = [
@@ -81,42 +85,38 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Assume Python 3.9.
 target-version = "py39"
 
-[tool.pdm]
-[tool.pdm.scripts]
-_.env_file = "./.env"
-upload = "python -m twine upload -r bloqade dist/*"
-build = {cmd = "pdm build"}
-publish = {composite = ["build", "upload"]}
-test = {shell = "git clean -f && pytest tests"}
-coverage = {shell = "git clean -f && coverage run -m pytest tests/ && coverage xml && coverage report"}
-coverage-html = {shell = "git clean -f && coverage run -m pytest -x -vv tests/ && coverage html && open htmlcov/index.html"}
-doc = {cmd = "mkdocs serve"}
-doc_build = {cmd = "mkdocs build"}
-doc_deploy = {cmd = "pdm mike deploy --push --update-aliases dev"}
-
 [tool.jupytext]
 formats = "ipynb,py:percent"
 hide_notebook_metadata = false
 
-
 [dependency-groups]
 dev = [
-    "twine>=4.0.2",
-    "ipython>=8.12.0",
-    "black>=23.3.0",
-    "pytest>=7.3.1",
-    "mypy>=1.2.0",
-    "ipykernel>=6.22.0",
-    "jupyter>=1.0.0",
-    "ruff>=0.0.264",
-    "pre-commit>=3.3.1",
-    "coverage>=7.2.5",
-    "jupytext>=1.14.5",
-    "pytest-recording>=0.12.2",
-    "vcrpy==4.4.0",
-    "pyinstrument>=4.6.1",
-    "scikit-optimize>=0.9.0",
-    "matplotlib>=3.8.1",
+    "black>=24.10.0",
+    "coverage>=7.6.10",
+    "ipykernel>=6.29.5",
+    "ipython>=8.18.1",
+    "jupyter>=1.1.1",
+    "jupytext>=1.16.6",
+    "mypy>=1.14.1",
+    "pre-commit>=4.0.1",
+    "pytest-recording>=0.13.2",
+    "pytest>=8.3.4",
+    "ruff>=0.8.5",
+    "vcrpy>=7.0.0",
+    "pyinstrument>=5.0.0",
+    "scikit-optimize>=0.10.2",
+    "matplotlib>=3.9.4",
     "icecream>=2.1.3",
-    "tqdm>=4.66.4",
+    "tqdm>=4.67.1",
+    "rust-just>=1.39.0",
+]
+doc = [
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.1.9",
+    "mkdocstrings[python]>=0.21.2",
+    "mkdocs-minify-plugin>=0.6.4",
+    "mkdocs-jupyter>=0.24.1",
+    "mkdocs-gen-files>=0.5.0",
+    "mkdocs-literate-nav>=0.6.0",
+    "mike>=1.1.2",
 ]

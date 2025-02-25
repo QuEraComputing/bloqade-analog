@@ -1,12 +1,14 @@
-from itertools import repeat
-from beartype.typing import Optional, List, Dict, Set, Sequence, Union
-from bloqade.analog.builder.typing import ParamType
-from bloqade.analog.builder.base import Builder
-from bloqade.analog.builder.pragmas import Parallelizable, AddArgs, BatchAssignable
-from bloqade.analog.builder.backend import BackendRoute
-from numbers import Real
 from decimal import Decimal
+from numbers import Real
+from itertools import repeat
+
 import numpy as np
+from beartype.typing import Set, Dict, List, Union, Optional, Sequence
+
+from bloqade.analog.builder.base import Builder
+from bloqade.analog.builder.typing import ParamType
+from bloqade.analog.builder.backend import BackendRoute
+from bloqade.analog.builder.pragmas import AddArgs, Parallelizable, BatchAssignable
 
 
 class CastParams:

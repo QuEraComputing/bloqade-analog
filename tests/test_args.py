@@ -1,5 +1,6 @@
-from bloqade.analog import start, var
 import pytest
+
+from bloqade.analog import var, start
 
 
 def test_options_1():

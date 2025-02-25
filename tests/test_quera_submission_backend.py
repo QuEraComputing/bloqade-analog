@@ -1,16 +1,16 @@
+from unittest.mock import MagicMock
+
 import pytest
 
 import bloqade.analog.submission.quera
 import bloqade.analog.submission.ir.task_specification as task_spec
+from bloqade.analog.submission.base import ValidationError
+from bloqade.analog.submission.capabilities import get_capabilities
+from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
 from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )
-from bloqade.analog.submission.base import ValidationError
-from bloqade.analog.submission.capabilities import get_capabilities
-from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
-
-from unittest.mock import MagicMock
 
 
 def get_task_ir():

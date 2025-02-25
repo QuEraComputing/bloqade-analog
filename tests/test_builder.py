@@ -6,20 +6,19 @@
 #     prog = prog.location(i)
 # prog.linear(start=1.0, stop=2.0, duration="x")
 # import pytest
+# from bloqade.analog.ir.location import Square, Chain
+import numpy as np
+import pytest
+
 import bloqade.analog.ir as ir
-from bloqade.analog.builder import waveform
 
 # import bloqade.builder.backend as builder_backend
 import bloqade.analog.ir.routine.quera as quera
 import bloqade.analog.ir.routine.braket as braket
-
+from bloqade.analog import var, cast, start
+from bloqade.analog.ir import rabi, rydberg, detuning, hyperfine
+from bloqade.analog.builder import waveform
 from bloqade.analog.ir.control.waveform import to_waveform
-from bloqade.analog.ir import rydberg, detuning, hyperfine, rabi
-from bloqade.analog import start, cast, var
-
-# from bloqade.analog.ir.location import Square, Chain
-import numpy as np
-import pytest
 
 
 def test_assign_checks():

@@ -1,10 +1,11 @@
+import plum
+from beartype.typing import TYPE_CHECKING, List, Union, Optional
+
 from bloqade.analog.builder.base import Builder
 from bloqade.analog.builder.typing import ScalarType
-from beartype.typing import Union, List, Optional, TYPE_CHECKING
-import plum
 
 if TYPE_CHECKING:
-    from bloqade.analog.builder.spatial import Uniform, Location, Scale
+    from bloqade.analog.builder.spatial import Scale, Uniform, Location
 
 
 class Field(Builder):
