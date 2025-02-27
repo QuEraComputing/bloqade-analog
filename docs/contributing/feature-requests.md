@@ -4,7 +4,7 @@ Given that we are currently at the beginning of the development of
 the Bloqade python interface, we are open to suggestions about what
 features would be helpful to include in future package iterations.
 If you have a request for a new feature, please open an issue on our
-GitHub page: https://github.com/QuEraComputing/bloqade-python/issues
+GitHub page: https://github.com/QuEraComputing/bloqade-analog/issues
 
 We ask that the feature requests be as specific as possible. Please
 include the following information in your feature request:

@@ -3,33 +3,27 @@ site_url: https://bloqade.quera.com
 site_description: >-
   The neutral atom computing software development kit.
 
-repo_name: bloqade-python
-repo_url: https://github.com/QuEraComputing/bloqade-python
+repo_name: bloqade-analog
+repo_url: https://github.com/QuEraComputing/bloqade-analog
 edit_uri: 'edit/main/docs/'
 
 # Page tree
 nav:
   - Home:
     - index.md
+    - Migration Guide to Bloqade Analog: home/migration.md
     - Quickstart: home/quick_start.md
     - Background: home/background.md
-    - Geometry: home/geometry.md
-    - Waveforms: home/waveforms.md
-    - Visualization: home/visualization.md
-    - Emulation: home/emulation.md
-    - Submission: home/submission.md
     - Gotchas: home/gotchas.md
-  - Tutorials: 'https://queracomputing.github.io/bloqade-python-examples/latest/'
-  - Reference:
+  - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/dev/'
+  - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
+  - Bloqade Digital: 'https://queracomputing.github.io/bloqade/latest/'
+  - Blog: https://queracomputing.github.io/bloqade/latest/blog/
+  - Analog Reference:
     - Builder Overview: reference/overview.md
     - Builder Standard Diagram: reference/standard.md
     - Hardware Reference: reference/hardware-capabilities.md
     - API References : reference/bloqade/
-  - Blog:
-    - 2023:
-      - blog/2023/index.md
-      - Introducing Bloqade SDK for Python: blog/2023/posts/bloqade-release.md
-  - License: https://github.com/QuEraComputing/bloqade-python/blob/main/LICENSE
   - Contributing:
     - contributing/index.md
     - Reporting Bugs: contributing/reporting-a-bug.md
@@ -40,6 +34,7 @@ nav:
     - Community Slack: contributing/community-slack.md
     - Asking a Question: contributing/asking-a-question.md
     - Providing Feedback: contributing/providing-feedback.md
+  - QuEra Computing: 'https://quera.com'
 
 copyright: Copyright &copy; 2023 - QuEra Computing Inc.
 theme:
@@ -82,7 +77,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   favicon: assets/favicon.ico
-  logo: assets/logo-dark.png
+  logo: assets/analog-logo-dark.svg
   font:
     text: Lato
 extra_css:
@@ -121,9 +116,9 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/QuEraComputing/bloqade-python
+      link: https://github.com/QuEraComputing/bloqade-analog
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/bloqade/
+      link: https://pypi.org/project/bloqade-analog/
     # TODO: make a mastodon account!
     # - icon: fontawesome/brands/mastodon
     #   link: https://fosstodon.org/@squidfunk

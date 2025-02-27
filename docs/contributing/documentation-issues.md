@@ -2,7 +2,7 @@
 
 We are always looking to improve our documentation. If you find
 a typo or think something is unclear, please open an issue on
-our GitHub page: https://github.com/QuEraComputing/bloqade-python/issues
+our GitHub page: https://github.com/QuEraComputing/bloqade-analog/issues
 
 For typos or other minor problems, create an issue that contains
 a link to the specific page that includes the problem, along with

@@ -35,7 +35,7 @@ The same goes for [IPython](https://ipython.readthedocs.io/en/stable/):
 You can import pre-defined geometries based on [Bravais lattices](https://en.wikipedia.org/wiki/Bravais_lattice) from `bloqade.atom_arrangement`. You may also specify a lattice spacing which dictates the spacing between the atoms as well as the number of atom sites in a certain direction.
 
 ```python
-from bloqade.atom_arrangement import Square, Kagome
+from bloqade.analog.atom_arrangement import Square, Kagome
 
 simple_geometry = Square(2, 4, lattice_spacing = 4.0)
 more_complex_geometry = Kagome(2, 2, lattice_spacing = 2.0)
@@ -54,7 +54,7 @@ more_complex_geometry.show()
 You can also add positions to a pre-defined geometry:
 
 ```python
-from bloqade.atom_arrangement import Square
+from bloqade.analog.atom_arrangement import Square
 
 base_geometry = Square(2)
 geometry_with_my_positions = base_geometry.add_position([(10,10), (20,20)])
@@ -63,7 +63,7 @@ geometry_with_my_positions = base_geometry.add_position([(10,10), (20,20)])
 As well as apply defects via `.apply_defect_density`. In the example below we apply a defect with a probability of 0.2:
 
 ```python
-from bloqade.atom_arrangement import Square, Kagome
+from bloqade.analog.atom_arrangement import Square, Kagome
 
 more_complex_geometry = Kagome(2, 2, lattice_spacing = 2.0)
 defective_geometry = more_complex_geometry.apply_defect_density(0.2)
@@ -219,7 +219,7 @@ pulse_sequence.show()
 And when you're content with it you just `.apply()` it on the geometries of your choice:
 
 ```python
-from bloqade.atom_arrangement import Honeycomb, Kagome
+from bloqade.analog.atom_arrangement import Honeycomb, Kagome
 
 geometry_1 = Honeycomb(2, lattice_spacing = 6.0)
 geometry_2 = Kagome(2, lattice_spacing = 6.0)
