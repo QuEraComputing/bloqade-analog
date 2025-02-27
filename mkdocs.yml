@@ -14,15 +14,15 @@ nav:
     - Quickstart: home/quick_start.md
     - Background: home/background.md
     - Gotchas: home/gotchas.md
-    - Builder Overview: reference/overview.md
-    - Builder Standard Diagram: reference/standard.md
-    - Hardware Reference: reference/hardware-capabilities.md
-    - API References : reference/bloqade/
   - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/latest/'
   - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
   - Bloqade Digital: 'https://queracomputing.github.io/bloqade/latest/'
   - Blog: https://queracomputing.github.io/bloqade/latest/blog/
-  - QuEra Computing: 'https://quera.com'
+  - Analog Reference:
+    - Builder Overview: reference/overview.md
+    - Builder Standard Diagram: reference/standard.md
+    - Hardware Reference: reference/hardware-capabilities.md
+    - API References : reference/bloqade/
   - Contributing:
     - contributing/index.md
     - Reporting Bugs: contributing/reporting-a-bug.md
@@ -33,6 +33,7 @@ nav:
     - Community Slack: contributing/community-slack.md
     - Asking a Question: contributing/asking-a-question.md
     - Providing Feedback: contributing/providing-feedback.md
+  - QuEra Computing: 'https://quera.com'
 
 copyright: Copyright &copy; 2023 - QuEra Computing Inc.
 theme:
