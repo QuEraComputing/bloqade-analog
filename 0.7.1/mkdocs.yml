@@ -21,7 +21,7 @@ nav:
     - Design Philosophy and Architecture: contributing/design-philosophy-and-architecture.md
     - Community Slack: contributing/community-slack.md
     - Asking a Question: 'contributing/asking-a-question.md'
-  - Tutorials: 'https://queracomputing.github.io/bloqade-python-examples/latest/'
+  - Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/latest/'
   - Reference:
     - Builder workflow : tree/builder.md
     - API References : reference/bloqade/
