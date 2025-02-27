@@ -13,6 +13,10 @@
 [![Documentation](https://img.shields.io/badge/Documentation-6437FF)](https://queracomputing.github.io/bloqade-analog/latest/)
 [![DOI](https://zenodo.org/badge/629628885.svg)](https://zenodo.org/doi/10.5281/zenodo.11114109)
 
+!!! warning
+    Bloqade has been restructed to make room for new features and improvements. Please refer to the [migration guide](https://queracomputing.github.io/bloqade-analog/dev/home/migration.html) for more information.
+
+
 # Welcome to Bloqade -- QuEra's Neutral Atom SDK
 
 ## What is Bloqade?

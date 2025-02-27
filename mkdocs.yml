@@ -11,6 +11,7 @@ edit_uri: 'edit/main/docs/'
 nav:
   - Home:
     - index.md
+    - Migration Guide to Bloqade Analog: home/migration.md
     - Quickstart: home/quick_start.md
     - Background: home/background.md
     - Gotchas: home/gotchas.md
