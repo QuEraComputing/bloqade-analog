@@ -76,7 +76,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   favicon: assets/favicon.ico
-  logo: assets/analog-logo-dark.png
+  logo: assets/analog-logo-dark.svg
   font:
     text: Lato
 extra_css:
@@ -117,7 +117,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/QuEraComputing/bloqade-analog
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/bloqade/
+      link: https://pypi.org/project/bloqade-analog/
     # TODO: make a mastodon account!
     # - icon: fontawesome/brands/mastodon
     #   link: https://fosstodon.org/@squidfunk
