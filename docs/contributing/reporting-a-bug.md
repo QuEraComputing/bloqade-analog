@@ -5,7 +5,7 @@ current implementation. We are continuously striving to
 improve the stability of Bloqade. As such, we encourage
 our users to report all bugs they find. To do this, we
 ask you to submit an issue to our GitHub page:
-https://github.com/QuEraComputing/bloqade-python/issues
+https://github.com/QuEraComputing/bloqade-analog/issues
 
 Please include the following information in your bug report:
 

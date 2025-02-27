@@ -1,21 +1,16 @@
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo.png">
-  <source srcset="docs/assets/logo.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/analog-logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/analog-logo.svg">
+  <img src="docs/assets/logo.svg" alt="Bloqade Logo">
 </picture>
 </div>
 
-<div align="center">
-  <img src="docs/assets/logo.png" alt="Bloqade Logo">
-</picture>
-</div>
-
-[![Latest Version](https://img.shields.io/pypi/v/bloqade.svg)](https://pypi.python.org/pypi/bloqade)
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/bloqade.svg)](https://pypi.python.org/pypi/bloqade)
-[![codecov](https://codecov.io/github/QuEraComputing/bloqade-python/graph/badge.svg?token=4YJFc45Jyl)](https://codecov.io/github/QuEraComputing/bloqade-python)
-![CI](https://github.com/QuEraComputing/bloqade-python/actions/workflows/ci.yml/badge.svg)
-[![Documentation](https://img.shields.io/badge/Documentation-6437FF)](https://queracomputing.github.io/bloqade-python/latest/)
+[![Latest Version](https://img.shields.io/pypi/v/bloqade.svg)](https://pypi.python.org/pypi/bloqade-analog)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/bloqade.svg)](https://pypi.python.org/pypi/bloqade-analog)
+[![codecov](https://codecov.io/github/QuEraComputing/bloqade-analog/graph/badge.svg?token=4YJFc45Jyl)](https://codecov.io/github/QuEraComputing/bloqade-analog)
+![CI](https://github.com/QuEraComputing/bloqade-analog/actions/workflows/ci.yml/badge.svg)
+[![Documentation](https://img.shields.io/badge/Documentation-6437FF)](https://queracomputing.github.io/bloqade-analog/latest/)
 [![DOI](https://zenodo.org/badge/629628885.svg)](https://zenodo.org/doi/10.5281/zenodo.11114109)
 
 # Welcome to Bloqade -- QuEra's Neutral Atom SDK
@@ -47,12 +42,12 @@ In order to better understand more about Bloqade users we would kindly ask that 
 You can install the package with `pip` in your Python environment of choice via:
 
 ```sh
-pip install bloqade
+pip install bloqade-analog
 ```
 
 ## Documentation
 
-If you're already convinced about what Bloqade brings to the table, feel free to take a look at our documentation with examples [here](https://queracomputing.github.io/bloqade-python/latest/).
+If you're already convinced about what Bloqade brings to the table, feel free to take a look at our documentation with examples [here](https://queracomputing.github.io/bloqade-analog/latest/).
 
 If you aren't convinced, keep scrolling!
 
@@ -80,8 +75,8 @@ Let Bloqade handle keeping track of all the variations while you focus on becomi
 Did we mention you can throw your program at hardware and emulation and still keep your parameter sweeps?
 
 ```python
-from bloqade import var
-from bloqade.atom_arrangement import Square
+from bloqade.analog import var
+from bloqade.analog.atom_arrangement import Square
 
 import numpy as np
 
@@ -134,7 +129,7 @@ You can save any intermediate steps in your program construction, enabling you t
 Feel free to let your waveforms grow to your liking too!:
 
 ```python
-from bloqade import start
+from bloqade.analog import start
 
 # Save your intermediate steps any way you like
 initial_geometry = start.add_position((0, 0))
@@ -152,8 +147,8 @@ program_2 = target_rabi_wf.piecewise_linear(
 Want to focus on building one part of your program first before others (or, just want that same Bloqade.jl flavor?) We've got you covered:
 
 ```python
-from bloqade import piecewise_linear, var
-from bloqade.ir.location import Square
+from bloqade.analog import piecewise_linear, var
+from bloqade.analog.ir.location import Square
 import numpy as np
 
 # Create a geometry without worrying about pulses yet
@@ -204,7 +199,7 @@ program_with_few_atoms.parallelize(24).braket.aquila(24).run_async(100)
 
 Bloqade wouldn't exist if we weren't fortunate enough to obtain feedback from awesome members of our community such as yourself (:
 
-If you find a bug, have an idea, or find an issue with our documentation, please feel free to file an issue on the [Github repo itself](https://github.com/QuEraComputing/bloqade-python/issues/new/choose).
+If you find a bug, have an idea, or find an issue with our documentation, please feel free to file an issue on the [Github repo itself](https://github.com/QuEraComputing/bloqade-analog/issues/new/choose).
 
 After using/experimenting/tinkering/hacking with Bloqade it would also be helpful to us for you to fill out [this form](https://share.hsforms.com/1FJjYan2VQC6NfrQ5IPAcewdrwvd) which allows us to get some more detailed feedback.
 

@@ -17,7 +17,7 @@ date-released: '2024-05-04'
 doi: 10.5281/zenodo.11114110
 license:
 - cc-by-4.0
-repository-code: https://github.com/QuEraComputing/bloqade-python/tree/v0.15.11
-title: 'QuEraComputing/bloqade-python: v0.15.11'
+repository-code: https://github.com/QuEraComputing/bloqade-analog/tree/v0.15.11
+title: 'QuEraComputing/bloqade-analog: v0.15.11'
 type: software
 version: v0.15.11

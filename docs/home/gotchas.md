@@ -21,7 +21,7 @@ This is quite redundant and verbose, especially considering Bloqade offers a lar
 In the code above, we're just defining a 4x4 square lattice of atoms with 4.0 micrometers of spacing between them. This can be expressed as follows
 
 ```python
-from bloqade.atom_arrangement import Square
+from bloqade.analog.atom_arrangement import Square
 
 spacing = 4.0
 geometry = Square(4, lattice_spacing = spacing)

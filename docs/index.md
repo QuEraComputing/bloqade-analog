@@ -1,14 +1,14 @@
 <div align="center">
 <picture>
-  <img id="logo_light_mode" src="assets/logo.png" style="width: 70%" alt="Bloqade Logo">
-  <img id="logo_dark_mode" src="assets/logo-dark.png" style="width: 70%" alt="Bloqade Logo">
+  <img id="logo_light_mode" src="assets/analog-logo.svg" style="width: 70%" alt="Bloqade Logo">
+  <img id="logo_dark_mode" src="assets/analog-logo-dark.svg" style="width: 70%" alt="Bloqade Logo">
 </picture>
 </div>
 
 [![Latest Version](https://img.shields.io/pypi/v/bloqade.svg)](https://pypi.python.org/pypi/bloqade)
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/bloqade.svg)](https://pypi.python.org/pypi/bloqade)
-[![codecov](https://codecov.io/github/QuEraComputing/bloqade-python/graph/badge.svg?token=4YJFc45Jyl)](https://codecov.io/github/QuEraComputing/bloqade-python)
-![CI](https://github.com/QuEraComputing/bloqade-python/actions/workflows/ci.yml/badge.svg)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/bloqade-analog.svg)](https://pypi.python.org/pypi/bloqade-analog)
+[![codecov](https://codecov.io/github/QuEraComputing/bloqade-analog/graph/badge.svg?token=4YJFc45Jyl)](https://codecov.io/github/QuEraComputing/bloqade-analog)
+![CI](https://github.com/QuEraComputing/bloqade-analog/actions/workflows/ci.yml/badge.svg)
 
 # **Welcome to Bloqade**: QuEra's Neutral Atom SDK
 
@@ -31,7 +31,7 @@ Let's try a simple example where we drive a [Rabi oscillation][rabi-oscillation-
 We start by defining where our atoms go, otherwise known as the *atom geometry*. In this particular example we will use a small Honeycomb lattice:
 
 ```python
-from bloqade.atom_arrangement import Honeycomb
+from bloqade.analog.atom_arrangement import Honeycomb
 
 geometry = Honeycomb(2, lattice_spacing = 10.0)
 ```
@@ -125,7 +125,7 @@ If you want to try the above at once, we collected the above steps into the snip
 
 ```python
 from math import pi
-from bloqade.atom_arrangement import Honeycomb
+from bloqade.analog.atom_arrangement import Honeycomb
 
 geometry = Honeycomb(2, lattice_spacing = 10.0)
 rabi_program = (
@@ -156,7 +156,7 @@ hardware_bitstring_counts = hardware_results.report().counts()
 You can easily explore a number of common geometric lattices with Bloqade's `atom_arrangement`'s:
 
 ```python
-from bloqade.atom_arrangement import Lieb, Square, Chain, Kagome
+from bloqade.analog.atom_arrangement import Lieb, Square, Chain, Kagome
 
 geometry_1 = Lieb(3)
 geometry_2 = Square(2)
@@ -184,7 +184,7 @@ geometry = start.add_positions([(0,0), (6,0), (12,0)])
 Define waveforms for pulse sequences any way you like by either building (and chaining!) them immediately as part of your program:
 
 ```python
-from bloqade.atom_arrangement import Square
+from bloqade.analog.atom_arrangement import Square
 
 geometry = Square(2)
 target_rabi_amplitude = geometry.rydberg.rabi.amplitude.uniform
@@ -198,7 +198,7 @@ custom_rabi_amp_waveform = (
 Or building them separately and applying them later:
 
 ```python
-from bloqade.atom_arrangement import Square, Chain
+from bloqade.analog.atom_arrangement import Square, Chain
 
 geometry_1 = Square(3)
 geometry_2 = Chain(5)
@@ -215,7 +215,7 @@ program_2 = geometry_2.apply(pulse_sequence)
 Go from a fast and powerful emulator:
 
 ```python
-from bloqade.atom_arrangement import Square
+from bloqade.analog.atom_arrangement import Square
 from math import pi
 
 geometry = Square(3, lattice_spacing = 6.5)
@@ -277,7 +277,7 @@ task_number
 Want to just see some plots of your results? `.show()` will show you the way!
 
 ```python
-from bloqade.atom_arrangement import Square
+from bloqade.analog.atom_arrangement import Square
 
 rabi_amplitude_values = [0.0, 15.8, 15.8, 0.0]
 rabi_detuning_values = [-16.33, -16.33, 42.66, 42.66]
@@ -299,7 +299,7 @@ emulation_results.report().show()
 
 ## Contributing to Bloqade
 
-Bloqade is released under the [Apache License, Version 2.0](https://github.com/QuEraComputing/bloqade-python/blob/main/LICENSE). If you'd like the chance to shape the future of [neutral atom][neutral-atom-qubits] quantum computation, see our [Contributing Guide](contributing/index.md) for more info!
+Bloqade is released under the [Apache License, Version 2.0](https://github.com/QuEraComputing/bloqade-analog/blob/main/LICENSE). If you'd like the chance to shape the future of [neutral atom][neutral-atom-qubits] quantum computation, see our [Contributing Guide](contributing/index.md) for more info!
 
 [rabi-oscillation-wiki]: https://en.wikipedia.org/wiki/Rabi_cycle
 [neutral-atom-qubits]: home/background.md#neutral-atom-qubits

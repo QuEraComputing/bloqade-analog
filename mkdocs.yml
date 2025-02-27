@@ -3,8 +3,8 @@ site_url: https://bloqade.quera.com
 site_description: >-
   The neutral atom computing software development kit.
 
-repo_name: bloqade-python
-repo_url: https://github.com/QuEraComputing/bloqade-python
+repo_name: bloqade-analog
+repo_url: https://github.com/QuEraComputing/bloqade-analog
 edit_uri: 'edit/main/docs/'
 
 # Page tree
@@ -13,23 +13,16 @@ nav:
     - index.md
     - Quickstart: home/quick_start.md
     - Background: home/background.md
-    - Geometry: home/geometry.md
-    - Waveforms: home/waveforms.md
-    - Visualization: home/visualization.md
-    - Emulation: home/emulation.md
-    - Submission: home/submission.md
     - Gotchas: home/gotchas.md
-  - Tutorials: 'https://queracomputing.github.io/bloqade-python-examples/latest/'
-  - Reference:
     - Builder Overview: reference/overview.md
     - Builder Standard Diagram: reference/standard.md
     - Hardware Reference: reference/hardware-capabilities.md
     - API References : reference/bloqade/
-  - Blog:
-    - 2023:
-      - blog/2023/index.md
-      - Introducing Bloqade SDK for Python: blog/2023/posts/bloqade-release.md
-  - License: https://github.com/QuEraComputing/bloqade-python/blob/main/LICENSE
+  - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/latest/'
+  - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
+  - Bloqade Digital: 'https://queracomputing.github.io/bloqade/latest/'
+  - Blog: https://queracomputing.github.io/bloqade/latest/blog/
+  - QuEra Computing: 'https://quera.com'
   - Contributing:
     - contributing/index.md
     - Reporting Bugs: contributing/reporting-a-bug.md
@@ -121,7 +114,7 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/QuEraComputing/bloqade-python
+      link: https://github.com/QuEraComputing/bloqade-analog
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/bloqade/
     # TODO: make a mastodon account!
