@@ -10,6 +10,10 @@
 [![codecov](https://codecov.io/github/QuEraComputing/bloqade-analog/graph/badge.svg?token=4YJFc45Jyl)](https://codecov.io/github/QuEraComputing/bloqade-analog)
 ![CI](https://github.com/QuEraComputing/bloqade-analog/actions/workflows/ci.yml/badge.svg)
 
+> [!IMPORTANT]
+>
+> Bloqade has been restructured to make room for new features and improvements. Please refer to the [migration guide](./home/migration/) for more information.
+
 # **Welcome to Bloqade**: QuEra's Neutral Atom SDK
 
 ## What is Bloqade?
