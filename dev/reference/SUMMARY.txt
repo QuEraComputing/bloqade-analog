@@ -85,6 +85,7 @@
                 * [params](bloqade/analog/ir/routine/params.md)
                 * [quera](bloqade/analog/ir/routine/quera.md)
             * [scalar](bloqade/analog/ir/scalar.md)
+        * [migrate](bloqade/analog/migrate.md)
         * [serialize](bloqade/analog/serialize.md)
         * [submission](bloqade/analog/submission/index.md)
             * [base](bloqade/analog/submission/base.md)
