@@ -33,7 +33,7 @@ from bloqade.analog.atom_arrangement import Square
 ...
 ```
 
-## Migrating old bloqade json files
+## Migrating old bloqade JSON files
 
 If you have old bloqade JSON files, you will not be able to directly deserialize them anymore because of the package restructuring. Howver we have provided some tools to migrate those JSON files to be compatible with `bloqade-analog`. You can do this by running the following command in the command line for a single file:
 
