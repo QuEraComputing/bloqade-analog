@@ -33,6 +33,31 @@ from bloqade.analog.atom_arrangement import Square
 ...
 ```
 
+## Migrating old bloqade json files
+
+If you have old bloqade json files, you will not be able to directly deserialize them anymore because of the package restructuring. Howver we have provided some tools to migrate those JSON files to be compatible with `bloqade-analog`. You can do this by running the following command in the command line for a single file:
+
+```sh
+python -m bloqade.analog.migrate <path_to_old_json_file>
+```
+This will create a new file with the same name as the old file, but with `_analog` appended to the end of the filename. For example, if you have a file called `my_bloqade.json`, the new file will be called `my_bloqade_analog.json`. You can then use `load` to deserialize this file with the `bloqade-analog` package.
+
+Another option is to use the migration tool in a python script:
+
+```python
+from bloqade.analog.migrate import migrate
+
+ # set the indent level for the output file
+indent: int = ...
+# set to True if you want to overwrite the old file, otherwise the new file will be created with -analog appended to the end of the filename
+overwrite: bool = ...
+f
+or filename in ["file1.json", "file2.json", ...]:
+    migrate(filename, indent=indent, overwrite=overwrite)
+```
+This will migrate all the files in the list to the new format.
+
+
 ## Having trouble, comments, or concerns?
 
 Please open an issue on our [GitHub](https://github.com/QuEraComputing/bloqade-analog/issues)
