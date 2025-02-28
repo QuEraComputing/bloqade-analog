@@ -1,517 +1,517 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://bloqade.quera.com/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/blog/2023/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/blog/2023/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/blog/2023/posts/bloqade-release/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/blog/2023/posts/bloqade-release/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/asking-a-question/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/asking-a-question/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/code-of-conduct/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/code-of-conduct/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/community-slack/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/community-slack/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/design-philosophy-and-architecture/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/design-philosophy-and-architecture/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/developing-bloqade/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/developing-bloqade/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/documentation-issues/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/documentation-issues/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/feature-requests/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/feature-requests/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/providing-feedback/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/providing-feedback/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/contributing/reporting-a-bug/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/contributing/reporting-a-bug/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/hardware-capabilities/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/hardware-capabilities/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/overview/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/overview/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/standard/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/standard/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/atom_arrangement/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/atom_arrangement/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/constants/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/constants/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/factory/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/factory/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/serialize/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/serialize/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/common/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/common/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/common/assignment_scan/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/common/assignment_scan/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/common/is_constant/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/common/is_constant/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/common/is_hyperfine/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/common/is_hyperfine/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/common/scan_variables/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/common/scan_variables/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/python/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/python/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/analysis/python/waveform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/analysis/python/waveform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/args/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/args/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/assign/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/assign/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/coupling/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/coupling/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/drive/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/drive/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/field/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/field/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/parallelize/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/parallelize/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/pragmas/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/pragmas/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/route/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/route/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/sequence_builder/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/sequence_builder/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/spatial/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/spatial/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/start/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/start/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/typing/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/typing/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/waveform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/waveform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/backend/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/backend/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/backend/bloqade/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/backend/bloqade/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/backend/braket/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/backend/braket/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/backend/quera/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/backend/quera/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/parse/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/parse/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/parse/builder/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/parse/builder/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/parse/stream/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/parse/stream/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/builder/parse/trait/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/builder/parse/trait/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/sparse_operator/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/sparse_operator/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/ir/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/ir/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/ir/atom_type/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/ir/atom_type/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/ir/emulator/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/ir/emulator/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/ir/space/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/ir/space/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/emulate/ir/state_vector/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/emulate/ir/state_vector/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/analog_circuit/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/analog_circuit/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/scalar/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/scalar/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/control/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/control/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/control/field/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/control/field/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/control/pulse/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/control/pulse/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/control/sequence/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/control/sequence/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/control/waveform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/control/waveform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/base/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/base/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/bravais/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/bravais/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/list/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/list/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/quera_task_result/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/quera_task_result/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/location/transform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/location/transform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/base/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/base/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/bloqade/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/bloqade/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/braket/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/braket/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/params/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/params/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/ir/routine/quera/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/ir/routine/quera/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/base/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/base/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/braket/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/braket/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/load_config/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/load_config/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/mock/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/mock/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/quera/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/quera/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/braket/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/braket/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/capabilities/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/capabilities/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/parallel/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/parallel/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/task_results/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/task_results/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/submission/ir/task_specification/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/submission/ir/task_specification/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/base/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/base/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/batch/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/batch/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/bloqade/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/bloqade/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/braket/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/braket/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/braket_simulator/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/braket_simulator/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/task/quera/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/task/quera/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/common/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/common/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/common/assign_variables/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/common/assign_variables/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/common/normalize/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/common/normalize/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/python/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/python/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/reference/bloqade/transform/python/waveform/</loc>
+         <loc>https://queracomputing.github.io/bloqade-analog/reference/bloqade/transform/python/waveform/</loc>
          <lastmod>2023-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
