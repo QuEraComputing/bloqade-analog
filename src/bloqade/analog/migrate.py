@@ -58,9 +58,11 @@ def migrate(
 def _entry():
     import argparse
 
+    import tqdm
+
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("filename", type=str)
+    parser.add_argument("filenames", type=str, nargs="*")
     parser.add_argument("--indent", type=int, default=None)
     parser.add_argument(
         "--overwrite",
@@ -70,9 +72,8 @@ def _entry():
     )
 
     args = parser.parse_args()
-    print(args.overwrite)
-    migrate(args.filename, args.indent, args.overwrite)
-    print(f"Converted {args.filename}")
+    for filename in tqdm.tqdm(args.filenames):
+        migrate(filename, args.indent, args.overwrite)
 
 
 if __name__ == "__main__":
