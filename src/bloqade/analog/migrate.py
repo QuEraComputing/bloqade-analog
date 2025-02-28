@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import IO, Any, Dict, List
 from dataclasses import field, dataclass
 
 import simplejson as json
@@ -26,7 +26,7 @@ class JSONWalker:
         if isinstance(obj, dict):
             return self.walk_dict(obj)
         elif isinstance(obj, list):
-            return [self.walk(item) for item in obj]
+            return list(map(self.walk, obj))
         else:
             return obj
 
@@ -36,23 +36,22 @@ class JSONWalker:
         return new_obj, self.has_done_something
 
 
+def _migrate(input_oi: IO[str], output_oi: IO[str], indent: int | None = None):
+    obj = json.load(input_oi)
+    new_obj, has_done_something = JSONWalker().convert(obj)
+
+    if has_done_something:
+        json.dump(new_obj, output_oi, indent=indent)
+
+
 def migrate(
     filename: str,
     indent: int | None = None,
     overwrite: bool = False,
 ):
-
-    with open(filename, "r") as io:
-        obj = json.load(io)
-        walker = JSONWalker()
-        new_obj, has_done_something = walker.convert(obj)
-
-    if has_done_something:
-        new_filename = (
-            filename if overwrite else filename.replace(".json", "-analog.json")
-        )
-        with open(new_filename, "w") as io:
-            json.dump(new_obj, io, indent=indent)
+    new_filename = filename if overwrite else filename.replace(".json", "-analog.json")
+    with open(filename, "r") as in_io, open(new_filename, "w") as out_io:
+        _migrate(in_io, out_io, indent)
 
 
 def _entry():

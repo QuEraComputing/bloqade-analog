@@ -1,8 +1,12 @@
-from bloqade.analog.migrate import JSONWalker
+import io
+
+import simplejson as json
+
+from bloqade.analog.migrate import _migrate
 
 
 def test_walk_dict():
-    walker = JSONWalker()
+
     obj = {
         "key1": "value1",
         "bloqade.key2": "value2",
@@ -19,5 +23,12 @@ def test_walk_dict():
         "list": [{"key6": "value6"}, {"bloqade.analog.key7": "value7"}],
     }
 
-    result = walker.walk_dict(obj)
-    assert result == expected
+    obj_str = json.dumps(obj)
+    expected_str = json.dumps(expected)
+
+    in_io = io.StringIO(obj_str)
+    out_io = io.StringIO()
+
+    _migrate(in_io, out_io)
+
+    assert out_io.getvalue() == expected_str
