@@ -40,7 +40,7 @@ If you have old bloqade JSON files, you will not be able to directly deserialize
 ```sh
 python -m bloqade.analog.migrate <path_to_old_json_file>
 ```
-This will create a new file with the same name as the old file, but with `_analog` appended to the end of the filename. For example, if you have a file called `my_bloqade.json`, the new file will be called `my_bloqade_analog.json`. You can then use `load` to deserialize this file with the `bloqade-analog` package. There are other options for converting the file, such as setting the indent level for the output file or overwriting the old file. You can see all the options by running:
+This will create a new file with the same name as the old file, but with `_analog` appended to the end of the filename. For example, if you have a file called `my_bloqade.json`, the new file will be called `my_bloqade-analog.json`. You can then use `load` to deserialize this file with the `bloqade-analog` package. There are other options for converting the file, such as setting the indent level for the output file or overwriting the old file. You can see all the options by running:
 
 ```sh
 python -m bloqade.analog.migrate --help
