@@ -1,523 +1,523 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://bloqade.quera.com/dev/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/asking-a-question/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/asking-a-question/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/code-of-conduct/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/code-of-conduct/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/community-slack/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/community-slack/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/design-philosophy-and-architecture/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/design-philosophy-and-architecture/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/developing-bloqade/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/developing-bloqade/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/documentation-issues/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/documentation-issues/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/feature-requests/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/feature-requests/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/providing-feedback/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/providing-feedback/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/contributing/reporting-a-bug/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/contributing/reporting-a-bug/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/background/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/background/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/emulation/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/emulation/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/geometry/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/geometry/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/gotchas/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/gotchas/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/migration/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/migration/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/quick_start/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/quick_start/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/submission/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/submission/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/visualization/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/visualization/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/home/waveforms/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/home/waveforms/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/hardware-capabilities/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/hardware-capabilities/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/overview/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/overview/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/standard/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/standard/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/atom_arrangement/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/atom_arrangement/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/constants/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/constants/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/factory/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/factory/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/migrate/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/migrate/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/serialize/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/serialize/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/args/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/args/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/assign/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/assign/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/coupling/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/coupling/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/drive/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/drive/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/field/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/field/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/parallelize/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/parallelize/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/pragmas/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/pragmas/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/route/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/route/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/sequence_builder/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/sequence_builder/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/spatial/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/spatial/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/start/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/start/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/typing/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/typing/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/waveform/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/waveform/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/backend/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/backend/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/backend/bloqade/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/backend/bloqade/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/backend/braket/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/backend/braket/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/backend/quera/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/backend/quera/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/parse/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/parse/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/parse/builder/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/parse/builder/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/parse/stream/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/parse/stream/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/builder/parse/trait/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/builder/parse/trait/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/assignment_scan/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/assignment_scan/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/check_slices/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/check_slices/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/is_constant/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/is_constant/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/is_hyperfine/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/is_hyperfine/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/scan_channels/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/scan_channels/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/common/scan_variables/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/common/scan_variables/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/hardware/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/hardware/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/hardware/channels/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/hardware/channels/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/hardware/lattice/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/hardware/lattice/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/hardware/piecewise_constant/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/hardware/piecewise_constant/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/hardware/piecewise_linear/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/hardware/piecewise_linear/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/python/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/python/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/analysis/python/waveform/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/analysis/python/waveform/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/emulator/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/emulator/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/hardware/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/hardware/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/hardware/components/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/hardware/components/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/hardware/define/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/hardware/define/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/passes/hardware/units/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/passes/hardware/units/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/add_padding/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/add_padding/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/assign_to_literal/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/assign_to_literal/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/assign_variables/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/assign_variables/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/canonicalize/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/canonicalize/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/common/flatten/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/common/flatten/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/python/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/python/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/compiler/rewrite/python/waveform/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/compiler/rewrite/python/waveform/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/sparse_operator/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/sparse_operator/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/ir/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/ir/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/ir/atom_type/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/ir/atom_type/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/ir/emulator/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/ir/emulator/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/ir/space/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/ir/space/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/emulate/ir/state_vector/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/emulate/ir/state_vector/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/analog_circuit/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/analog_circuit/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/scalar/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/scalar/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/field/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/field/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/pulse/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/pulse/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/sequence/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/sequence/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/waveform/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/waveform/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/traits/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/traits/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/traits/append/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/traits/append/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/traits/canonicalize/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/traits/canonicalize/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/traits/hash/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/traits/hash/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/control/traits/slice/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/control/traits/slice/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/location/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/location/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/location/bravais/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/location/bravais/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/location/location/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/location/location/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/base/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/base/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/bloqade/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/bloqade/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/braket/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/braket/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/params/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/params/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/ir/routine/quera/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/ir/routine/quera/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/base/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/base/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/braket/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/braket/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/load_config/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/load_config/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/mock/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/mock/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/quera/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/quera/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/braket/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/braket/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/capabilities/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/capabilities/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/parallel/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/parallel/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/task_results/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/task_results/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/submission/ir/task_specification/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/submission/ir/task_specification/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/base/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/base/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/batch/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/batch/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/bloqade/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/bloqade/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/braket/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/braket/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/braket_simulator/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/braket_simulator/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
     <url>
-         <loc>https://bloqade.quera.com/dev/reference/bloqade/analog/task/quera/</loc>
+         <loc>https://github.com/QuEraComputing/bloqade-analog/dev/reference/bloqade/analog/task/quera/</loc>
          <lastmod>2025-02-28</lastmod>
     </url>
 </urlset>
