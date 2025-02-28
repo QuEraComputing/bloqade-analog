@@ -1,5 +1,5 @@
 site_name: The Neutral Atom SDK
-site_url: https://bloqade.quera.com
+site_url: https://github.com/QuEraComputing/bloqade-analog
 site_description: >-
   The neutral atom computing software development kit.
 
@@ -9,16 +9,17 @@ edit_uri: 'edit/main/docs/'
 
 # Page tree
 nav:
-  - Home:
+  - Home: 'https://queracomputing.github.io/bloqade/latest/'
+  - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
+  - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/dev/'
+  - Bloqade Analog:
     - index.md
     - Migration Guide to Bloqade Analog: home/migration.md
     - Quickstart: home/quick_start.md
     - Background: home/background.md
     - Gotchas: home/gotchas.md
-  - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/dev/'
-  - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
-  - Bloqade Digital: 'https://queracomputing.github.io/bloqade/latest/'
-  - Blog: https://queracomputing.github.io/bloqade/latest/blog/
+  - Blog: 'https://queracomputing.github.io/bloqade/latest/blog/'
+  - QuEra Computing: 'https://quera.com'
   - Analog Reference:
     - Builder Overview: reference/overview.md
     - Builder Standard Diagram: reference/standard.md
@@ -34,7 +35,6 @@ nav:
     - Community Slack: contributing/community-slack.md
     - Asking a Question: contributing/asking-a-question.md
     - Providing Feedback: contributing/providing-feedback.md
-  - QuEra Computing: 'https://quera.com'
 
 copyright: Copyright &copy; 2023 - QuEra Computing Inc.
 theme:
