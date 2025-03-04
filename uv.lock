@@ -283,7 +283,7 @@ css = [
 
 [[package]]
 name = "bloqade-analog"
-version = "0.16.0"
+version = "0.16.1"
 source = { editable = "." }
 dependencies = [
     { name = "amazon-braket-sdk" },
@@ -341,7 +341,7 @@ requires-dist = [
     { name = "bokeh", specifier = ">=3.2.2" },
     { name = "juliacall", specifier = ">=0.9.14" },
     { name = "numba", specifier = ">=0.58.0" },
-    { name = "numpy", specifier = ">=2.0.2" },
+    { name = "numpy", specifier = ">=1.26.0" },
     { name = "pandas", specifier = ">=2.1.0" },
     { name = "plotext", specifier = ">=5.2.8" },
     { name = "plum-dispatch", specifier = ">=2.2.2" },
