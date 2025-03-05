@@ -56,7 +56,7 @@ __all__ = [
     "piecewise_constant",
     "linear",
     "constant",
-    "set_print_depth",
+    "tree_depth",
     "load",
     "save",
     "loads",
