@@ -176,7 +176,6 @@ cython_debug/
 .pdm-python
 main.py
 *.ipynb
-*.json
 .ruff_cache
 
 .mock_state.txt
