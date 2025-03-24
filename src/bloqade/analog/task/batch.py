@@ -446,10 +446,10 @@ class RemoteBatch(Serializable, Filter):
         # offline, non-blocking
         tid = []
         data = []
-        for int, task in self.tasks.items():
-            tid.append(int)
+        for task_num, task in self.tasks.items():
+            tid.append(task_num)
 
-            dat = [None, None, None]
+            dat: list[int | str | None] = [None, None, None]
             dat[0] = task.task_id
             if task.task_result_ir is not None:
                 dat[1] = task.task_result_ir.task_status.name
