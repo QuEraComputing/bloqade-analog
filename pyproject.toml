@@ -1,6 +1,6 @@
 [project]
 name = "bloqade-analog"
-version = "0.17.0-DEV"
+version = "0.16.3"
 description = "Analog neutral atom software development kit"
 authors = [
     { name = "Roger-luo", email = "rluo@quera.com" },
