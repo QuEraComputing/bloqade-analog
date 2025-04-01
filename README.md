@@ -16,7 +16,7 @@
 
 > [!IMPORTANT]
 >
-> Bloqade has been restructured to make room for new features and improvements. Please refer to the [migration guide](https://bloqade.quera.com/dev/home/migration/) for more information.
+> Bloqade has been restructured to make room for new features and improvements. Please refer to the [migration guide](https://queracomputing.github.io/bloqade-analog/latest/home/migration/) for more information.
 
 
 # Welcome to Bloqade -- QuEra's Neutral Atom SDK
