@@ -1,5 +1,6 @@
 import json
 import time
+from typing import TypeVar
 from collections import OrderedDict, namedtuple
 
 from beartype import beartype
@@ -7,6 +8,7 @@ from requests import Response, request
 from beartype.typing import Any, Dict, List, Tuple, Union, Optional, NamedTuple
 from pydantic.v1.dataclasses import dataclass
 
+from bloqade.analog.task.base import CustomRemoteTaskABC
 from bloqade.analog.task.batch import RemoteBatch
 from bloqade.analog.task.quera import QuEraTask
 from bloqade.analog.builder.typing import LiteralType
@@ -49,7 +51,7 @@ class QuEraServiceOptions(RoutineBase):
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)
 class CustomSubmissionRoutine(RoutineBase):
-    def _compile(
+    def _compile_single(
         self,
         shots: int,
         use_experimental: bool = False,
@@ -150,7 +152,7 @@ class CustomSubmissionRoutine(RoutineBase):
             )
 
         out = []
-        for metadata, task_ir in self._compile(shots, use_experimental, args):
+        for metadata, task_ir in self._compile_single(shots, use_experimental, args):
             json_request_body = json_body_template.format(
                 task_ir=task_ir.json(exclude_none=True, exclude_unset=True)
             )
@@ -160,6 +162,139 @@ class CustomSubmissionRoutine(RoutineBase):
             time.sleep(sleep_time)
 
         return out
+
+    RemoteTaskType = TypeVar("RemoteTaskType", bound=CustomRemoteTaskABC)
+
+    def _compile_custom_batch(
+        self,
+        shots: int,
+        RemoteTask: type[RemoteTaskType],
+        use_experimental: bool = False,
+        args: Tuple[LiteralType, ...] = (),
+        name: Optional[str] = None,
+    ) -> RemoteBatch:
+        from bloqade.analog.submission.capabilities import get_capabilities
+        from bloqade.analog.compiler.passes.hardware import (
+            assign_circuit,
+            analyze_channels,
+            generate_ahs_code,
+            generate_quera_ir,
+            validate_waveforms,
+            canonicalize_circuit,
+        )
+
+        if not issubclass(RemoteTask, CustomRemoteTaskABC):
+            raise TypeError(f"{RemoteTask} must be a subclass of CustomRemoteTaskABC.")
+
+        circuit, params = self.circuit, self.params
+        capabilities = get_capabilities(use_experimental)
+
+        tasks = OrderedDict()
+
+        for task_number, batch_params in enumerate(params.batch_assignments(*args)):
+            assignments = {**batch_params, **params.static_params}
+            final_circuit, metadata = assign_circuit(circuit, assignments)
+
+            level_couplings = analyze_channels(final_circuit)
+            final_circuit = canonicalize_circuit(final_circuit, level_couplings)
+
+            validate_waveforms(level_couplings, final_circuit)
+            ahs_components = generate_ahs_code(
+                capabilities, level_couplings, final_circuit
+            )
+
+            task_ir = generate_quera_ir(ahs_components, shots).discretize(capabilities)
+
+            tasks[task_number] = RemoteTask.from_compile_results(
+                task_ir,
+                metadata,
+                ahs_components.lattice_data.parallel_decoder,
+            )
+
+        batch = RemoteBatch(source=self.source, tasks=tasks, name=name)
+
+        return batch
+
+    @beartype
+    def run_async(
+        self,
+        shots: int,
+        RemoteTask: type[RemoteTaskType],
+        args: Tuple[LiteralType, ...] = (),
+        name: Optional[str] = None,
+        use_experimental: bool = False,
+        shuffle: bool = False,
+        **kwargs,
+    ) -> RemoteBatch:
+        """
+        Compile to a RemoteBatch, which contain
+            QuEra backend specific tasks,
+            and run_async through QuEra service.
+
+        Args:
+            shots (int): number of shots
+            args (Tuple): additional arguments
+            name (str): custom name of the batch
+            shuffle (bool): shuffle the order of jobs
+
+        Return:
+            RemoteBatch
+
+        """
+        batch = self._compile_custom_batch(
+            shots, RemoteTask, use_experimental, args, name
+        )
+        batch._submit(shuffle, **kwargs)
+        return batch
+
+    @beartype
+    def run(
+        self,
+        shots: int,
+        RemoteTask: type[RemoteTaskType],
+        args: Tuple[LiteralType, ...] = (),
+        name: Optional[str] = None,
+        use_experimental: bool = False,
+        shuffle: bool = False,
+        **kwargs,
+    ) -> RemoteBatch:
+        """Run the custom task and return the result.
+
+        Args:
+            shots (int): number of shots
+            RemoteTask (type): type of the remote task, must subclass of CustomRemoteTaskABC
+            args (Tuple): additional arguments for remaining un
+            name (str): name of the batch object
+            shuffle (bool): shuffle the order of jobs
+        """
+        if not callable(getattr(RemoteTask, "pull", None)):
+            raise TypeError(
+                f"{RemoteTask} must have a `pull` method for executing `run`."
+            )
+
+        batch = self.run_async(
+            shots, RemoteTask, args, name, use_experimental, shuffle, **kwargs
+        )
+        batch.pull()
+        return batch
+
+    @beartype
+    def __call__(
+        self,
+        *args: LiteralType,
+        RemoteTask: type[RemoteTaskType] | None = None,
+        shots: int = 1,
+        name: Optional[str] = None,
+        use_experimental: bool = False,
+        shuffle: bool = False,
+        **kwargs,
+    ) -> RemoteBatch:
+        if RemoteTask is None:
+            raise ValueError("RemoteTask must be provided for custom submission.")
+
+        return self.run(
+            shots, RemoteTask, args, name, use_experimental, shuffle, **kwargs
+        )
 
 
 @dataclass(frozen=True, config=__pydantic_dataclass_config__)

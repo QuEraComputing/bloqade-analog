@@ -1,3 +1,4 @@
+import abc
 import datetime
 from typing import Any
 from numbers import Number
@@ -12,11 +13,13 @@ from pydantic.v1.dataclasses import dataclass
 
 from bloqade.analog.serialize import Serializer
 from bloqade.analog.visualization import display_report
+from bloqade.analog.builder.typing import ParamType
 from bloqade.analog.submission.ir.parallel import ParallelDecoder
 from bloqade.analog.submission.ir.task_results import (
     QuEraTaskResults,
     QuEraTaskStatusCode,
 )
+from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 
 
 @Serializer.register
@@ -95,6 +98,77 @@ class RemoteTask(Task):
 
     def _result_exists(self) -> bool:
         raise NotImplementedError
+
+
+class CustomRemoteTaskABC(abc.ABC):
+
+    @classmethod
+    @abc.abstractmethod
+    def from_compile_results(
+        cls,
+        task_ir: QuEraTaskSpecification,
+        metadata: Dict[str, ParamType],
+        parallel_decoder: Optional[ParallelDecoder],
+    ): ...
+
+    @property
+    @abc.abstractmethod
+    def geometry(self) -> Geometry: ...
+
+    @property
+    @abc.abstractmethod
+    def parallel_decoder(self) -> ParallelDecoder: ...
+
+    @property
+    @abc.abstractmethod
+    def metadata(self) -> Dict[str, ParamType]: ...
+
+    @property
+    def task_result_ir(self) -> QuEraTaskResults | None:
+        if not hasattr(self, "_task_result_ir"):
+            self._task_result_ir = QuEraTaskResults(
+                task_status=QuEraTaskStatusCode.Unaccepted
+            )
+
+        if self._result_exists():
+            self._task_result_ir = self.result()
+
+        return self._task_result_ir
+
+    @task_result_ir.setter
+    def set_task_result(self, task_result):
+        self._task_result_ir = task_result
+
+    @property
+    @abc.abstractmethod
+    def task_id(self) -> str:
+        pass
+
+    @property
+    @abc.abstractmethod
+    def task_ir(self) -> QuEraTaskSpecification: ...
+
+    @abc.abstractmethod
+    def result(self) -> QuEraTaskResults: ...
+
+    @abc.abstractmethod
+    def _result_exists(self) -> bool: ...
+
+    @abc.abstractmethod
+    def fetch(self) -> None: ...
+
+    def status(self) -> QuEraTaskStatusCode:
+        if self._result_exists():
+            return self.result().task_status
+        else:
+            raise RuntimeError("Result does not exist yet.")
+
+    @abc.abstractmethod
+    def _submit(self): ...
+
+    def submit(self, force: bool = False):
+        if not self._result_exists() or force:
+            self._submit()
 
 
 class LocalTask(Task):

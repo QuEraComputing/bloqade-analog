@@ -17,7 +17,7 @@ from beartype import beartype
 from beartype.typing import Any, Dict, List, Union, Optional
 
 from bloqade.analog.serialize import Serializer
-from bloqade.analog.task.base import Report
+from bloqade.analog.task.base import Report, CustomRemoteTaskABC
 from bloqade.analog.task.quera import QuEraTask
 from bloqade.analog.task.braket import BraketTask
 from bloqade.analog.builder.base import Builder
@@ -333,7 +333,11 @@ def _deserialize(obj: dict) -> BatchErrors:
 @Serializer.register
 class RemoteBatch(Serializable, Filter):
     source: Builder
-    tasks: Union[OrderedDict[int, QuEraTask], OrderedDict[int, BraketTask]]
+    tasks: Union[
+        OrderedDict[int, QuEraTask],
+        OrderedDict[int, BraketTask],
+        OrderedDict[int, CustomRemoteTaskABC],
+    ]
     name: Optional[str] = None
 
     class SubmissionException(Exception):
@@ -442,10 +446,10 @@ class RemoteBatch(Serializable, Filter):
         # offline, non-blocking
         tid = []
         data = []
-        for int, task in self.tasks.items():
-            tid.append(int)
+        for task_num, task in self.tasks.items():
+            tid.append(task_num)
 
-            dat = [None, None, None]
+            dat: list[int | str | None] = [None, None, None]
             dat[0] = task.task_id
             if task.task_result_ir is not None:
                 dat[1] = task.task_result_ir.task_status.name
