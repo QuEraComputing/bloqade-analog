@@ -117,10 +117,6 @@ class CustomRemoteTaskABC(abc.ABC):
 
     @property
     @abc.abstractmethod
-    def parallel_decoder(self) -> ParallelDecoder: ...
-
-    @property
-    @abc.abstractmethod
     def metadata(self) -> Dict[str, ParamType]: ...
 
     @property
