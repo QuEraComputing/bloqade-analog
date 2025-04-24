@@ -152,7 +152,6 @@ class HTTPHandler(HTTPHandlerABC):
             print("Multiple tasks found with the given ID.")
             return None
         record = matches[0]
-        print("The record = ", record.get("status"))
         if record.get("status") == "Completed":
             # test_google_doc = "https://drive.usercontent.google.com/download?id=1hvUlzzpIpl5FIsXDjetGeQQKoYW9LrAn&export=download&authuser=0"
             googledoc = record.get("resultsFileUrl")
@@ -160,10 +159,8 @@ class HTTPHandler(HTTPHandlerABC):
             # convert the preview URL to download URL
             googledoc = convert_preview_to_download(
                 googledoc)
-            print("googledoc = ", googledoc)
             res = get(googledoc)
             res.raise_for_status()
-            print("res = ", res.text)
             data = res.json()
 
             task_results = QuEraTaskResults(**data)
@@ -240,7 +237,6 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
             return self
 
         status = self.status()
-        print("status = ", status)
         if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
             self.task_result_ir = self._http_handler.fetch_results(
                 self.task_id)
