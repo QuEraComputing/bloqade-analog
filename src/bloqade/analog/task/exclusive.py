@@ -123,7 +123,7 @@ class HTTPHandler(HTTPHandlerABC):
 
         # Extract the status from the first dictionary
         status = matches[0].get("status")
-        return QuEraTaskStatusCode(status)
+        return status
 
 
     def fetch_results(self, task_id: str):
@@ -267,6 +267,14 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         elif res == "Failed":
             # through an error
             raise ValueError("Query task status failed.")
+        elif res == "Submitted":
+            return QuEraTaskStatusCode.Enqueued
+        # TODO: please add all possible status
+        elif res == "Completed":
+            return QuEraTaskStatusCode.Completed
+        elif res == "Running":
+            # Not covered by test
+            return QuEraTaskStatusCode.Executing
         else:
             return self.task_result_ir.task_status
 
