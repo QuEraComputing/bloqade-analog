@@ -122,7 +122,9 @@ class HTTPHandler(HTTPHandlerABC):
             return "Failed"
 
         # Extract the status from the first dictionary
-        return matches[0].get("status", None)
+        status = matches[0].get("status")
+        return QuEraTaskStatusCode(status)
+
 
     def fetch_results(self, task_id: str):
         response = request(
