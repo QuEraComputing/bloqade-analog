@@ -553,8 +553,7 @@ class RemoteBatch(Serializable, Filter):
             # saving ?
 
             save(errors, error_file)
-            # TODO DEBUG uncomment this line once serialize and unserialize is defined
-            # save(self, future_file)
+            save(self, future_file)
 
             if ignore_submission_error:
                 warnings.warn(

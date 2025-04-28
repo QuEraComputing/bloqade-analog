@@ -15,6 +15,9 @@ from bloqade.analog.submission.ir.task_results import (
 )
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
 from requests import Response, request, get
+from bloqade.analog.serialize import Serializer
+from bloqade.analog.builder.base import ParamType
+
 
 
 class HTTPHandlerABC:
@@ -71,10 +74,12 @@ def convert_preview_to_download(preview_url):
 
 
 class HTTPHandler(HTTPHandlerABC):
-    def __init__(self, zapier_webhook_url: str, zapier_webhook_key: str, vercel_api_url: str):
-        self.zapier_webhook_url = zapier_webhook_url
-        self.zapier_webhook_key = zapier_webhook_key
-        self.verrcel_api_url = vercel_api_url
+    def __init__(self, zapier_webhook_url: str = None, 
+                 zapier_webhook_key: str =  None, 
+                 vercel_api_url: str = None):
+        self.zapier_webhook_url = zapier_webhook_url or os.environ["ZAPIER_WEBHOOK_URL"]
+        self.zapier_webhook_key = zapier_webhook_key or os.environ["ZAPIER_WEBHOOK_KEY"]
+        self.verrcel_api_url = vercel_api_url or os.environ["VERCEL_API_URL"]
 
     def submit_task_via_zapier(self, task_ir: QuEraTaskSpecification, task_id: str, task_note: str):
         # implement http request logic to submit task via Zapier
@@ -155,7 +160,6 @@ class HTTPHandler(HTTPHandlerABC):
             return None
         record = matches[0]
         if record.get("status") == "Completed":
-            # test_google_doc = "https://drive.usercontent.google.com/download?id=1hvUlzzpIpl5FIsXDjetGeQQKoYW9LrAn&export=download&authuser=0"
             googledoc = record.get("resultsFileUrl")
 
             # convert the preview URL to download URL
@@ -172,21 +176,18 @@ class HTTPHandler(HTTPHandlerABC):
 class TestHTTPHandler(HTTPHandlerABC):
     pass
 
-
+@Serializer.register
 class ExclusiveRemoteTask(CustomRemoteTaskABC):
     def __init__(
         self,
         task_ir: QuEraTaskSpecification,
         metadata: Dict[str, ParamType],
         parallel_decoder: ParallelDecoder | None,
-        http_handler: HTTPHandlerABC | None = None,
+        http_handler: HTTPHandlerABC | None = HTTPHandler(),
+        task_id: str = None,
+        task_result_ir: QuEraTaskResults = None,
     ):
-        self.zapier_webhook_url = os.environ["ZAPIER_WEBHOOK_URL"]
-        self.zapier_webhook_key = os.environ["ZAPIER_WEBHOOK_KEY"]
-        self.vercel_api_url = os.environ["VERCEL_API_URL"]
-        self._http_handler = http_handler or HTTPHandler(zapier_webhook_url=self.zapier_webhook_url,
-                                                         zapier_webhook_key=self.zapier_webhook_key,
-                                                         vercel_api_url=self.vercel_api_url)
+        self._http_handler = http_handler 
         self._task_ir = task_ir
         self._metadata = metadata
         self._parallel_decoder = parallel_decoder
@@ -196,10 +197,8 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         self._geometry = Geometry(
             float_sites, task_ir.lattice.filling, parallel_decoder
         )
-        self._task_id = None
-        self._task_result_ir = None
-        # self.air_table_url = os.environ["AIR_TABLE_URL"]
-        # self.air_table_api_key = os.environ["AIR_TABLE_API_KEY"]
+        self._task_id = task_id
+        self._task_result_ir = task_result_ir
 
     @classmethod
     def from_compile_results(cls, task_ir, metadata, parallel_decoder):
@@ -248,20 +247,23 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         return self
 
     def pull(self):
-        # Please avoid use this method, it's blocking and the wating time is hours long
-        pass
-
+        # Please avoid using this method, it's blocking and the waiting time is hours long
+        # Throw an error saying this is not supported
+        raise NotImplementedError(
+            "Pulling is not supported. Please use fetch() instead."
+        )
+    
     def cancel(self):
-        pass
-
-    def validate(self) -> str:
-        pass
+        # This is not supported
+        raise NotImplementedError(
+            "Cancelling is not supported."
+        )
 
     def status(self) -> QuEraTaskStatusCode:
         if self._task_id is None:
             return QuEraTaskStatusCode.Unsubmitted
-        print("status: self._task_id = ", self._task_id)
         res = self._http_handler.query_task_status(self._task_id)
+        print("Query task status: ", res)
         if res != "Not Found":
             return res
         elif res == "Failed":
@@ -322,36 +324,28 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         self._task_result_ir = task_result_ir
 
 
-# @ExclusiveRemoteTask.set_serializer
-# def _serialze(obj: ExclusiveRemoteTask) -> Dict[str, ParamType]:
-#    # TODO: Not tested, once it's done, resolve the DEBUG flag
-#    return {
-#        "task_id": obj.task_id or None,
-#        "task_ir": obj.task_ir.dict(by_alias=True, exclude_none=True),
-#        "metadata": obj.metadata,
-#        "zapier_webhook_url": obj.zapier_webhook_url,
-#        "zapier_webhook_key": obj.zapier_webhook_key,
-#        "vercel_api_url": obj.vercel_api_url,
-#        "parallel_decoder": (
-#            obj.parallel_decoder.dict() or None
-#        ),
-#        "geometry": obj.geometry.dict() or None,
-#        "task_result_ir": obj.task_result_ir.dict() if obj.task_result_ir else None,
-#    }
+@ExclusiveRemoteTask.set_serializer
+
+def _serialze(obj: ExclusiveRemoteTask) -> Dict[str, ParamType]:
+    return {
+        "task_id": obj.task_id or None,
+        "task_ir": obj.task_ir.dict(by_alias=True, exclude_none=True),
+        "metadata": obj.metadata,
+        "parallel_decoder": (
+            obj.parallel_decoder.dict() if obj.parallel_decoder else None
+        ),
+        "geometry": obj.geometry,
+        "task_result_ir": obj.task_result_ir.dict() if obj.task_result_ir else None,
+    }
 
 
-# @ExclusiveRemoteTask.set_deserializer
-# def _deserializer(d: Dict[str, Any]) -> ExclusiveRemoteTask:
-#     # TODO: Not tested, once it's done, resolve the DEBUG flag
-#     d["task_ir"] = QuEraTaskSpecification(**d["task_ir"])
-#     d["parallel_decoder"] = (
-#         ParallelDecoder(**d["parallel_decoder"]
-#                         ) if d["parallel_decoder"] else None
-#     )
-#     d["http_handler"] = HTTPHandler(
-#         zapier_webhook_url=d["zapier_webhook_url"],
-#         zapier_webhook_key=d["zapier_webhook_key"],
-#         vercel_api_url=d["vercel_api_url"],
-#     )
+@ExclusiveRemoteTask.set_deserializer
+def _deserializer(d: Dict[str, any]) -> ExclusiveRemoteTask:
+    # TODO: Not tested, once it's done, resolve the DEBUG flag
+    d["task_ir"] = QuEraTaskSpecification(**d["task_ir"])
+    d["parallel_decoder"] = (
+        ParallelDecoder(**d["parallel_decoder"]
+                        ) if d["parallel_decoder"] else None
+    )
+    return ExclusiveRemoteTask(**d)
 
-#     return ExclusiveRemoteTask(**d)
