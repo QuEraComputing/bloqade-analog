@@ -263,7 +263,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         if self._task_id is None:
             return QuEraTaskStatusCode.Unsubmitted
         res = self._http_handler.query_task_status(self._task_id)
-        print("Query task status: ", res)
+        #print("Query task status: ", res)
         if res != "Not Found":
             return res
         elif res == "Failed":
