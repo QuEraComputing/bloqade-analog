@@ -264,10 +264,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
             return QuEraTaskStatusCode.Unsubmitted
         res = self._http_handler.query_task_status(self._task_id)
         #print("Query task status: ", res)
-        if res != "Not Found":
-            return res
-        elif res == "Failed":
-            # through an error
+        if res == "Failed":
             raise ValueError("Query task status failed.")
         elif res == "Submitted":
             return QuEraTaskStatusCode.Enqueued
@@ -334,7 +331,6 @@ def _serialze(obj: ExclusiveRemoteTask) -> Dict[str, ParamType]:
         "parallel_decoder": (
             obj.parallel_decoder.dict() if obj.parallel_decoder else None
         ),
-        "geometry": obj.geometry,
         "task_result_ir": obj.task_result_ir.dict() if obj.task_result_ir else None,
     }
 
