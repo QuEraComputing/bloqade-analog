@@ -17,6 +17,7 @@ from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecificati
 from requests import request, get
 from bloqade.analog.serialize import Serializer
 
+
 class HTTPHandlerABC:
     @abc.abstractmethod
     def submit_task_via_zapier(task_ir: QuEraTaskSpecification, task_id: str):
