@@ -1,7 +1,6 @@
 import os
 import abc
 import uuid
-import json
 import re
 
 from beartype.typing import Dict
@@ -15,10 +14,8 @@ from bloqade.analog.submission.ir.task_results import (
     QuEraTaskStatusCode,
 )
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
-from requests import Response, request, get
+from requests import request, get
 from bloqade.analog.serialize import Serializer
-from bloqade.analog.builder.base import ParamType
-
 
 class HTTPHandlerABC:
     @abc.abstractmethod
