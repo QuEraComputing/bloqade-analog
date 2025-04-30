@@ -5,6 +5,7 @@ import json
 import re
 
 from beartype.typing import Dict
+from dataclasses import dataclass, field
 
 from bloqade.analog.task.base import Geometry, CustomRemoteTaskABC
 from bloqade.analog.builder.typing import ParamType
@@ -176,36 +177,31 @@ class HTTPHandler(HTTPHandlerABC):
 class TestHTTPHandler(HTTPHandlerABC):
     pass
 
+@dataclass
 @Serializer.register
 class ExclusiveRemoteTask(CustomRemoteTaskABC):
-    def __init__(
-        self,
-        task_ir: QuEraTaskSpecification,
-        metadata: Dict[str, ParamType],
-        parallel_decoder: ParallelDecoder | None,
-        http_handler: HTTPHandlerABC | None = HTTPHandler(),
-        task_id: str = None,
-        task_result_ir: QuEraTaskResults = None,
-    ):
-        self._http_handler = http_handler 
-        self._task_ir = task_ir
-        self._metadata = metadata
-        self._parallel_decoder = parallel_decoder
+    _task_ir: QuEraTaskSpecification | None
+    _metadata: Dict[str, ParamType]
+    _parallel_decoder: ParallelDecoder | None
+    _http_handler: HTTPHandlerABC = field(default_factory=HTTPHandler)
+    _task_id: str | None = None
+    _task_result_ir: QuEraTaskResults | None = None
+    
+    def __post_init__(self):
         float_sites = list(
-            map(lambda x: (float(x[0]), float(x[1])), task_ir.lattice.sites)
+            map(lambda x: (float(x[0]), float(x[1])), self._task_ir.lattice.sites)
         )
         self._geometry = Geometry(
-            float_sites, task_ir.lattice.filling, parallel_decoder
+            float_sites, self._task_ir.lattice.filling, self._parallel_decoder
         )
-        self._task_id = task_id
-        self._task_result_ir = task_result_ir
+
 
     @classmethod
     def from_compile_results(cls, task_ir, metadata, parallel_decoder):
         return cls(
-            task_ir=task_ir,
-            metadata=metadata,
-            parallel_decoder=parallel_decoder,
+            _task_ir=task_ir,
+            _metadata=metadata,
+            _parallel_decoder=parallel_decoder,
         )
 
     def _submit(self, force: bool = False) -> "ExclusiveRemoteTask":
@@ -215,20 +211,20 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
                     "the task is already submitted with %s" % (self._task_id)
                 )
         self._task_id = str(uuid.uuid4())
+
         if self._http_handler.submit_task_via_zapier(self._task_ir, self._task_id, None) == "success":
             self._task_result_ir = QuEraTaskResults(
                 task_status=QuEraTaskStatusCode.Accepted)
         else:
             self._task_result_ir = QuEraTaskResults(
                 task_status=QuEraTaskStatusCode.Failed)
-        print(self.task_result_ir)
         return self
 
     def fetch(self):
-        if self.task_result_ir.task_status is QuEraTaskStatusCode.Unsubmitted:
+        if self._task_result_ir.task_status is QuEraTaskStatusCode.Unsubmitted:
             raise ValueError("Task ID not found.")
 
-        if self.task_result_ir.task_status in [
+        if self._task_result_ir.task_status in [
             QuEraTaskStatusCode.Completed,
             QuEraTaskStatusCode.Partial,
             QuEraTaskStatusCode.Failed,
@@ -239,10 +235,10 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
         status = self.status()
         if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
-            self.task_result_ir = self._http_handler.fetch_results(
-                self.task_id)
+            self._task_result_ir = self._http_handler.fetch_results(
+                self._task_id)
         else:
-            self.task_result_ir = QuEraTaskResults(task_status=status)
+            self._task_result_ir = QuEraTaskResults(task_status=status)
 
         return self
 
@@ -275,13 +271,13 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
             # Not covered by test
             return QuEraTaskStatusCode.Executing
         else:
-            return self.task_result_ir.task_status
+            return self._task_result_ir.task_status
 
     def _result_exists(self):
-        if self.task_result_ir is None:
+        if self._task_result_ir is None:
             return False
         else:
-            if self.task_result_ir.task_status == QuEraTaskStatusCode.Completed:
+            if self._task_result_ir.task_status == QuEraTaskStatusCode.Completed:
                 return True
             else:
                 return False
@@ -322,7 +318,6 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
 
 @ExclusiveRemoteTask.set_serializer
-
 def _serialze(obj: ExclusiveRemoteTask) -> Dict[str, ParamType]:
     return {
         "task_id": obj.task_id or None,
@@ -337,11 +332,18 @@ def _serialze(obj: ExclusiveRemoteTask) -> Dict[str, ParamType]:
 
 @ExclusiveRemoteTask.set_deserializer
 def _deserializer(d: Dict[str, any]) -> ExclusiveRemoteTask:
-    # TODO: Not tested, once it's done, resolve the DEBUG flag
-    d["task_ir"] = QuEraTaskSpecification(**d["task_ir"])
-    d["parallel_decoder"] = (
+    d1 = dict()
+    d1["_task_ir"] = QuEraTaskSpecification(**d["task_ir"])
+    d1["_parallel_decoder"] = (
         ParallelDecoder(**d["parallel_decoder"]
-                        ) if d["parallel_decoder"] else None
+                        ) if d["parallel_decoder"] else None )
+    d1["_metadata"] = d["metadata"]
+    d1["_task_result_ir"] = (
+        QuEraTaskResults(**d["task_result_ir"])
+        if d["task_result_ir"]
+        else None
     )
-    return ExclusiveRemoteTask(**d)
+    d1["_task_id"] = d["task_id"]
+
+    return ExclusiveRemoteTask(**d1)
 
