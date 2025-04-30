@@ -20,7 +20,6 @@ from bloqade.analog.serialize import Serializer
 from bloqade.analog.builder.base import ParamType
 
 
-
 class HTTPHandlerABC:
     @abc.abstractmethod
     def submit_task_via_zapier(task_ir: QuEraTaskSpecification, task_id: str):
@@ -75,17 +74,21 @@ def convert_preview_to_download(preview_url):
 
 
 class HTTPHandler(HTTPHandlerABC):
-    def __init__(self, zapier_webhook_url: str = None, 
-                 zapier_webhook_key: str =  None, 
-                 vercel_api_url: str = None):
+    def __init__(
+        self,
+        zapier_webhook_url: str = None,
+        zapier_webhook_key: str = None,
+        vercel_api_url: str = None,
+    ):
         self.zapier_webhook_url = zapier_webhook_url or os.environ["ZAPIER_WEBHOOK_URL"]
         self.zapier_webhook_key = zapier_webhook_key or os.environ["ZAPIER_WEBHOOK_KEY"]
         self.verrcel_api_url = vercel_api_url or os.environ["VERCEL_API_URL"]
 
-    def submit_task_via_zapier(self, task_ir: QuEraTaskSpecification, task_id: str, task_note: str):
+    def submit_task_via_zapier(
+        self, task_ir: QuEraTaskSpecification, task_id: str, task_note: str
+    ):
         # implement http request logic to submit task via Zapier
-        request_options = dict(
-            params={"key": self.zapier_webhook_key, "note": task_id})
+        request_options = dict(params={"key": self.zapier_webhook_key, "note": task_id})
 
         # for metadata, task_ir in self._compile_single(shots, use_experimental, args):
         json_request_body = task_ir.json(exclude_none=True, exclude_unset=True)
@@ -98,8 +101,7 @@ class HTTPHandler(HTTPHandlerABC):
             submit_status = response_data.get("status", None)
             return submit_status
         else:
-            print(
-                f"HTTP request failed with status code: {response.status_code}")
+            print(f"HTTP request failed with status code: {response.status_code}")
             print("HTTP responce: ", response.text)
             return "Failed"
 
@@ -131,7 +133,6 @@ class HTTPHandler(HTTPHandlerABC):
         status = matches[0].get("status")
         return status
 
-
     def fetch_results(self, task_id: str):
         response = request(
             "GET",
@@ -143,8 +144,7 @@ class HTTPHandler(HTTPHandlerABC):
             },
         )
         if response.status_code != 200:
-            print(
-                f"HTTP request failed with status code: {response.status_code}")
+            print(f"HTTP request failed with status code: {response.status_code}")
             print("HTTP responce: ", response.text)
             return None
 
@@ -164,8 +164,7 @@ class HTTPHandler(HTTPHandlerABC):
             googledoc = record.get("resultsFileUrl")
 
             # convert the preview URL to download URL
-            googledoc = convert_preview_to_download(
-                googledoc)
+            googledoc = convert_preview_to_download(googledoc)
             res = get(googledoc)
             res.raise_for_status()
             data = res.json()
@@ -177,6 +176,7 @@ class HTTPHandler(HTTPHandlerABC):
 class TestHTTPHandler(HTTPHandlerABC):
     pass
 
+
 @dataclass
 @Serializer.register
 class ExclusiveRemoteTask(CustomRemoteTaskABC):
@@ -186,7 +186,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
     _http_handler: HTTPHandlerABC = field(default_factory=HTTPHandler)
     _task_id: str | None = None
     _task_result_ir: QuEraTaskResults | None = None
-    
+
     def __post_init__(self):
         float_sites = list(
             map(lambda x: (float(x[0]), float(x[1])), self._task_ir.lattice.sites)
@@ -194,7 +194,6 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         self._geometry = Geometry(
             float_sites, self._task_ir.lattice.filling, self._parallel_decoder
         )
-
 
     @classmethod
     def from_compile_results(cls, task_ir, metadata, parallel_decoder):
@@ -212,12 +211,19 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
                 )
         self._task_id = str(uuid.uuid4())
 
-        if self._http_handler.submit_task_via_zapier(self._task_ir, self._task_id, None) == "success":
+        if (
+            self._http_handler.submit_task_via_zapier(
+                self._task_ir, self._task_id, None
+            )
+            == "success"
+        ):
             self._task_result_ir = QuEraTaskResults(
-                task_status=QuEraTaskStatusCode.Accepted)
+                task_status=QuEraTaskStatusCode.Accepted
+            )
         else:
             self._task_result_ir = QuEraTaskResults(
-                task_status=QuEraTaskStatusCode.Failed)
+                task_status=QuEraTaskStatusCode.Failed
+            )
         return self
 
     def fetch(self):
@@ -235,8 +241,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
         status = self.status()
         if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
-            self._task_result_ir = self._http_handler.fetch_results(
-                self._task_id)
+            self._task_result_ir = self._http_handler.fetch_results(self._task_id)
         else:
             self._task_result_ir = QuEraTaskResults(task_status=status)
 
@@ -248,18 +253,15 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         raise NotImplementedError(
             "Pulling is not supported. Please use fetch() instead."
         )
-    
+
     def cancel(self):
         # This is not supported
-        raise NotImplementedError(
-            "Cancelling is not supported."
-        )
+        raise NotImplementedError("Cancelling is not supported.")
 
     def status(self) -> QuEraTaskStatusCode:
         if self._task_id is None:
             return QuEraTaskStatusCode.Unsubmitted
         res = self._http_handler.query_task_status(self._task_id)
-        #print("Query task status: ", res)
         if res == "Failed":
             raise ValueError("Query task status failed.")
         elif res == "Submitted":
@@ -335,15 +337,12 @@ def _deserializer(d: Dict[str, any]) -> ExclusiveRemoteTask:
     d1 = dict()
     d1["_task_ir"] = QuEraTaskSpecification(**d["task_ir"])
     d1["_parallel_decoder"] = (
-        ParallelDecoder(**d["parallel_decoder"]
-                        ) if d["parallel_decoder"] else None )
+        ParallelDecoder(**d["parallel_decoder"]) if d["parallel_decoder"] else None
+    )
     d1["_metadata"] = d["metadata"]
     d1["_task_result_ir"] = (
-        QuEraTaskResults(**d["task_result_ir"])
-        if d["task_result_ir"]
-        else None
+        QuEraTaskResults(**d["task_result_ir"]) if d["task_result_ir"] else None
     )
     d1["_task_id"] = d["task_id"]
 
     return ExclusiveRemoteTask(**d1)
-
