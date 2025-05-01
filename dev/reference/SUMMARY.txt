@@ -105,4 +105,5 @@
             * [bloqade](bloqade/analog/task/bloqade.md)
             * [braket](bloqade/analog/task/braket.md)
             * [braket_simulator](bloqade/analog/task/braket_simulator.md)
+            * [exclusive](bloqade/analog/task/exclusive.md)
             * [quera](bloqade/analog/task/quera.md)
