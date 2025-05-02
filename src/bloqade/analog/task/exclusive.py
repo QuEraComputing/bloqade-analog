@@ -246,15 +246,14 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
         return self
 
-    
-    def pull(self,poll_interval:float=20):
+    def pull(self, poll_interval: float = 20):
         """
         Blocking pull to get the task result.
         poll_interval is the time interval to poll the task status.
         Please ensure that it is relatively large, otherwise
         the server could get overloaded with queries.
         """
-        
+
         while True:
             if self._task_result_ir.task_status is QuEraTaskStatusCode.Unsubmitted:
                 raise ValueError("Task ID not found.")
@@ -272,7 +271,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
             if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
                 self._task_result_ir = self._http_handler.fetch_results(self._task_id)
                 return self
-            
+
             time.sleep(poll_interval)
 
     def cancel(self):
