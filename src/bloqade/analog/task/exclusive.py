@@ -2,6 +2,7 @@ import os
 import abc
 import uuid
 import re
+import time
 
 from beartype.typing import Dict
 from dataclasses import dataclass, field
@@ -245,12 +246,33 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
         return self
 
-    def pull(self):
-        # Please avoid using this method, it's blocking and the waiting time is hours long
-        # Throw an error saying this is not supported
-        raise NotImplementedError(
-            "Pulling is not supported. Please use fetch() instead."
-        )
+    def pull(self,poll_interval:float=20):
+        """
+        Blocking pull to get the task result.
+        poll_interval is the time interval to poll the task status.
+        Please ensure that it is relatively large, otherwise
+        the server could get overloaded with queries.
+        """
+        if self._task_result_ir.task_status is QuEraTaskStatusCode.Unsubmitted:
+            raise ValueError("Task ID not found.")
+
+        if self._task_result_ir.task_status in [
+            QuEraTaskStatusCode.Completed,
+            QuEraTaskStatusCode.Partial,
+            QuEraTaskStatusCode.Failed,
+            QuEraTaskStatusCode.Unaccepted,
+            QuEraTaskStatusCode.Cancelled,
+        ]:
+            return self
+
+        status = self.status()
+        if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
+            self._task_result_ir = self._http_handler.fetch_results(self._task_id)
+        else:
+            time.sleep(poll_interval)
+            self.pull(poll_interval)
+        
+        return self
 
     def cancel(self):
         # This is not supported
