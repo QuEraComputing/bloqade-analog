@@ -94,6 +94,9 @@ def piecewise_linear(durations: List[ScalarType], values: List[ScalarType]) -> W
             "The length of values must be one greater than the length of durations"
         )
 
+    if len(durations) == 0:
+        raise ValueError("The durations and values lists must not be empty.")
+
     pwl_wf = Linear(values[0], values[1], durations[0])
     for duration, start, stop in zip(durations[1:], values[1:-1], values[2:]):
         pwl_wf = pwl_wf.append(Linear(start, stop, duration))
@@ -126,6 +129,9 @@ def piecewise_constant(
         raise ValueError(
             "The length of values must be the same as the length of durations"
         )
+
+    if len(durations) == 0:
+        raise ValueError("The durations and values lists must not be empty.")
 
     pwc_wf = Constant(values[0], durations[0])
     for duration, value in zip(durations[1:], values[1:]):
