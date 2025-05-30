@@ -3,11 +3,11 @@ from decimal import Decimal
 from beartype import beartype
 from beartype.typing import TYPE_CHECKING, Any, Dict, List, Union, Optional
 
-from bloqade.analog.builder.pragmas import Assignable
+from bloqade.analog.ir.scalar import Variable
 from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.builder.pragmas import Assignable
 from bloqade.analog.ir.routine.base import Routine
 from bloqade.analog.ir.control.waveform import Linear, Constant, Waveform
-from bloqade.analog.ir.scalar import Variable
 
 if TYPE_CHECKING:
     from bloqade.analog.submission.ir.capabilities import QuEraCapabilities
@@ -186,7 +186,7 @@ def rydberg_h(
         raise ValueError(
             "At least one of detuning, amplitude, or phase must be provided."
         )
-   
+
     prog = prog.assign(**static_params)
 
     if isinstance(batch_params, dict):
