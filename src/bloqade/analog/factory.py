@@ -3,7 +3,9 @@ from decimal import Decimal
 from beartype import beartype
 from beartype.typing import TYPE_CHECKING, Any, Dict, List, Union, Optional
 
+from bloqade.analog.ir.scalar import Variable
 from bloqade.analog.builder.typing import ScalarType
+from bloqade.analog.builder.pragmas import Assignable
 from bloqade.analog.ir.routine.base import Routine
 from bloqade.analog.ir.control.waveform import Linear, Constant, Waveform
 
@@ -92,12 +94,12 @@ def piecewise_linear(durations: List[ScalarType], values: List[ScalarType]) -> W
             "The length of values must be one greater than the length of durations"
         )
 
-    pwl_wf = None
-    for duration, start, stop in zip(durations, values[:-1], values[1:]):
-        if pwl_wf is None:
-            pwl_wf = Linear(start, stop, duration)
-        else:
-            pwl_wf = pwl_wf.append(Linear(start, stop, duration))
+    if len(durations) == 0:
+        raise ValueError("The durations and values lists must not be empty.")
+
+    pwl_wf = Linear(values[0], values[1], durations[0])
+    for duration, start, stop in zip(durations[1:], values[1:-1], values[2:]):
+        pwl_wf = pwl_wf.append(Linear(start, stop, duration))
 
     return pwl_wf
 
@@ -128,12 +130,12 @@ def piecewise_constant(
             "The length of values must be the same as the length of durations"
         )
 
-    pwc_wf = None
-    for duration, value in zip(durations, values):
-        if pwc_wf is None:
-            pwc_wf = Constant(value, duration)
-        else:
-            pwc_wf = pwc_wf.append(Constant(value, duration))
+    if len(durations) == 0:
+        raise ValueError("The durations and values lists must not be empty.")
+
+    pwc_wf = Constant(values[0], durations[0])
+    for duration, value in zip(durations[1:], values[1:]):
+        pwc_wf = pwc_wf.append(Constant(value, duration))
 
     return pwc_wf
 
@@ -146,7 +148,7 @@ def rydberg_h(
     phase: Optional[Waveform] = None,
     static_params: Dict[str, Any] = {},
     batch_params: Union[List[Dict[str, Any]], Dict[str, Any]] = [],
-    args: List[str] = [],
+    args: List[str | Variable] = [],
 ) -> Routine:
     """Create a rydberg program with uniform detuning, amplitude, and phase.
 
@@ -181,10 +183,15 @@ def rydberg_h(
         prog = prog.rydberg.detuning.uniform.apply(detuning)
 
     if amplitude is not None:
-        prog = prog.amplitude.uniform.apply(amplitude)
+        prog = prog.rydberg.rabi.amplitude.uniform.apply(amplitude)
 
     if phase is not None:
-        prog = prog.phase.uniform.apply(phase)
+        prog = prog.rydberg.rabi.phase.uniform.apply(phase)
+
+    if not isinstance(prog, Assignable):
+        raise ValueError(
+            "At least one of detuning, amplitude, or phase must be provided."
+        )
 
     prog = prog.assign(**static_params)
 
