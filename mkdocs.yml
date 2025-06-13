@@ -12,6 +12,7 @@ nav:
   - Home: 'https://queracomputing.github.io/bloqade/latest/'
   - Digital Tutorials: 'https://queracomputing.github.io/bloqade/latest/digital/'
   - Analog Tutorials: 'https://queracomputing.github.io/bloqade-analog-examples/dev/'
+  - qBook: 'https://qbook.quera.com'
   - Bloqade Analog:
     - index.md
     - Migration Guide to Bloqade Analog: home/migration.md
