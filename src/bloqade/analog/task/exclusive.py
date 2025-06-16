@@ -1,4 +1,5 @@
 import os
+<<<<<<< HEAD
 import abc
 import uuid
 import re
@@ -6,6 +7,18 @@ import re
 from beartype.typing import Dict
 from dataclasses import dataclass, field
 
+=======
+import re
+import abc
+import time
+import uuid
+from dataclasses import field, dataclass
+
+from requests import get, request
+from beartype.typing import Dict
+
+from bloqade.analog.serialize import Serializer
+>>>>>>> main
 from bloqade.analog.task.base import Geometry, CustomRemoteTaskABC
 from bloqade.analog.builder.typing import ParamType
 from bloqade.analog.submission.ir.parallel import ParallelDecoder
@@ -14,8 +27,11 @@ from bloqade.analog.submission.ir.task_results import (
     QuEraTaskStatusCode,
 )
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
+<<<<<<< HEAD
 from requests import request, get
 from bloqade.analog.serialize import Serializer
+=======
+>>>>>>> main
 
 
 class HTTPHandlerABC:
@@ -245,12 +261,33 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
 
         return self
 
-    def pull(self):
-        # Please avoid using this method, it's blocking and the waiting time is hours long
-        # Throw an error saying this is not supported
-        raise NotImplementedError(
-            "Pulling is not supported. Please use fetch() instead."
-        )
+    def pull(self, poll_interval: float = 20):
+        """
+        Blocking pull to get the task result.
+        poll_interval is the time interval to poll the task status.
+        Please ensure that it is relatively large, otherwise
+        the server could get overloaded with queries.
+        """
+
+        while True:
+            if self._task_result_ir.task_status is QuEraTaskStatusCode.Unsubmitted:
+                raise ValueError("Task ID not found.")
+
+            if self._task_result_ir.task_status in [
+                QuEraTaskStatusCode.Completed,
+                QuEraTaskStatusCode.Partial,
+                QuEraTaskStatusCode.Failed,
+                QuEraTaskStatusCode.Unaccepted,
+                QuEraTaskStatusCode.Cancelled,
+            ]:
+                return self
+
+            status = self.status()
+            if status in [QuEraTaskStatusCode.Completed, QuEraTaskStatusCode.Partial]:
+                self._task_result_ir = self._http_handler.fetch_results(self._task_id)
+                return self
+
+            time.sleep(poll_interval)
 
     def cancel(self):
         # This is not supported
