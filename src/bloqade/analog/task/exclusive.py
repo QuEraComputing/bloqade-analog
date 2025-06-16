@@ -1,13 +1,4 @@
 import os
-<<<<<<< HEAD
-import abc
-import uuid
-import re
-
-from beartype.typing import Dict
-from dataclasses import dataclass, field
-
-=======
 import re
 import abc
 import time
@@ -18,7 +9,6 @@ from requests import get, request
 from beartype.typing import Dict
 
 from bloqade.analog.serialize import Serializer
->>>>>>> main
 from bloqade.analog.task.base import Geometry, CustomRemoteTaskABC
 from bloqade.analog.builder.typing import ParamType
 from bloqade.analog.submission.ir.parallel import ParallelDecoder
@@ -27,11 +17,6 @@ from bloqade.analog.submission.ir.task_results import (
     QuEraTaskStatusCode,
 )
 from bloqade.analog.submission.ir.task_specification import QuEraTaskSpecification
-<<<<<<< HEAD
-from requests import request, get
-from bloqade.analog.serialize import Serializer
-=======
->>>>>>> main
 
 
 class HTTPHandlerABC:
