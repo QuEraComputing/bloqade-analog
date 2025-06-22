@@ -141,10 +141,12 @@ class HTTPHandler(HTTPHandlerABC):
             res = get(googledoc)
             res.raise_for_status()
             data = res.json()
-            # get the "statusCode" and "message" from the data and print them out. 
+            # get the "statusCode" and "message" from the data and print them out.
             status_code = data.get("statusCode", "NA")
             message = data.get("message", "NA")
-            print(f"Task validation failed with status code: {status_code}, message: {message}")
+            print(
+                f"Task validation failed with status code: {status_code}, message: {message}"
+            )
 
         return status
 
@@ -301,7 +303,7 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
         if res == "Failed":
             return QuEraTaskStatusCode.Failed
         elif res == "Failed validation":
-            
+
             return QuEraTaskStatusCode.Failed
         elif res == "Submitted":
             return QuEraTaskStatusCode.Enqueued
