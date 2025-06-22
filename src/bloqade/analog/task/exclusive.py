@@ -102,7 +102,7 @@ class HTTPHandler(HTTPHandlerABC):
         else:
             print(f"HTTP request failed with status code: {response.status_code}")
             print("HTTP responce: ", response.text)
-            return "Failed"
+            return "HTTP Request Failed"
 
     def query_task_status(self, task_id: str):
         response = request(
@@ -115,7 +115,7 @@ class HTTPHandler(HTTPHandlerABC):
             },
         )
         if response.status_code != 200:
-            return "Not Found"
+            return "HTTP Request Failed."
         response_data = response.json()
         # Get "matched" from the response
         matches = response_data.get("matches", None)
@@ -123,13 +123,29 @@ class HTTPHandler(HTTPHandlerABC):
         # Verify if the list contains only one element
         if matches is None:
             print("No task found with the given ID.")
-            return "Failed"
+            return "Task searching Failed"
         elif len(matches) > 1:
             print("Multiple tasks found with the given ID.")
-            return "Failed"
+            return "Task searching Failed"
+
+        record = matches[0]
 
         # Extract the status from the first dictionary
-        status = matches[0].get("status")
+        status = record.get("status")
+
+        if status == "Failed validation":
+            googledoc = record.get("resultsFileUrl")
+
+            # convert the preview URL to download URL
+            googledoc = convert_preview_to_download(googledoc)
+            res = get(googledoc)
+            res.raise_for_status()
+            data = res.json()
+            # get the "statusCode" and "message" from the data and print them out. 
+            status_code = data.get("statusCode", "NA")
+            message = data.get("message", "NA")
+            print(f"Task validation failed with status code: {status_code}, message: {message}")
+
         return status
 
     def fetch_results(self, task_id: str):
@@ -283,7 +299,10 @@ class ExclusiveRemoteTask(CustomRemoteTaskABC):
             return QuEraTaskStatusCode.Unsubmitted
         res = self._http_handler.query_task_status(self._task_id)
         if res == "Failed":
-            raise ValueError("Query task status failed.")
+            return QuEraTaskStatusCode.Failed
+        elif res == "Failed validation":
+            
+            return QuEraTaskStatusCode.Failed
         elif res == "Submitted":
             return QuEraTaskStatusCode.Enqueued
         # TODO: please add all possible status
