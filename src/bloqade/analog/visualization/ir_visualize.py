@@ -71,7 +71,7 @@ def mock_data(Ndata):
 
 def mock_register():
     p = figure(width=300, height=300, toolbar_location="above")
-    p.circle(x=np.random.rand(10), y=np.random.rand(10))
+    p.circle(x=np.random.rand(10), y=np.random.rand(10), size=4)
 
     return p
 

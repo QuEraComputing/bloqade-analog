@@ -5,6 +5,8 @@ out.txt
 tests/data/jobs/
 main.html
 main
+.python-version
+debug*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
