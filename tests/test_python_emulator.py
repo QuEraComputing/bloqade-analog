@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 from scipy.stats import ks_2samp
 from beartype.typing import Dict
 
@@ -291,5 +292,56 @@ def test_bloqade_filling():
     KS_test(a_post_processed, b)
 
 
-if __name__ == "__main__":
-    test_bloqade_filling()
+@pytest.mark.parametrize(
+    "phi, omega, delta",
+    [
+        (0.0, 1.0, 0.0),
+        (np.pi / 2, 1.0, 0.0),
+        (np.pi, 1.0, 0.0),
+        (3 * np.pi / 2, 1.0, 0.0),
+        (0.0, 2.0, 0.0),
+        (np.pi / 2, 2.0, 0.0),
+        (np.pi, 2.0, 0.0),
+        (3 * np.pi / 2, 2.0, 0.0),
+        (0.0, 1.0, 1.0),
+        (np.pi / 2, 1.0, 1.0),
+        (np.pi, 1.0, 1.0),
+        (-3 * np.pi / 2, 1.0, 1.0),
+        (0.0, 2.0, 1.0),
+        (-np.pi / 2, 2.0, 1.0),
+        (-np.pi, 2.0, 1.0),
+        (-3 * np.pi / 2, 2.0, 1.0),
+        (-0.321, 1.0, 0.5),
+        (0.543, 1.0, 0.5),
+        (2.321, 1.0, 1.1232),
+        (-2.543, 4.12390, 2.4354),
+    ],
+)
+def test_hamiltonian(phi, omega, delta):
+
+    def hamiltonian(phi: float, omega: float, delta: float) -> np.ndarray:
+        # index 0 is g
+        # index 1 is r
+        G = 0j
+        # Detuning
+        G += np.diag([0, -1]) * delta
+
+        G[0, 1] = np.exp(1j * phi) * omega / 2
+        G[1, 0] = np.exp(-1j * phi) * omega / 2
+        return G
+
+    T = 2 * np.pi
+    (program,) = (
+        (
+            start.add_position([(0, 0)])
+            .rydberg.rabi.amplitude.uniform.constant(omega, T)
+            .phase.uniform.constant(phi, T)
+            .detuning.uniform.constant(delta, T)
+        )
+        .bloqade.python()
+        .hamiltonian()
+    )
+
+    mat = program.hamiltonian.tocsr(0.0).toarray()
+
+    assert np.allclose(mat, hamiltonian(phi, omega, delta))
