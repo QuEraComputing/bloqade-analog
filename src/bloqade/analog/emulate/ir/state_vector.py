@@ -281,7 +281,7 @@ class RabiOperator:
         if self.phase is None:
             return self.op.matvec(register, out=output, scale=amplitude)
 
-        amplitude *= np.exp(1j * self.phase(time))
+        amplitude *= np.exp(-1j * self.phase(time))
         self.op.matvec(register, out=output, scale=amplitude)
         self.op.T.matvec(register, out=output, scale=np.conj(amplitude))
 
@@ -292,7 +292,7 @@ class RabiOperator:
         if self.phase is None:
             return self.op.tocsr() * amplitude
 
-        amplitude: np.complexfloating = amplitude * np.exp(1j * self.phase(time))
+        amplitude: np.complexfloating = amplitude * np.exp(-1j * self.phase(time))
         mat = self.op.tocsr() * amplitude
 
         return mat + mat.T.conj()
