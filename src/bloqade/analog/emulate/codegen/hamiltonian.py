@@ -151,16 +151,16 @@ class RydbergHamiltonianCodeGen(Visitor):
             ((atom_index, _),) = op_data.target_atoms.items()
             operator = IndexMapping(self.space.size, *matrix_ele(atom_index))
         else:
-            indptr = np.zeros(self.space.size + 1, dtype=self.space.index_type)
+            indptr = np.zeros(self.space.size + 1, dtype=np.int64)
 
             for atom_index in op_data.target_atoms:
                 row_indices, col_indices = matrix_ele(atom_index)
                 indptr[1:][row_indices] += 1
             np.cumsum(indptr, out=indptr)
 
-            indices = np.zeros(indptr[-1], dtype=self.space.index_type)
+            indptr = indptr.astype(np.min_scalar_type(-indptr[-1]))
+            indices = np.zeros(indptr[-1], dtype=indptr.dtype)
             data = np.zeros(indptr[-1], dtype=np.float64)
-
             for atom_index, value in op_data.target_atoms.items():
                 row_indices, col_indices = matrix_ele(atom_index)
                 indices[indptr[:-1][row_indices]] = col_indices
