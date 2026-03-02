@@ -59,8 +59,8 @@ def get_atom_arrangement_figure(
     y_min = np.inf
     y_max = -np.inf
     for idx, location_info in enumerate(atom_arng_ir.enumerate()):
-        (x_var, y_var) = location_info.position
-        (x, y) = (float(x_var(**assignments)), float(y_var(**assignments)))
+        x_var, y_var = location_info.position
+        x, y = (float(x_var(**assignments)), float(y_var(**assignments)))
         x_min = min(x, x_min)
         y_min = min(y, y_min)
         x_max = max(x, x_max)
