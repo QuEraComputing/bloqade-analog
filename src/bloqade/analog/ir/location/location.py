@@ -576,14 +576,14 @@ class ParallelRegisterInfo:
             # calculate bounding box
             # of this register
             location_iter = atom_arrangement.enumerate()
-            (x, y) = next(location_iter).position
+            x, y = next(location_iter).position
             x_min = x
             x_max = x
             y_min = y
             y_max = y
 
             for location_info in location_iter:
-                (x, y) = location_info.position
+                x, y = location_info.position
                 x_min = x.min(x_min)
                 x_max = x.max(x_max)
                 y_min = y.min(y_min)

@@ -58,7 +58,7 @@ class BoundedBravais(AtomArrangement):
 
         for index in itertools.product(*[range(n) for n in self.shape]):
             for pos in self.coordinates(list(index)):
-                (x, y) = tuple(repr_lattice_spacing * pos)
+                x, y = tuple(repr_lattice_spacing * pos)
                 xs.append(x)
                 ys.append(y)
 
@@ -340,7 +340,7 @@ class Rectangular(BoundedBravais):
                 for pos in repr_compatible_coordinates(
                     self, index
                 ):  # need to replace this
-                    (x, y) = tuple(repr_lattice_spacing * pos)
+                    x, y = tuple(repr_lattice_spacing * pos)
                     xs.append(x)
                     ys.append(y)
 
