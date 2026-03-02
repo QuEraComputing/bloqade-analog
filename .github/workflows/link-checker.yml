@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check
-        uses: ruzickap/action-my-broken-link-checker@v2
+        uses: ruzickap/action-my-broken-link-checker@v3
         with:
           url: https://bloqade.quera.com
           cmd_params: "--buffer-size=8192 --exclude='https://github.com/QuEraComputing/bloqade-analog/edit/' --exclude='https://fonts.gstatic.com'"
