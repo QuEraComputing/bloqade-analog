@@ -19,9 +19,9 @@ jobs:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
         with:
           # Install a specific version of uv.
           version: "0.5.1"
@@ -43,7 +43,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }} # required
       - name: Archive code coverage results
         if: matrix.python-version == '3.12'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: code-coverage-report
           path: coverage.xml
@@ -53,9 +53,9 @@ jobs:
     needs: build
     if: github.event.pull_request
     steps:
-        - uses: actions/checkout@v5
+        - uses: actions/checkout@v6
         - name: download covearge
-          uses: actions/download-artifact@v5
+          uses: actions/download-artifact@v6
           with:
             name: code-coverage-report
         - name: check coverage
