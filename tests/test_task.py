@@ -45,3 +45,34 @@ def test_batch_warn():
 
     assert len(error_files) == 1
     assert len(batch_files) == 1
+
+
+def test_batch_get_and_remove_tasks_with_none_task_result_ir():
+    from collections import OrderedDict
+    from bloqade.analog.submission.ir.task_results import (
+        QuEraTaskResults,
+        QuEraTaskStatusCode,
+    )
+
+    class MockTask:
+        def __init__(self, status):
+            self.task_result_ir = (
+                QuEraTaskResults(task_status=status) if status else None
+            )
+
+    tasks = OrderedDict(
+        [
+            (0, MockTask(QuEraTaskStatusCode.Completed)),
+            (1, MockTask(None)),
+            (2, MockTask(QuEraTaskStatusCode.Failed)),
+        ]
+    )
+    batch = RemoteBatch(None, tasks)
+
+    # get_tasks should include only task 0, ignoring None result without AttributeError
+    completed_batch = batch.get_tasks("Completed")
+    assert list(completed_batch.tasks.keys()) == [0]
+
+    # remove_tasks should filter out task 2 and keep task 0 and task 1
+    non_failed_batch = batch.remove_tasks("Failed")
+    assert list(non_failed_batch.tasks.keys()) == [0, 1]
