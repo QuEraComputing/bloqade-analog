@@ -592,7 +592,10 @@ class RemoteBatch(Serializable, Filter):
 
         new_task_results = OrderedDict()
         for task_number, task in self.tasks.items():
-            if task.task_result_ir.task_status in st_codes:
+            if (
+                task.task_result_ir is not None
+                and task.task_result_ir.task_status in st_codes
+            ):
                 new_task_results[task_number] = task
 
         return RemoteBatch(self.source, new_task_results, name=self.name)
@@ -627,9 +630,11 @@ class RemoteBatch(Serializable, Filter):
 
         new_results = OrderedDict()
         for task_number, task in self.tasks.items():
-            if task.task_result_ir.task_status in st_codes:
+            if (
+                task.task_result_ir is not None
+                and task.task_result_ir.task_status in st_codes
+            ):
                 continue
-
             new_results[task_number] = task
 
         return RemoteBatch(self.source, new_results, self.name)
