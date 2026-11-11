@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: chartboost/ruff-action@v1
+        with:
+          # Keep CI aligned with uv.lock and .pre-commit-config.yaml.
+          version: 0.15.4
   black:
     runs-on: ubuntu-latest
     steps:

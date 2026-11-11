@@ -13,15 +13,18 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13"
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14"
 ]
 dependencies = [
     "juliacall>=0.9.14",
     "numpy>=2.1.0",
     "pydantic>=2.0",
+    # pydantic.v1 (used here and by amazon-braket-schemas) supports Python 3.14
+    # only from pydantic 2.13.
+    "pydantic>=2.13; python_version >= '3.14'",
     "scipy>=1.0.0",
     "pandas>=2.1.0",
     "bokeh>=3.2.2",
@@ -34,7 +37,7 @@ dependencies = [
     "plum-dispatch>=2.2.2",
     "numba>=0.61.0",
 ]
-requires-python = ">=3.10,<3.14"
+requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "Apache License 2.0"}
 
@@ -82,8 +85,8 @@ exclude = [
     "venv",
 ]
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-# Assume Python 3.9.
-target-version = "py39"
+# Assume Python 3.11.
+target-version = "py311"
 
 [tool.jupytext]
 formats = "ipynb,py:percent"
