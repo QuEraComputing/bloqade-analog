@@ -81,9 +81,14 @@ exclude = [
     "node_modules",
     "venv",
 ]
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Assume Python 3.9.
 target-version = "py39"
+
+[tool.ruff.lint]
+# Pin the rule set explicitly: ruff 0.17 expanded its default selection,
+# which made CI fail with ~1000 new findings on unchanged code.
+select = ["E4", "E7", "E9", "F"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.jupytext]
 formats = "ipynb,py:percent"
@@ -119,4 +124,5 @@ doc = [
     "mkdocs-gen-files>=0.5.0",
     "mkdocs-literate-nav>=0.6.0",
     "mike>=1.1.2",
+    "pygments<2.20",
 ]
