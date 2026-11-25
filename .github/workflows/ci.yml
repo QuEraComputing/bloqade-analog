@@ -14,6 +14,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # Lets the Codecov upload authenticate via OIDC instead of a secret.
+      # Dependabot-triggered runs cannot read repository secrets, so a
+      # token-based upload fails there.
+      id-token: write
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
@@ -40,7 +46,7 @@ jobs:
           files: coverage.xml # optional
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
-          token: ${{ secrets.CODECOV_TOKEN }} # required
+          use_oidc: true # fork PRs fall back to tokenless upload
       - name: Archive code coverage results
         if: matrix.python-version == '3.12'
         uses: actions/upload-artifact@v7
@@ -51,6 +57,10 @@ jobs:
   post:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: read
+      # Needed to comment on Dependabot PRs, whose token is read-only by default.
+      pull-requests: write
     if: github.event.pull_request
     steps:
         - uses: actions/checkout@v7
