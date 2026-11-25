@@ -14,6 +14,12 @@ jobs:
   documentation:
     name: Deploy preview documentation
     runs-on: ubuntu-latest
+    # Dependabot-triggered runs get a read-only GITHUB_TOKEN unless the
+    # workflow asks for more, so request what pr-preview-action needs.
+    permissions:
+      contents: write # push the preview to gh-pages
+      pull-requests: write # post the sticky preview comment
+      pages: read # wait for the Pages build to finish
     steps:
       - uses: actions/checkout@v7
       - name: Install uv
